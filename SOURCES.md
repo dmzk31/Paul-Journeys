@@ -66,7 +66,15 @@
 
 - [Natural Earth 1:50m Physical Vectors — Land](https://www.naturalearthdata.com/downloads/50m-physical-vectors/)
 - [原始 GeoJSON](https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_50m_land.geojson)
-- 公有領域；未使用其行政疆界表示古代國界。網站採現代海岸線輪廓，不含地形高程。
+- 公有領域；網站採現代海岸線輪廓，不含地形高程。
+
+## 可切換的地區邊界
+
+- **古代行省**：採 [Ancient World Mapping Center (AWMC) 官方地理資料庫](https://github.com/AWMC/geodata)，`Cultural Shapefiles Apr 2024.zip` 內的 `roman_empire_ad_69_provinces` 與 `roman_empire_ad_69_extent`，即**西元69年概況**。此時間切面接近保羅活動年代，但不表示四次行程各年份的精確行政狀態；行省邊界也不等同所有聖經地理名詞的範圍。歷史邊界採虛線。
+- 原始依據為 Barrington Atlas of the Greek and Roman World，以及 AWMC 的 OpenStreetMap 修改資料；依官方資料庫 [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/) 提供。授權全文保留於 `assets/data/AWMC-LICENSE.txt`；本站衍生的古代邊界與分色 GeoJSON 亦以 ODbL 1.0 提供。
+- 轉製：選取地中海及近東視野所需幾何、轉成 GeoJSON、簡化折點與座標精度；分色面由原始邊界及帝國輪廓組面，僅為底色閉合小於0.08度的數位化接縫，畫面虛線仍採原始邊界線。底色為視覺分區，並非歷史政治立場或統一省名分類。古代海岸線與現代底圖可能有小幅差異。
+- **現代國界**：採 [Natural Earth 1:50m Admin 0 – Countries](https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/)（公有領域），[原始 GeoJSON](https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_50m_admin_0_countries.geojson)。只用於現代地理對照，保留資料集的實際控制界線表述，不當作古代邊界。依分區欄位配色，簡化幾何並篩選所需範圍。
+- 預設顯示古代行省，可在地圖上方切換現代國界或隱藏邊界；網址會保留所選圖層。所有資料隨網站提供，瀏覽時不向外部圖資服務查詢。
 
 ## 程式庫
 

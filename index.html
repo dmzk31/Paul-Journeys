@@ -25,6 +25,7 @@
         <button class="journey-picker" type="button" data-panel="journeys" aria-controls="explorer-dialog" aria-expanded="false" disabled><span id="map-journey-caption">第一次行程</span><span aria-hidden="true" class="chevron"></span></button>
         <div class="view-switch" role="group" aria-label="地圖顯示模式"><button id="mode-2d" type="button" class="active" aria-pressed="true">2D</button><button id="mode-3d" type="button" aria-pressed="false">3D</button></div>
         <button id="fit-btn" class="map-button" type="button" title="顯示本次行程完整路線">完整路線</button>
+        <div class="boundary-row"><label for="boundary-mode">邊界 <select id="boundary-mode"><option value="ancient">古代行省（69年）</option><option value="modern">現代國界</option><option value="none">不顯示邊界</option></select></label><span class="traveller-key"><i aria-hidden="true"></i>保羅位置</span></div>
       </div>
       <div class="map-stage">
         <div id="map" role="region" aria-label="可旋轉與縮放的行程地圖" tabindex="-1"></div>
@@ -38,7 +39,7 @@
       <nav class="explorer-nav" aria-label="開啟行程與地圖面板">
         <button type="button" data-panel="journeys" aria-controls="explorer-dialog" aria-expanded="false" disabled><span aria-hidden="true">☷</span>行程</button>
         <button type="button" data-panel="stops" aria-controls="explorer-dialog" aria-expanded="false" disabled><span aria-hidden="true">⌖</span>站點</button>
-        <button type="button" data-panel="companions" aria-controls="explorer-dialog" aria-expanded="false" disabled><span aria-hidden="true">♧</span>同行者</button>
+        <button type="button" data-panel="stoplist" aria-controls="explorer-dialog" aria-expanded="false" disabled><span aria-hidden="true">☷</span>選站</button>
         <button type="button" data-panel="playback" aria-controls="explorer-dialog" aria-expanded="false" disabled><span aria-hidden="true">≋</span>播放設定</button>
         <button id="camera-btn" type="button" data-panel="camera" aria-controls="explorer-dialog" aria-expanded="false" disabled><span aria-hidden="true">◎</span>視角</button>
       </nav>
@@ -47,17 +48,15 @@
   <aside id="journey-panel" hidden aria-label="收合的行程面板內容">
     <div id="panel-journeys" class="panel-content">
       <nav id="journey-tabs" class="journey-tabs" aria-label="選擇行程"></nav>
-      <section class="journey-intro" aria-labelledby="journey-name"><div class="section-heading"><h2 id="journey-name"></h2><span id="journey-ref" class="reference"></span></div><p id="journey-summary"></p><p class="companions"><span>同工概覽</span><span id="companions"></span></p><p class="overview-note">非全程同行名單；各段同行與分隊見「同行者」。</p></section>
+      <section class="journey-intro" aria-labelledby="journey-name"><div class="section-heading"><h2 id="journey-name"></h2><span id="journey-ref" class="reference"></span></div><p id="journey-summary"></p><p class="companions"><span>同工概覽</span><span id="companions"></span></p><p class="overview-note">非全程同行名單；各段同行與分隊見「站點」。</p></section>
       <details class="letters"><summary>本次行程與書信</summary><p id="journey-books"></p></details>
       <p class="sidebar-footnote">地圖以現代海岸線呈現地理位置；連線為行程示意，並非精確古道路或航跡。</p><footer class="production-credit">製作：Daniel Kao</footer>
     </div>
     <div id="panel-stops" class="panel-content">
       <section class="station-detail" aria-labelledby="station-name" aria-live="polite"><div class="detail-kicker"><span id="station-step"></span><span id="station-mode"></span></div><h2 id="station-name"></h2><p id="station-title" class="station-title"></p><p id="station-text"></p><p id="station-note" class="station-note" hidden></p><div class="detail-footer"><span id="station-ref" class="reference"></span><a id="place-source" href="https://www.openbible.info/geo/" target="_blank" rel="noopener noreferrer">地點參考</a></div></section>
-      <div class="route-heading"><h3>選擇站點</h3><span id="stop-total"></span></div><ol id="stop-list" class="stop-list" aria-label="選擇停靠站"></ol>
-    </div>
-    <div id="panel-companions" class="panel-content">
       <section id="segment-companions" class="segment-companions" aria-labelledby="segment-companions-title"><div class="section-heading"><h3 id="segment-companions-title">本段同行者</h3><button id="companion-method" class="text-btn" type="button">標示說明</button></div><span id="map-companions-caption" class="sr-only" aria-hidden="true"></span><p id="companion-scope" class="companion-scope"></p><ul id="companion-people" class="companion-people"></ul><p id="companion-note" class="companion-note"></p><p id="companion-change" class="companion-change" hidden></p><details id="companion-related" class="companion-related"><summary>分隊、會合與其他相關人物</summary><div id="companion-related-body"></div></details><button id="companion-evidence" class="evidence-button" type="button">查閱本段經文</button></section>
     </div>
+    <div id="panel-stoplist" class="panel-content"><div class="route-heading"><h3>選擇站點</h3><span id="stop-total"></span></div><ol id="stop-list" class="stop-list" aria-label="選擇停靠站"></ol></div>
     <div id="panel-playback" class="panel-content">
       <section class="playback" aria-label="路線播放設定"><p class="panel-description">可在主畫面播放、暫停或逐站前進；關閉這個面板即可回到地圖。</p><label class="field-label" for="progress">行程進度</label><input id="progress" class="progress" type="range" min="0" max="14" step="0.01" value="0"><div class="playback-options"><label class="speed-label" for="speed">播放速度<select id="speed"><option value="1">1×</option><option value="2">2×</option><option value="4">4×</option></select></label><label class="follow-label"><input id="follow-camera" type="checkbox">視角跟隨</label></div><button id="restart-btn" type="button" class="secondary-button">重新開始</button><h3>路線圖例</h3><div class="map-legend"><span><i class="land-line"></i>陸路</span><span><i class="sea-line"></i>海路</span><span><i class="uncertain-line"></i>漂流／未詳</span></div><p class="gesture-hint">拖曳移動 · 滾輪縮放 · 右鍵拖曳旋轉／傾斜</p></section>
     </div>

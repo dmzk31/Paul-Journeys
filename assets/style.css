@@ -10,3 +10,31 @@ dialog{width:calc(100% - 32px);max-width:580px;max-height:84dvh;border:0;border-
 @media(max-width:370px){.brand strong{font-size:17px}.brand small{font-size:9px}.header-actions{gap:5px}.header-actions .text-btn{font-size:12px}.map-topbar{padding-inline:8px;gap:5px}.journey-picker{font-size:13px;padding-inline:8px;gap:7px}.view-switch button{padding-inline:10px}.map-button{font-size:12px;padding-inline:8px}.play-btn{padding-inline:10px}.station-actions{gap:4px}.step-btn{width:36px}.explorer-nav button{font-size:12px}}
 @media(max-height:500px) and (orientation:landscape){.site-header{min-height:46px;padding:4px 16px}.brand img{height:29px;width:29px}.brand strong{font-size:18px}.brand small{display:none}.map-topbar{min-height:48px;padding:3px 14px}.station-bar{min-height:52px;padding:4px 16px}.explorer-nav{padding-top:2px;padding-bottom:2px}.explorer-nav button{min-height:44px;flex-direction:row;gap:8px}dialog{max-height:90dvh}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* Keep maps unobstructed while making layers and Paul's position easy to read. */
+:root{--ink:#24384e;--muted:#62778b;--line:#dbe5ef;--paper:#f8fbff}
+.site-header{background:linear-gradient(115deg,#eef7fc,#fff 70%);border-bottom-color:#cddfeb}
+.brand strong{color:#234b69}.map-topbar{flex-wrap:wrap;gap:8px 12px;background:#fff;padding-bottom:6px}
+.boundary-row{flex-basis:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;max-width:760px;margin:auto;padding-top:4px;border-top:1px solid #e6edf3;font-size:14px}
+.boundary-row label{display:flex;align-items:center;gap:8px;color:#526a81}
+.boundary-row select{min-height:36px;font-size:14px;border-color:#c7d8e6;background-color:#f4f8fd;padding-left:9px}
+.traveller-key{display:flex;align-items:center;gap:7px;color:#ac2843;font-size:13px;white-space:nowrap}
+.traveller-key i{width:11px;height:11px;border-radius:50%;background:#e82d50;box-shadow:0 0 0 3px #e82d5022}
+.view-switch button.active{background:#205f8b}.explorer-nav{background:#f1f7fd;border-top-color:#cddfeb}.explorer-nav button>span{color:#237a9d}
+.explorer-nav button:hover,.explorer-nav button[aria-expanded=true]{background:#dcecf9;color:#174a76}
+.dialog-header{background:#edf5fc}.station-detail{border-bottom-color:#c9dceb}.segment-companions{padding-top:22px}.companion-status{background:#e6eef9;color:#4d5c87;padding:2px 7px;border-radius:4px}
+.companion-people li{padding:13px 14px;margin-bottom:11px;border:1px solid #d9e5ef;border-left:3px solid var(--accent);border-radius:8px;background:#fff}
+.companion-citation{color:#146da4}.evidence-button,.secondary-button{background:#e7f3f8;border-color:#bdd8e4;color:#205e80}
+.region-label{color:#473f60d9;font-weight:600;text-shadow:0 1px 3px #ffffffd9,0 -1px 3px #ffffffd9;letter-spacing:.08em}
+.region-label.water{color:#28708da6;text-shadow:none}.modern-label{color:#325672d9}
+.place-marker .place-label{background:#fffffff0;color:#283c53;font-size:14px;box-shadow:0 1px 5px #34577824}
+.place-marker.active .place-label{background:var(--accent);color:#fff}.place-marker .dot{background:#fff;border-color:var(--accent);width:9px;height:9px}
+.traveller{position:absolute;z-index:8!important;width:30px;height:30px;border:0;background:none;box-shadow:none;pointer-events:none}
+.paul-core{position:absolute;inset:0;display:grid;place-items:center;border:3px solid #fff;border-radius:50%;background:#e82d50;color:#fff;font-size:15px;font-weight:700;box-shadow:0 0 0 2px #a81735,0 3px 9px #72172e66}
+.paul-pulse{position:absolute;inset:-7px;border-radius:50%;border:2px solid #e82d50;background:#e82d5029}
+.paul-label{position:absolute;left:35px;top:3px;font-size:14px;line-height:24px;padding:0 7px;border-radius:5px;background:#bd173b;color:#fff;font-weight:700;white-space:nowrap;box-shadow:0 2px 5px #60213d44}
+.is-playing .paul-pulse{animation:paul-beacon 1.6s ease-out infinite}
+.traveller.flip-label .paul-label{left:auto;right:35px}
+@keyframes paul-beacon{0%{transform:scale(.8);opacity:.9}85%,100%{transform:scale(1.7);opacity:0}}
+@media(max-width:720px){.map-topbar{gap:6px 8px}.boundary-row{padding-top:4px}.boundary-row select{max-width:200px}.explorer-nav button{font-size:14px}.place-marker .place-label{font-size:14px;line-height:22px}.map-button,.header-actions .text-btn{font-size:14px}.brand small{font-size:11px}}
+@media(max-width:370px){.boundary-row{gap:6px}.boundary-row label{gap:5px}.boundary-row select{max-width:180px}.traveller-key{font-size:12px}.explorer-nav button{font-size:13px}.map-button{font-size:13px}.brand small{display:none}}

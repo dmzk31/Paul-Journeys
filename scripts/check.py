@@ -60,6 +60,33 @@ for url in re.findall(r'(?:src|href)="(\./[^"]+)"', html):
 assert 'href="/' not in html and 'src="/' not in html, 'root paths break project Pages'
 land = json.loads((root/'assets/data/land.geojson').read_text(encoding='utf-8'))
 assert land['type'] == 'FeatureCollection' and land['features']
+for filename, types in [('ancient-boundaries.geojson', {'LineString', 'MultiLineString'}), ('ancient-regions.geojson', {'Polygon','MultiPolygon'}), ('modern-countries.geojson', {'Polygon','MultiPolygon'})]:
+    layer = json.loads((root/'assets/data'/filename).read_text(encoding='utf-8'))
+    assert layer['features'] and layer['license'], filename
+    if filename.startswith('ancient'): assert layer['year'] == 69, 'historical layer needs a dated snapshot'
+    def check_coords(coords):
+        if isinstance(coords[0], (int,float)):
+            assert -180 <= coords[0] <= 180 and -90 <= coords[1] <= 90, filename
+        else:
+            for child in coords: check_coords(child)
+    for item in layer['features']:
+        assert item['geometry']['type'] in types, filename
+        check_coords(item['geometry']['coordinates'])
+# The event panel must contain its companions, while station selection stays separate.
+from html.parser import HTMLParser
+class Panels(HTMLParser):
+    def __init__(self): super().__init__(); self.stack=[]; self.parents={}
+    def handle_starttag(self, tag, attrs):
+        attrs=dict(attrs); key=attrs.get('id')
+        if key: self.parents[key]=[entry[1] for entry in self.stack]
+        if tag not in {'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}: self.stack.append((tag,key))
+    def handle_endtag(self, tag):
+        for i in range(len(self.stack)-1,-1,-1):
+            if self.stack[i][0] == tag: self.stack=self.stack[:i]; break
+panels=Panels(); panels.feed(html)
+assert 'panel-stops' in panels.parents['segment-companions']
+assert 'panel-stops' not in panels.parents['stop-list']
+assert 'panel-stoplist' in panels.parents['stop-list']
 for file in ('assets/vendor/maplibre-gl.js', 'assets/vendor/maplibre-gl.css', 'assets/vendor/maplibre-LICENSE.txt', '.nojekyll', '.github/workflows/pages.yml'):
     assert (root/file).is_file(), file
 print(f"PASS: 4 journeys, {sum(len(j['stops']) for j in data['journeys'])} annotated nodes, {len(data['scriptureEvidence'])} scripture verses; team changes, references, route integrity, assets, DOM IDs and Pages subpaths checked.")
