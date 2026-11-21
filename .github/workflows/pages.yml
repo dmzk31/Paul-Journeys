@@ -1,29 +1,44 @@
-name: Deploy interactive atlas to GitHub Pages
+name: Validate atlas and publish manually
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish to GitHub Pages only when explicitly enabled
+        type: boolean
+        required: false
+        default: false
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Validate atlas data
+        run: python3 scripts/check.py
+
   deploy:
+    if: github.event_name == 'workflow_dispatch' && inputs.publish
+    needs: validate
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - name: Validate atlas data
-        run: python3 scripts/check.py
       - uses: actions/configure-pages@v5
       - name: Prepare public files
         run: |

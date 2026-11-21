@@ -31,7 +31,7 @@ python -m http.server 8080
 1. 在 GitHub 建立儲存庫，例如 `paul-journeys`。
 2. 將本資料夾的內容放在儲存庫根目錄，包含 `.github/workflows/pages.yml`。
 3. 至儲存庫 **Settings → Pages → Build and deployment → Source**，選擇 **GitHub Actions**。
-4. 推送至 `main` 分支，或在 Actions 手動執行 **Deploy interactive atlas to GitHub Pages**。
+4. 推送至 `main` 只執行資料檢查，不會發布。日後確認要發布時，在 Actions 手動執行 **Validate atlas and publish manually**，並勾選 `publish`。
 5. 部署成功後，在 Pages 或 Actions 查看實際網站網址。
 
 所有網站資源都採相對路徑，可用於 `https://帳號.github.io/儲存庫名稱/` 的子目錄部署。若儲存庫預設分支不是 `main`，請同步修改 workflow 的分支設定。
