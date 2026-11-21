@@ -1,0 +1,2386 @@
+{
+  "places": {
+    "Antioch 1": {
+      "name": "安提阿",
+      "en": "Antioch 1",
+      "coordinates": [
+        36.171743,
+        36.226691
+      ],
+      "source": "https://www.openbible.info/geo/antioch-1",
+      "sourceId": "ae41ab4"
+    },
+    "Seleucia": {
+      "name": "西流基",
+      "en": "Seleucia",
+      "coordinates": [
+        35.922,
+        36.124
+      ],
+      "source": "https://www.openbible.info/geo/seleucia",
+      "sourceId": "a6d306d"
+    },
+    "Salamis": {
+      "name": "撒拉米",
+      "en": "Salamis",
+      "coordinates": [
+        33.901944,
+        35.184944
+      ],
+      "source": "https://www.openbible.info/geo/salamis",
+      "sourceId": "afa863b"
+    },
+    "Paphos": {
+      "name": "帕弗",
+      "en": "Paphos",
+      "coordinates": [
+        32.404167,
+        34.755667
+      ],
+      "source": "https://www.openbible.info/geo/paphos",
+      "sourceId": "a314765"
+    },
+    "Perga": {
+      "name": "別加",
+      "en": "Perga",
+      "coordinates": [
+        30.853686,
+        36.960353
+      ],
+      "source": "https://www.openbible.info/geo/perga",
+      "sourceId": "aff04b8"
+    },
+    "Antioch 2": {
+      "name": "彼西底的安提阿",
+      "en": "Antioch 2",
+      "coordinates": [
+        31.189167,
+        38.306111
+      ],
+      "source": "https://www.openbible.info/geo/antioch-2",
+      "sourceId": "a6c704a"
+    },
+    "Iconium": {
+      "name": "以哥念",
+      "en": "Iconium",
+      "coordinates": [
+        32.492331,
+        37.872202
+      ],
+      "source": "https://www.openbible.info/geo/iconium",
+      "sourceId": "ae425aa"
+    },
+    "Lystra": {
+      "name": "路司得",
+      "en": "Lystra",
+      "coordinates": [
+        32.3384,
+        37.6017
+      ],
+      "source": "https://www.openbible.info/geo/lystra",
+      "sourceId": "af0719d"
+    },
+    "Derbe": {
+      "name": "特庇",
+      "en": "Derbe",
+      "coordinates": [
+        33.361453,
+        37.348569
+      ],
+      "source": "https://www.openbible.info/geo/derbe",
+      "sourceId": "aa401a9"
+    },
+    "Attalia": {
+      "name": "亞大利",
+      "en": "Attalia",
+      "coordinates": [
+        30.703614,
+        36.881272
+      ],
+      "source": "https://www.openbible.info/geo/attalia",
+      "sourceId": "ac744c1"
+    },
+    "Troas": {
+      "name": "特羅亞",
+      "en": "Troas",
+      "coordinates": [
+        26.158611,
+        39.751944
+      ],
+      "source": "https://www.openbible.info/geo/troas",
+      "sourceId": "a91c509"
+    },
+    "Samothrace": {
+      "name": "撒摩特喇",
+      "en": "Samothrace",
+      "coordinates": [
+        25.583333,
+        40.45
+      ],
+      "source": "https://www.openbible.info/geo/samothrace",
+      "sourceId": "a68750d"
+    },
+    "Neapolis": {
+      "name": "尼亞波利",
+      "en": "Neapolis",
+      "coordinates": [
+        24.415,
+        40.935
+      ],
+      "source": "https://www.openbible.info/geo/neapolis",
+      "sourceId": "a6a7150"
+    },
+    "Philippi": {
+      "name": "腓立比",
+      "en": "Philippi",
+      "coordinates": [
+        24.284576,
+        41.012072
+      ],
+      "source": "https://www.openbible.info/geo/philippi",
+      "sourceId": "a49e1d0"
+    },
+    "Amphipolis": {
+      "name": "暗妃波里",
+      "en": "Amphipolis",
+      "coordinates": [
+        23.847209,
+        40.820159
+      ],
+      "source": "https://www.openbible.info/geo/amphipolis",
+      "sourceId": "a4bdea7"
+    },
+    "Apollonia": {
+      "name": "亞波羅尼亞",
+      "en": "Apollonia",
+      "coordinates": [
+        23.469685,
+        40.623703
+      ],
+      "source": "https://www.openbible.info/geo/apollonia",
+      "sourceId": "ab20df9"
+    },
+    "Thessalonica": {
+      "name": "帖撒羅尼迦",
+      "en": "Thessalonica",
+      "coordinates": [
+        22.945767,
+        40.637771
+      ],
+      "source": "https://www.openbible.info/geo/thessalonica",
+      "sourceId": "afa9d8e"
+    },
+    "Berea": {
+      "name": "庇哩亞",
+      "en": "Berea",
+      "coordinates": [
+        22.2,
+        40.518333
+      ],
+      "source": "https://www.openbible.info/geo/berea",
+      "sourceId": "a62fe31"
+    },
+    "Athens": {
+      "name": "雅典",
+      "en": "Athens",
+      "coordinates": [
+        23.726738,
+        37.971851
+      ],
+      "source": "https://www.openbible.info/geo/athens",
+      "sourceId": "a1fe6e7"
+    },
+    "Corinth": {
+      "name": "哥林多",
+      "en": "Corinth",
+      "coordinates": [
+        22.878741,
+        37.905785
+      ],
+      "source": "https://www.openbible.info/geo/corinth",
+      "sourceId": "a6f437a"
+    },
+    "Cenchreae": {
+      "name": "堅革哩",
+      "en": "Cenchreae",
+      "coordinates": [
+        22.996816,
+        37.884335
+      ],
+      "source": "https://www.openbible.info/geo/cenchreae",
+      "sourceId": "aa31dd3"
+    },
+    "Ephesus": {
+      "name": "以弗所",
+      "en": "Ephesus",
+      "coordinates": [
+        27.3407,
+        37.939125
+      ],
+      "source": "https://www.openbible.info/geo/ephesus",
+      "sourceId": "a5feb15"
+    },
+    "Caesarea": {
+      "name": "該撒利亞",
+      "en": "Caesarea",
+      "coordinates": [
+        34.891667,
+        32.5
+      ],
+      "source": "https://www.openbible.info/geo/caesarea",
+      "sourceId": "a58735e"
+    },
+    "Jerusalem": {
+      "name": "耶路撒冷",
+      "en": "Jerusalem",
+      "coordinates": [
+        35.234167,
+        31.776667
+      ],
+      "source": "https://www.openbible.info/geo/jerusalem",
+      "sourceId": "a15257a"
+    },
+    "Galatia": {
+      "name": "加拉太地區",
+      "en": "Galatia",
+      "coordinates": [
+        32.983333,
+        39.266667
+      ],
+      "source": "https://www.openbible.info/geo/galatia",
+      "sourceId": "a0f440a"
+    },
+    "Phrygia": {
+      "name": "弗呂家",
+      "en": "Phrygia",
+      "coordinates": [
+        31.0,
+        39.0
+      ],
+      "source": "https://www.openbible.info/geo/phrygia",
+      "sourceId": "ab8ae56"
+    },
+    "Assos": {
+      "name": "亞朔",
+      "en": "Assos",
+      "coordinates": [
+        26.336667,
+        39.490556
+      ],
+      "source": "https://www.openbible.info/geo/assos",
+      "sourceId": "a0a2ca7"
+    },
+    "Mitylene": {
+      "name": "米推利尼",
+      "en": "Mitylene",
+      "coordinates": [
+        26.547048,
+        39.110475
+      ],
+      "source": "https://www.openbible.info/geo/mitylene",
+      "sourceId": "a33910d"
+    },
+    "Miletus": {
+      "name": "米利都",
+      "en": "Miletus",
+      "coordinates": [
+        27.275556,
+        37.531111
+      ],
+      "source": "https://www.openbible.info/geo/miletus",
+      "sourceId": "a55027d"
+    },
+    "Cos": {
+      "name": "哥士",
+      "en": "Cos",
+      "coordinates": [
+        27.110278,
+        36.815278
+      ],
+      "source": "https://www.openbible.info/geo/cos",
+      "sourceId": "a398e5d"
+    },
+    "Rhodes 1": {
+      "name": "羅底",
+      "en": "Rhodes 1",
+      "coordinates": [
+        28.2109,
+        36.4402
+      ],
+      "source": "https://www.openbible.info/geo/rhodes-1",
+      "sourceId": "a4218ee"
+    },
+    "Patara": {
+      "name": "帕大喇",
+      "en": "Patara",
+      "coordinates": [
+        29.314167,
+        36.260278
+      ],
+      "source": "https://www.openbible.info/geo/patara",
+      "sourceId": "ade301b"
+    },
+    "Tyre": {
+      "name": "推羅",
+      "en": "Tyre",
+      "coordinates": [
+        35.196111,
+        33.270833
+      ],
+      "source": "https://www.openbible.info/geo/tyre",
+      "sourceId": "a160272"
+    },
+    "Ptolemais": {
+      "name": "多利買",
+      "en": "Ptolemais",
+      "coordinates": [
+        35.0692,
+        32.9214
+      ],
+      "source": "https://www.openbible.info/geo/ptolemais",
+      "sourceId": "abc2af0"
+    },
+    "Sidon": {
+      "name": "西頓",
+      "en": "Sidon",
+      "coordinates": [
+        35.371944,
+        33.560985
+      ],
+      "source": "https://www.openbible.info/geo/sidon",
+      "sourceId": "a98e4d7"
+    },
+    "Myra": {
+      "name": "每拉",
+      "en": "Myra",
+      "coordinates": [
+        29.985278,
+        36.259167
+      ],
+      "source": "https://www.openbible.info/geo/myra",
+      "sourceId": "aa4b3e2"
+    },
+    "Cnidus": {
+      "name": "革尼土一帶",
+      "en": "Cnidus",
+      "coordinates": [
+        27.375,
+        36.685833
+      ],
+      "source": "https://www.openbible.info/geo/cnidus",
+      "sourceId": "ab793ce"
+    },
+    "Salmone": {
+      "name": "撒摩尼對面",
+      "en": "Salmone",
+      "coordinates": [
+        26.31155,
+        35.31603
+      ],
+      "source": "https://www.openbible.info/geo/salmone",
+      "sourceId": "a1c44ea"
+    },
+    "Fair Havens": {
+      "name": "佳澳",
+      "en": "Fair Havens",
+      "coordinates": [
+        24.800306,
+        34.929694
+      ],
+      "source": "https://www.openbible.info/geo/fair-havens",
+      "sourceId": "aae626a"
+    },
+    "Cauda": {
+      "name": "高大",
+      "en": "Cauda",
+      "coordinates": [
+        24.083333,
+        34.833333
+      ],
+      "source": "https://www.openbible.info/geo/cauda",
+      "sourceId": "aca2b0a"
+    },
+    "Malta": {
+      "name": "米利大島",
+      "en": "Malta",
+      "coordinates": [
+        14.411732,
+        35.933464
+      ],
+      "source": "https://www.openbible.info/geo/malta",
+      "sourceId": "a57835d"
+    },
+    "Syracuse": {
+      "name": "敘拉古",
+      "en": "Syracuse",
+      "coordinates": [
+        15.293056,
+        37.063889
+      ],
+      "source": "https://www.openbible.info/geo/syracuse",
+      "sourceId": "a1e3697"
+    },
+    "Rhegium": {
+      "name": "利基翁",
+      "en": "Rhegium",
+      "coordinates": [
+        15.64412,
+        38.1088
+      ],
+      "source": "https://www.openbible.info/geo/rhegium",
+      "sourceId": "a63bb26"
+    },
+    "Puteoli": {
+      "name": "部丟利",
+      "en": "Puteoli",
+      "coordinates": [
+        14.120556,
+        40.826111
+      ],
+      "source": "https://www.openbible.info/geo/puteoli",
+      "sourceId": "a4488e9"
+    },
+    "Forum of Appius": {
+      "name": "亞比烏市",
+      "en": "Forum of Appius",
+      "coordinates": [
+        12.9975,
+        41.46639
+      ],
+      "source": "https://www.openbible.info/geo/forum-of-appius",
+      "sourceId": "a121d5e"
+    },
+    "Three Taverns": {
+      "name": "三館",
+      "en": "Three Taverns",
+      "coordinates": [
+        12.873889,
+        41.561944
+      ],
+      "source": "https://www.openbible.info/geo/three-taverns",
+      "sourceId": "afef438"
+    },
+    "Rome": {
+      "name": "羅馬",
+      "en": "Rome",
+      "coordinates": [
+        12.4852,
+        41.8922
+      ],
+      "source": "https://www.openbible.info/geo/rome",
+      "sourceId": "afc8e7a"
+    }
+  },
+  "journeys": [
+    {
+      "id": 1,
+      "name": "第一次行程",
+      "subtitle": "為外邦人開了信的門",
+      "ref": "徒13:4下–14:28",
+      "color": "#bd8138",
+      "companions": "巴拿巴；約翰（馬可）在別加離隊（徒13:2、5、13）",
+      "summary": "從安提阿受差遣，經居比路進入小亞細亞；回程堅固門徒，並在各召會選立長老。",
+      "books": "本次行程未附書信著時。",
+      "stops": [
+        {
+          "place": "Antioch 1",
+          "name": "安提阿",
+          "ref": "徒13:1–4",
+          "title": "聖靈的差遣",
+          "text": "巴拿巴和掃羅在禁食禱告、按手後，從安提阿受差遣。",
+          "mode": "start",
+          "companionProfile": "first-departure"
+        },
+        {
+          "place": "Seleucia",
+          "name": "西流基",
+          "ref": "徒13:4",
+          "title": "從海港啟航",
+          "text": "二人下到西流基，從這裡坐船往居比路。",
+          "mode": "land",
+          "companionProfile": "first-departure"
+        },
+        {
+          "place": "Salamis",
+          "name": "撒拉米",
+          "ref": "徒13:5",
+          "title": "在會堂宣傳神的話",
+          "text": "抵達居比路東岸，在猶太人的各會堂傳講，約翰作他們的幫手。",
+          "mode": "sea",
+          "companionProfile": "first-cyprus"
+        },
+        {
+          "place": "Paphos",
+          "name": "帕弗",
+          "ref": "徒13:6–12",
+          "title": "省長士求保羅相信",
+          "text": "經過全島到帕弗，面對以呂馬的抵擋；省長看見所發生的事，就信了。",
+          "mode": "land",
+          "companionProfile": "first-cyprus"
+        },
+        {
+          "place": "Perga",
+          "name": "別加",
+          "ref": "徒13:13",
+          "title": "約翰離隊",
+          "text": "從帕弗開船到旁非利亞的別加，約翰離開他們，返回耶路撒冷。",
+          "mode": "sea",
+          "companionProfile": "first-perga"
+        },
+        {
+          "place": "Antioch 2",
+          "name": "彼西底的安提阿",
+          "ref": "徒13:14–52",
+          "title": "轉向外邦人",
+          "text": "保羅在會堂傳講；面對反對，保羅和巴拿巴放膽向外邦人傳揚。",
+          "mode": "land",
+          "companionProfile": "first-mainland"
+        },
+        {
+          "place": "Iconium",
+          "name": "以哥念",
+          "ref": "徒14:1–5",
+          "title": "多人相信，也遭抵擋",
+          "text": "二人在會堂講論，許多猶太人和希利尼人相信；後來有人企圖凌辱並用石頭打他們。",
+          "mode": "land",
+          "companionProfile": "first-mainland"
+        },
+        {
+          "place": "Lystra",
+          "name": "路司得",
+          "ref": "徒14:6–20",
+          "title": "醫治瘸腿的人",
+          "text": "保羅醫治不能行走的人，阻止群眾向使徒獻祭；後來被石頭打，拖到城外。",
+          "mode": "land",
+          "companionProfile": "first-mainland"
+        },
+        {
+          "place": "Derbe",
+          "name": "特庇",
+          "ref": "徒14:20–21上",
+          "title": "使好些人作門徒",
+          "text": "保羅與巴拿巴到特庇傳福音，使好些人作了門徒。",
+          "mode": "land",
+          "companionProfile": "first-derbe"
+        },
+        {
+          "place": "Lystra",
+          "name": "路司得",
+          "ref": "徒14:21下–23",
+          "title": "回程堅固門徒",
+          "text": "回訪路司得、以哥念和安提阿，勸門徒恆守信仰，在各召會選立長老。",
+          "mode": "land",
+          "returning": true,
+          "companionProfile": "first-return"
+        },
+        {
+          "place": "Iconium",
+          "name": "以哥念",
+          "ref": "徒14:21下–23",
+          "title": "回訪召會",
+          "text": "回程經過以哥念，堅固門徒，並以禁食禱告將他們交託主。",
+          "mode": "land",
+          "returning": true,
+          "companionProfile": "first-return"
+        },
+        {
+          "place": "Antioch 2",
+          "name": "彼西底的安提阿",
+          "ref": "徒14:21下–24",
+          "title": "經過彼西底",
+          "text": "完成回訪後，經過彼西底，來到旁非利亞。",
+          "mode": "land",
+          "returning": true,
+          "companionProfile": "first-return"
+        },
+        {
+          "place": "Perga",
+          "name": "別加",
+          "ref": "徒14:24–25上",
+          "title": "在別加講道",
+          "text": "回到旁非利亞，在別加講道。",
+          "mode": "land",
+          "returning": true,
+          "companionProfile": "first-return"
+        },
+        {
+          "place": "Attalia",
+          "name": "亞大利",
+          "ref": "徒14:25下–26",
+          "title": "準備返回安提阿",
+          "text": "從別加下到亞大利，再坐船返回起初受差遣的地方。",
+          "mode": "land",
+          "companionProfile": "first-return"
+        },
+        {
+          "place": "Antioch 1",
+          "name": "安提阿",
+          "ref": "徒14:26–28",
+          "title": "向召會述說神的作為",
+          "text": "聚集召會，述說神同著他們所行的一切，以及怎樣為外邦人開了信的門。",
+          "mode": "sea",
+          "returning": true,
+          "companionProfile": "first-return"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "第二次行程",
+      "subtitle": "回訪眾召會，跨向馬其頓",
+      "ref": "徒15:40–18:22",
+      "color": "#337c91",
+      "companions": "西拉、提摩太、百基拉、亞居拉等分段同行；路加依「我們」推定，詳見各段經文。",
+      "summary": "保羅揀選西拉，回訪眾召會；在特羅亞看見馬其頓人的異象，渡海前往馬其頓，再到雅典與哥林多。",
+      "books": "參考簡報將帖撒羅尼迦前後書及加拉太書置於本次哥林多停留期間；此為資料所採著時安排。",
+      "stops": [
+        {
+          "place": "Antioch 1",
+          "name": "安提阿",
+          "ref": "徒15:35–41",
+          "title": "揀選西拉同行",
+          "text": "保羅和巴拿巴分開後，揀選西拉，經敘利亞和基利家堅固眾召會。",
+          "mode": "start",
+          "companionProfile": "second-silas"
+        },
+        {
+          "place": "Derbe",
+          "name": "特庇",
+          "ref": "徒16:1",
+          "title": "回訪門徒",
+          "text": "保羅經敘利亞、基利家，來到特庇，又到路司得。",
+          "mode": "land",
+          "via": [
+            [
+              36.1,
+              37.1
+            ],
+            [
+              34.9,
+              37.0
+            ]
+          ],
+          "companionProfile": "second-silas"
+        },
+        {
+          "place": "Lystra",
+          "name": "路司得",
+          "ref": "徒16:1–5",
+          "title": "提摩太加入",
+          "text": "保羅帶提摩太同行，將耶路撒冷所定的規條交給各城門徒遵守。",
+          "mode": "land",
+          "companionProfile": "second-silas",
+          "companionChange": "抵達路司得後，保羅帶提摩太同行（徒16:1–3）；從下一段往特羅亞的路線起列入提摩太。",
+          "companionChangeRefs": [
+            "徒16:1",
+            "徒16:2",
+            "徒16:3"
+          ]
+        },
+        {
+          "place": "Troas",
+          "name": "特羅亞",
+          "ref": "徒16:6–10",
+          "title": "馬其頓人的異象",
+          "text": "聖靈禁止在亞西亞講道，耶穌的靈不許往庇推尼；保羅下到特羅亞，夜間看見異象。",
+          "mode": "land",
+          "via": [
+            [
+              30.1,
+              38.7
+            ],
+            [
+              28.5,
+              39.4
+            ]
+          ],
+          "companionProfile": "second-timothy",
+          "companionChange": "特羅亞出現「我們」的敘事（徒16:10）；敘事者參與明確，但身份與「此時加入」需保留推定。",
+          "companionChangeRefs": [
+            "徒16:10"
+          ]
+        },
+        {
+          "place": "Samothrace",
+          "name": "撒摩特喇",
+          "ref": "徒16:11",
+          "title": "渡過愛琴海",
+          "text": "一行人從特羅亞開船，直航撒摩特喇。",
+          "mode": "sea",
+          "companionProfile": "second-we"
+        },
+        {
+          "place": "Neapolis",
+          "name": "尼亞波利",
+          "ref": "徒16:11–12",
+          "title": "抵達馬其頓海港",
+          "text": "第二天抵達尼亞波利，從那裡前往腓立比。",
+          "mode": "sea",
+          "companionProfile": "second-we"
+        },
+        {
+          "place": "Philippi",
+          "name": "腓立比",
+          "ref": "徒16:12–40",
+          "title": "呂底亞與禁卒一家",
+          "text": "呂底亞一家受浸；保羅和西拉被囚，夜間禱告唱詩，禁卒一家也相信受浸。",
+          "mode": "land",
+          "companionProfile": "second-we"
+        },
+        {
+          "place": "Amphipolis",
+          "name": "暗妃波里",
+          "ref": "徒17:1",
+          "title": "路過暗妃波里",
+          "text": "離開腓立比後，路過暗妃波里和亞波羅尼亞。",
+          "mode": "land",
+          "companionProfile": "second-macedonia"
+        },
+        {
+          "place": "Apollonia",
+          "name": "亞波羅尼亞",
+          "ref": "徒17:1",
+          "title": "前往帖撒羅尼迦",
+          "text": "沿途經過亞波羅尼亞，來到帖撒羅尼迦。",
+          "mode": "land",
+          "companionProfile": "second-macedonia"
+        },
+        {
+          "place": "Thessalonica",
+          "name": "帖撒羅尼迦",
+          "ref": "徒17:1–9",
+          "title": "本著聖經辯論",
+          "text": "保羅一連三個安息日講解基督的受害與復活；反對者煽動群眾。",
+          "mode": "land",
+          "companionProfile": "second-macedonia"
+        },
+        {
+          "place": "Berea",
+          "name": "庇哩亞",
+          "ref": "徒17:10–14",
+          "title": "天天考查聖經",
+          "text": "這裡的人熱切領受這道，天天考查聖經；後來反對者也來擾亂。",
+          "mode": "land",
+          "companionProfile": "second-berea"
+        },
+        {
+          "place": "Athens",
+          "name": "雅典",
+          "ref": "徒17:15–34",
+          "title": "在亞略巴古傳講",
+          "text": "保羅看見滿城偶像，與人辯論，並在亞略巴古傳講創造主與復活。",
+          "mode": "uncertain",
+          "note": "經文未詳述庇哩亞至雅典的全程交通方式。",
+          "companionProfile": "second-athens"
+        },
+        {
+          "place": "Corinth",
+          "name": "哥林多",
+          "ref": "徒18:1–17",
+          "title": "住了一年零六個月",
+          "text": "遇見亞居拉、百基拉，與他們同住作工，並持續教導神的話。",
+          "mode": "land",
+          "companionProfile": "second-corinth"
+        },
+        {
+          "place": "Cenchreae",
+          "name": "堅革哩",
+          "ref": "徒18:18",
+          "title": "離開哥林多地區",
+          "text": "保羅因有願在身，在堅革哩剪了頭髮，與百基拉、亞居拉坐船前行。",
+          "mode": "land",
+          "companionProfile": "second-couple"
+        },
+        {
+          "place": "Ephesus",
+          "name": "以弗所",
+          "ref": "徒18:19–21",
+          "title": "短暫停留以弗所",
+          "text": "在會堂與猶太人辯論；將百基拉、亞居拉留在這裡，自己繼續航程。",
+          "mode": "sea",
+          "companionProfile": "second-couple",
+          "companionChange": "抵達以弗所後，亞居拉與百基拉留在這裡（徒18:19、26）。",
+          "companionChangeRefs": [
+            "徒18:19",
+            "徒18:26"
+          ]
+        },
+        {
+          "place": "Caesarea",
+          "name": "該撒利亞",
+          "ref": "徒18:22",
+          "title": "在該撒利亞下船",
+          "text": "離開以弗所後，在該撒利亞下船。",
+          "mode": "sea",
+          "via": [
+            [
+              28.8,
+              34.5
+            ],
+            [
+              32.2,
+              33.4
+            ]
+          ],
+          "companionProfile": "second-home"
+        },
+        {
+          "place": "Jerusalem",
+          "name": "耶路撒冷",
+          "ref": "徒18:22",
+          "title": "上去問候召會",
+          "text": "依所附經文的表述，保羅上耶路撒冷問候召會。",
+          "mode": "land",
+          "companionProfile": "second-home"
+        },
+        {
+          "place": "Antioch 1",
+          "name": "安提阿",
+          "ref": "徒18:22",
+          "title": "再回安提阿",
+          "text": "問候召會後，下到安提阿，結束第二次行程。",
+          "mode": "land",
+          "returning": true,
+          "companionProfile": "second-home"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "第三次行程",
+      "subtitle": "堅固門徒，往耶路撒冷去",
+      "ref": "徒18:23–21:17",
+      "color": "#b65b4c",
+      "companions": "回程名單七人，且有分隊（徒20:4–6）；路加依「我們」推定。",
+      "summary": "挨次經過加拉太和弗呂家，在以弗所長期盡職；經馬其頓與希臘回程，在米利都與長老道別，最後抵達耶路撒冷。",
+      "books": "參考資料安排：以弗所寫哥林多前書，馬其頓寫哥林多後書，希臘停留期間寫羅馬書。",
+      "stops": [
+        {
+          "place": "Antioch 1",
+          "name": "安提阿",
+          "ref": "徒18:23",
+          "title": "再次起行",
+          "text": "住了些時候，保羅從安提阿再次出發。",
+          "mode": "start",
+          "companionProfile": "third-outbound"
+        },
+        {
+          "place": "Galatia",
+          "name": "加拉太地區",
+          "ref": "徒18:23",
+          "title": "堅固眾門徒",
+          "text": "挨次經過加拉太地區和弗呂家，堅固眾門徒。此標記代表地區，並非確定停靠城市。",
+          "mode": "land",
+          "approximate": true,
+          "companionProfile": "third-outbound"
+        },
+        {
+          "place": "Phrygia",
+          "name": "弗呂家",
+          "ref": "徒18:23",
+          "title": "經過弗呂家",
+          "text": "繼續探訪門徒，向以弗所前進。此標記代表地區概略位置。",
+          "mode": "land",
+          "approximate": true,
+          "companionProfile": "third-outbound"
+        },
+        {
+          "place": "Ephesus",
+          "name": "以弗所",
+          "ref": "徒19:1–41",
+          "title": "主的話擴長而得勝",
+          "text": "在會堂講說三個月，並在推喇奴講堂天天辯論兩年；後來銀匠底米丟掀起擾亂。",
+          "mode": "land",
+          "companionProfile": "third-outbound"
+        },
+        {
+          "place": "Philippi",
+          "name": "馬其頓／腓立比",
+          "ref": "徒20:1–6",
+          "title": "經過馬其頓勸勉門徒",
+          "text": "擾亂平定後，保羅前往馬其頓，多方勸勉門徒。以腓立比作本區代表標記。",
+          "mode": "land",
+          "approximate": true,
+          "via": [
+            [
+              26.2,
+              39.8
+            ],
+            [
+              24.5,
+              40.6
+            ]
+          ],
+          "companionProfile": "third-macedonia"
+        },
+        {
+          "place": "Corinth",
+          "name": "希臘／哥林多",
+          "ref": "徒20:2–3",
+          "title": "在希臘住了三個月",
+          "text": "因猶太人設計陷害，保羅決定從馬其頓回程。此處依參考簡報，以哥林多表示希臘停留。",
+          "mode": "land",
+          "approximate": true,
+          "companionProfile": "third-greece"
+        },
+        {
+          "place": "Philippi",
+          "name": "腓立比",
+          "ref": "徒20:3–6",
+          "title": "改道馬其頓",
+          "text": "改道回到馬其頓；除酵節後，從腓立比一帶開船。",
+          "mode": "land",
+          "returning": true,
+          "companionProfile": "third-return-team"
+        },
+        {
+          "place": "Troas",
+          "name": "特羅亞",
+          "ref": "徒20:6–12",
+          "title": "擘餅與徹夜講論",
+          "text": "抵達後住了七天；在聚集擘餅時，保羅講論直到半夜，猶推古墜樓後被活活領來。",
+          "mode": "sea",
+          "companionProfile": "third-philippi-troas"
+        },
+        {
+          "place": "Assos",
+          "name": "亞朔",
+          "ref": "徒20:13–14",
+          "title": "保羅步行至亞朔",
+          "text": "同工先乘船，保羅打算步行，到亞朔與他們會合。",
+          "mode": "land",
+          "companionProfile": "third-assos-walk"
+        },
+        {
+          "place": "Mitylene",
+          "name": "米推利尼",
+          "ref": "徒20:14–15",
+          "title": "沿愛琴海岸航行",
+          "text": "接保羅上船後來到米推利尼，再經基阿對面與撒摩，前往米利都。",
+          "mode": "sea",
+          "companionProfile": "third-asian-coast"
+        },
+        {
+          "place": "Miletus",
+          "name": "米利都",
+          "ref": "徒20:15–38",
+          "title": "與以弗所長老道別",
+          "text": "保羅請以弗所召會長老前來，勸勉並交託他們，與眾人禱告道別。",
+          "mode": "sea",
+          "via": [
+            [
+              26.0,
+              38.5
+            ],
+            [
+              26.9,
+              37.8
+            ]
+          ],
+          "companionProfile": "third-asian-coast"
+        },
+        {
+          "place": "Cos",
+          "name": "哥士",
+          "ref": "徒21:1",
+          "title": "離別後啟航",
+          "text": "一行人離別眾人，開船直航哥士。",
+          "mode": "sea",
+          "companionProfile": "third-syria-coast"
+        },
+        {
+          "place": "Rhodes 1",
+          "name": "羅底",
+          "ref": "徒21:1",
+          "title": "到羅底",
+          "text": "第二天抵達羅底，再前往帕大喇。",
+          "mode": "sea",
+          "companionProfile": "third-syria-coast"
+        },
+        {
+          "place": "Patara",
+          "name": "帕大喇",
+          "ref": "徒21:1–2",
+          "title": "換船往腓尼基",
+          "text": "遇見開往腓尼基的船，就上船起行。",
+          "mode": "sea",
+          "companionProfile": "third-syria-coast"
+        },
+        {
+          "place": "Tyre",
+          "name": "推羅",
+          "ref": "徒21:3–6",
+          "title": "與門徒同住七天",
+          "text": "從居比路南側駛過，在推羅上岸；門徒勸保羅不要上耶路撒冷。",
+          "mode": "sea",
+          "via": [
+            [
+              31.5,
+              34.2
+            ],
+            [
+              33.5,
+              33.8
+            ]
+          ],
+          "companionProfile": "third-syria-coast"
+        },
+        {
+          "place": "Ptolemais",
+          "name": "多利買",
+          "ref": "徒21:7",
+          "title": "問候弟兄們",
+          "text": "從推羅來到多利買，問候弟兄，同住一天。",
+          "mode": "sea",
+          "companionProfile": "third-syria-coast"
+        },
+        {
+          "place": "Caesarea",
+          "name": "該撒利亞",
+          "ref": "徒21:8–14",
+          "title": "亞迦布的預言",
+          "text": "住在傳福音者腓利家；亞迦布預言捆綁，眾人苦勸保羅不要上耶路撒冷。",
+          "mode": "land",
+          "companionProfile": "third-syria-coast"
+        },
+        {
+          "place": "Jerusalem",
+          "name": "耶路撒冷",
+          "ref": "徒21:15–17",
+          "title": "抵達耶路撒冷",
+          "text": "收拾行李上耶路撒冷，弟兄們歡歡喜喜地接待他們。",
+          "mode": "land",
+          "companionProfile": "third-jerusalem"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "第四次行程",
+      "subtitle": "在捆鎖中，向羅馬前行",
+      "ref": "徒27:1–28:31",
+      "color": "#7a66a4",
+      "companions": "亞里達古（徒27:2）；路加依「我們」推定；百夫長猶流負責押送（徒27:1）。",
+      "summary": "保羅上訴於該撒後，被押解往義大利。航程遭遇狂風與船難，眾人安全上岸；最終抵達羅馬，在租住的房子裡放膽傳講。",
+      "books": "參考資料將以弗所書、腓立比書、歌羅西書及腓利門書置於羅馬第一次被囚期間。獲釋後活動與後續書信另屬延伸資料。",
+      "stops": [
+        {
+          "place": "Caesarea",
+          "name": "該撒利亞",
+          "ref": "徒25:11–12；27:1–2",
+          "title": "被解往羅馬",
+          "text": "保羅上訴於該撒後，交由百夫長猶流押送，坐船前往義大利。受審背景見徒21–26章。",
+          "mode": "start",
+          "companionProfile": "fourth-departure"
+        },
+        {
+          "place": "Sidon",
+          "name": "西頓",
+          "ref": "徒27:3",
+          "title": "朋友的照應",
+          "text": "猶流寬待保羅，准他到朋友那裡接受照應。",
+          "mode": "sea",
+          "companionProfile": "fourth-departure"
+        },
+        {
+          "place": "Myra",
+          "name": "每拉",
+          "ref": "徒27:4–6",
+          "title": "轉乘亞力山大的船",
+          "text": "因風不順，沿居比路背風岸前行；到呂家的每拉，換乘開往義大利的船。",
+          "mode": "sea",
+          "via": [
+            [
+              35.5,
+              35.6
+            ],
+            [
+              34.0,
+              35.9
+            ],
+            [
+              32.4,
+              36.0
+            ]
+          ],
+          "companionProfile": "fourth-voyage"
+        },
+        {
+          "place": "Cnidus",
+          "name": "革尼土一帶",
+          "ref": "徒27:7",
+          "title": "船行緩慢",
+          "text": "一連多日行船緩慢，好不容易抵達革尼土一帶，受風攔阻而轉向革哩底。",
+          "mode": "sea",
+          "companionProfile": "fourth-voyage"
+        },
+        {
+          "place": "Salmone",
+          "name": "撒摩尼對面",
+          "ref": "徒27:7–8",
+          "title": "沿革哩底背風岸",
+          "text": "從撒摩尼對面經過，沿革哩底背風岸航行。",
+          "mode": "sea",
+          "companionProfile": "fourth-voyage"
+        },
+        {
+          "place": "Fair Havens",
+          "name": "佳澳",
+          "ref": "徒27:8–15",
+          "title": "勸告與狂風",
+          "text": "保羅提醒航程危險，但眾人仍起航；不久遭遇名為友拉革羅的狂風。",
+          "mode": "sea",
+          "companionProfile": "fourth-voyage"
+        },
+        {
+          "place": "Cauda",
+          "name": "高大",
+          "ref": "徒27:16–17",
+          "title": "收住小艇、捆綁船底",
+          "text": "貼著高大的背風岸奔航，眾人收住小艇，並用纜繩捆綁船底。",
+          "mode": "sea",
+          "companionProfile": "fourth-voyage"
+        },
+        {
+          "place": "Malta",
+          "name": "米利大島",
+          "ref": "徒27:18–28:10",
+          "title": "船難後眾人安全上岸",
+          "text": "船遭風浪催逼而毀壞，276人都安全上岸。保羅在島上服事並醫治病人。漂流線僅為示意。",
+          "mode": "drift",
+          "via": [
+            [
+              21.0,
+              34.7
+            ],
+            [
+              18.2,
+              35.1
+            ],
+            [
+              16.1,
+              35.6
+            ]
+          ],
+          "companionProfile": "fourth-voyage"
+        },
+        {
+          "place": "Syracuse",
+          "name": "敘拉古",
+          "ref": "徒28:11–12",
+          "title": "過冬後再啟航",
+          "text": "三個月後換船離開米利大，來到敘拉古，停泊三天。",
+          "mode": "sea",
+          "companionProfile": "fourth-after-malta"
+        },
+        {
+          "place": "Rhegium",
+          "name": "利基翁",
+          "ref": "徒28:13",
+          "title": "等待南風",
+          "text": "來到利基翁；一天後起了南風，繼續航行。",
+          "mode": "sea",
+          "via": [
+            [
+              15.5,
+              37.8
+            ]
+          ],
+          "companionProfile": "fourth-after-malta"
+        },
+        {
+          "place": "Puteoli",
+          "name": "部丟利",
+          "ref": "徒28:13–14",
+          "title": "與弟兄同住七天",
+          "text": "抵達部丟利，遇見弟兄們，應邀停留七天。",
+          "mode": "sea",
+          "via": [
+            [
+              15.4,
+              39.4
+            ],
+            [
+              14.2,
+              40.2
+            ]
+          ],
+          "companionProfile": "fourth-after-malta"
+        },
+        {
+          "place": "Forum of Appius",
+          "name": "亞比烏市",
+          "ref": "徒28:15",
+          "title": "弟兄們前來迎接",
+          "text": "羅馬的弟兄們前來迎接；保羅看見他們，就感謝神，壯起膽來。",
+          "mode": "land",
+          "companionProfile": "fourth-after-malta"
+        },
+        {
+          "place": "Three Taverns",
+          "name": "三館",
+          "ref": "徒28:15",
+          "title": "繼續往羅馬",
+          "text": "這是弟兄們前來迎接的另一處地點。",
+          "mode": "land",
+          "companionProfile": "fourth-after-malta"
+        },
+        {
+          "place": "Rome",
+          "name": "羅馬",
+          "ref": "徒28:16–31",
+          "title": "放膽傳講，毫無阻礙",
+          "text": "保羅與看守他的兵丁另住一處；在租住的房子裡足足兩年，歡迎來訪的人，傳講神的國與主耶穌基督的事。",
+          "mode": "land",
+          "companionProfile": "fourth-after-malta"
+        }
+      ]
+    }
+  ],
+  "companionProfiles": {
+    "first-departure": {
+      "people": [
+        {
+          "name": "巴拿巴",
+          "role": "與保羅一同受差遣。",
+          "status": "direct",
+          "refs": [
+            "徒13:2",
+            "徒13:3"
+          ]
+        },
+        {
+          "name": "約翰（馬可）",
+          "role": "先前與巴拿巴、掃羅同去，並在撒拉米作幫手；此段依上下文接續。",
+          "status": "context",
+          "refs": [
+            "徒12:25",
+            "徒13:5"
+          ]
+        }
+      ],
+      "refs": [
+        "徒12:25",
+        "徒13:2",
+        "徒13:3",
+        "徒13:4",
+        "徒13:5"
+      ],
+      "note": "經文未逐站重列整個小組；馬可在撒拉米明確出現，不把每個中途站都當成再次點名。",
+      "related": []
+    },
+    "first-cyprus": {
+      "people": [
+        {
+          "name": "巴拿巴",
+          "role": "與保羅同在居比路盡職。",
+          "status": "direct",
+          "refs": [
+            "徒13:2",
+            "徒13:7"
+          ]
+        },
+        {
+          "name": "約翰（馬可）",
+          "role": "作他們的幫手；沿居比路的行進依同段敘事銜接。",
+          "status": "context",
+          "refs": [
+            "徒13:5",
+            "徒13:6",
+            "徒13:13"
+          ]
+        }
+      ],
+      "refs": [
+        "徒13:4",
+        "徒13:5",
+        "徒13:6",
+        "徒13:7",
+        "徒13:13"
+      ],
+      "note": "",
+      "related": []
+    },
+    "first-perga": {
+      "people": [
+        {
+          "name": "巴拿巴",
+          "role": "從居比路到別加；後續仍與保羅同行。",
+          "status": "context",
+          "refs": [
+            "徒13:7",
+            "徒13:13",
+            "徒13:43"
+          ]
+        },
+        {
+          "name": "約翰（馬可）",
+          "role": "同行至別加；到此離隊，返回耶路撒冷。",
+          "status": "direct",
+          "refs": [
+            "徒13:13",
+            "徒15:38"
+          ]
+        }
+      ],
+      "refs": [
+        "徒13:13",
+        "徒13:43",
+        "徒15:38"
+      ],
+      "note": "馬可在本段終點離隊，往彼西底安提阿及其後路段不再把他列入。",
+      "related": []
+    },
+    "first-mainland": {
+      "people": [
+        {
+          "name": "巴拿巴",
+          "role": "與保羅在小亞細亞同工；各段依反覆點名及「二人」敘事接續。",
+          "status": "context",
+          "refs": [
+            "徒13:43",
+            "徒13:50",
+            "徒14:14",
+            "徒14:20"
+          ]
+        }
+      ],
+      "refs": [
+        "徒13:13",
+        "徒13:43",
+        "徒13:50",
+        "徒14:14",
+        "徒14:20"
+      ],
+      "note": "本段不列已在別加離隊的馬可。",
+      "related": []
+    },
+    "first-derbe": {
+      "people": [
+        {
+          "name": "巴拿巴",
+          "role": "經文明說保羅同巴拿巴往特庇去。",
+          "status": "direct",
+          "refs": [
+            "徒14:20"
+          ]
+        }
+      ],
+      "refs": [
+        "徒14:20",
+        "徒14:21"
+      ],
+      "note": "",
+      "related": []
+    },
+    "first-return": {
+      "people": [
+        {
+          "name": "巴拿巴",
+          "role": "二人回訪眾城，堅固門徒、選立長老，再回安提阿。",
+          "status": "context",
+          "refs": [
+            "徒14:20",
+            "徒14:21",
+            "徒14:23",
+            "徒14:26",
+            "徒14:28"
+          ]
+        }
+      ],
+      "refs": [
+        "徒14:20",
+        "徒14:21",
+        "徒14:23",
+        "徒14:26",
+        "徒14:28"
+      ],
+      "note": "",
+      "related": []
+    },
+    "second-silas": {
+      "people": [
+        {
+          "name": "西拉",
+          "role": "保羅揀選西拉出發，經敘利亞、基利家前行。",
+          "status": "direct",
+          "refs": [
+            "徒15:40",
+            "徒15:41"
+          ]
+        }
+      ],
+      "refs": [
+        "徒15:39",
+        "徒15:40",
+        "徒15:41",
+        "徒16:1"
+      ],
+      "note": "巴拿巴與馬可另往居比路；提摩太到路司得才加入。",
+      "related": []
+    },
+    "second-timothy": {
+      "people": [
+        {
+          "name": "西拉",
+          "role": "由安提阿出發後，依連續敘事同行。",
+          "status": "context",
+          "refs": [
+            "徒15:40",
+            "徒16:4",
+            "徒16:19"
+          ]
+        },
+        {
+          "name": "提摩太",
+          "role": "保羅在路司得帶他一同出去。",
+          "status": "direct",
+          "refs": [
+            "徒16:1",
+            "徒16:3"
+          ]
+        }
+      ],
+      "refs": [
+        "徒15:40",
+        "徒16:1",
+        "徒16:3",
+        "徒16:4",
+        "徒16:8",
+        "徒16:10"
+      ],
+      "note": "路加並未在這段被直接點名；抵達特羅亞後才出現「我們」的敘事。",
+      "related": []
+    },
+    "second-we": {
+      "people": [
+        {
+          "name": "西拉",
+          "role": "由前文接續；腓立比的事件再次明確點名。",
+          "status": "context",
+          "refs": [
+            "徒15:40",
+            "徒16:19",
+            "徒16:25"
+          ]
+        },
+        {
+          "name": "提摩太",
+          "role": "路司得加入後的隊伍成員；後文在庇哩亞再見其名。",
+          "status": "context",
+          "refs": [
+            "徒16:3",
+            "徒17:14"
+          ]
+        },
+        {
+          "name": "路加（敘事者）",
+          "role": "「我們」顯示敘事者參與；將敘事者稱為路加，依所附文件卷首作者說明，屬身份推定。",
+          "status": "inferred",
+          "refs": [
+            "徒16:10",
+            "徒16:11",
+            "徒16:12",
+            "徒16:17"
+          ]
+        }
+      ],
+      "refs": [
+        "徒16:3",
+        "徒16:10",
+        "徒16:11",
+        "徒16:12",
+        "徒16:17",
+        "徒16:19",
+        "徒16:25",
+        "徒17:14"
+      ],
+      "note": "經文沒有「路加在特羅亞加入」的具名句子，因此不標為經文明說的加入時間。",
+      "related": []
+    },
+    "second-macedonia": {
+      "people": [
+        {
+          "name": "西拉",
+          "role": "與保羅路過暗妃波里、亞波羅尼亞，到帖撒羅尼迦。",
+          "status": "direct",
+          "refs": [
+            "徒17:1"
+          ]
+        },
+        {
+          "name": "提摩太",
+          "role": "按路司得加入及後來留在庇哩亞的記載銜接；本段未另點名。",
+          "status": "context",
+          "refs": [
+            "徒16:3",
+            "徒17:14"
+          ]
+        }
+      ],
+      "refs": [
+        "徒16:3",
+        "徒16:40",
+        "徒17:1",
+        "徒17:14"
+      ],
+      "note": "本段不把路加列為確定同行者。16:10–17的「我們」到此已恢復第三人稱；經文未明說路加留在腓立比。",
+      "related": []
+    },
+    "second-berea": {
+      "people": [
+        {
+          "name": "西拉",
+          "role": "弟兄們在夜間打發保羅和西拉往庇哩亞。",
+          "status": "direct",
+          "refs": [
+            "徒17:10"
+          ]
+        },
+        {
+          "name": "提摩太",
+          "role": "在庇哩亞與西拉同留；從前段到此依上下文接續。",
+          "status": "context",
+          "refs": [
+            "徒16:3",
+            "徒17:14"
+          ]
+        }
+      ],
+      "refs": [
+        "徒17:10",
+        "徒17:14",
+        "徒17:15"
+      ],
+      "note": "保羅離開庇哩亞時，西拉與提摩太仍留在當地；不能把二人接著列在往雅典的同行名單。",
+      "related": []
+    },
+    "second-athens": {
+      "people": [
+        {
+          "name": "護送保羅的弟兄（未具名）",
+          "role": "將保羅帶到雅典，領受交給西拉、提摩太的命令後返回。",
+          "status": "direct",
+          "refs": [
+            "徒17:14",
+            "徒17:15"
+          ]
+        }
+      ],
+      "refs": [
+        "徒17:14",
+        "徒17:15",
+        "徒17:16"
+      ],
+      "note": "西拉和提摩太留在庇哩亞；保羅在雅典等候他們。這兩位不列為本段同行。",
+      "related": []
+    },
+    "second-corinth": {
+      "people": [],
+      "refs": [
+        "徒17:15",
+        "徒18:1",
+        "徒18:2",
+        "徒18:3",
+        "徒18:5"
+      ],
+      "note": "雅典至哥林多這段未列具名同行者；這不等於經文斷言保羅全程獨行。",
+      "related": [
+        {
+          "text": "抵達哥林多後遇見亞居拉、百基拉，與他們同住作工。",
+          "refs": [
+            "徒18:2",
+            "徒18:3"
+          ]
+        },
+        {
+          "text": "西拉、提摩太後來從馬其頓下來會合；不是這段自雅典起程的確定同行者。",
+          "refs": [
+            "徒18:5"
+          ]
+        }
+      ]
+    },
+    "second-couple": {
+      "people": [
+        {
+          "name": "百基拉",
+          "role": "與保羅離開哥林多地區，坐船同往以弗所。",
+          "status": "direct",
+          "refs": [
+            "徒18:18",
+            "徒18:19"
+          ]
+        },
+        {
+          "name": "亞居拉",
+          "role": "與百基拉一同隨保羅出航。",
+          "status": "direct",
+          "refs": [
+            "徒18:18",
+            "徒18:19"
+          ]
+        }
+      ],
+      "refs": [
+        "徒18:18",
+        "徒18:19"
+      ],
+      "note": "二人到以弗所後留在當地；本段沒有經文根據把西拉、提摩太也列為同船者。",
+      "related": []
+    },
+    "second-home": {
+      "people": [],
+      "refs": [
+        "徒18:19",
+        "徒18:21",
+        "徒18:22"
+      ],
+      "note": "以弗所以後的返程沒有逐名記錄同行者；不可把先前所有同工延伸為全程同行。",
+      "related": [
+        {
+          "text": "亞居拉、百基拉留在以弗所，之後在當地幫助亞波羅。",
+          "refs": [
+            "徒18:19",
+            "徒18:26"
+          ]
+        }
+      ]
+    },
+    "third-outbound": {
+      "people": [],
+      "refs": [
+        "徒18:23",
+        "徒19:1"
+      ],
+      "note": "安提阿經加拉太、弗呂家至以弗所的這些路段，沒有列出具名同行者；不把後來出現的同工倒推為自安提阿全程同行。",
+      "related": []
+    },
+    "third-macedonia": {
+      "people": [],
+      "refs": [
+        "徒19:22",
+        "徒19:29",
+        "徒20:1"
+      ],
+      "note": "保羅離開以弗所往馬其頓時，經文沒有逐名重列啟程同伴。",
+      "related": [
+        {
+          "text": "提摩太與以拉都已先被打發往馬其頓，當時保羅仍留亞西亞。",
+          "refs": [
+            "徒19:22"
+          ]
+        },
+        {
+          "text": "馬其頓人該猶、亞里達古在以弗所被稱為與保羅同行的人；未明列其在本段是否與保羅同時啟程。",
+          "refs": [
+            "徒19:29"
+          ]
+        }
+      ]
+    },
+    "third-greece": {
+      "people": [],
+      "refs": [
+        "徒20:1",
+        "徒20:2",
+        "徒20:3",
+        "徒20:4"
+      ],
+      "note": "馬其頓至希臘的本段沒有逐名記錄同行者；20:4是往亞西亞的回程隊伍名單，不能直接等同本段全部同行人。",
+      "related": []
+    },
+    "third-return-team": {
+      "people": [],
+      "refs": [
+        "徒20:3",
+        "徒20:4",
+        "徒20:5",
+        "徒20:6"
+      ],
+      "note": "改道馬其頓的回程有七位同工名單，但經文未交代分隊的確切站點，不將七人一律標成這段同路同行。",
+      "related": [
+        {
+          "text": "往亞西亞的回程隊伍七人：所巴特、亞里達古、西公都、特庇人該猶、提摩太、推基古、特羅非摩；20:5說這些人先到特羅亞等候，不表示每段都與保羅同船。",
+          "refs": [
+            "徒20:4",
+            "徒20:5"
+          ]
+        }
+      ]
+    },
+    "third-philippi-troas": {
+      "people": [
+        {
+          "name": "路加（敘事者）",
+          "role": "本段用「我們從腓立比開船」；身份按卷首作者說明推定。",
+          "status": "inferred",
+          "refs": [
+            "徒20:5",
+            "徒20:6"
+          ]
+        },
+        {
+          "name": "同船的其他同伴（未逐名）",
+          "role": "「我們」指示同船群體，但沒有在此逐一點名。",
+          "status": "direct",
+          "refs": [
+            "徒20:6"
+          ]
+        }
+      ],
+      "refs": [
+        "徒20:4",
+        "徒20:5",
+        "徒20:6"
+      ],
+      "note": "七位同工已先到特羅亞等候，因此不把七人全列為這班船的乘客。",
+      "related": [
+        {
+          "text": "往亞西亞的回程隊伍七人：所巴特、亞里達古、西公都、特庇人該猶、提摩太、推基古、特羅非摩；20:5說這些人先到特羅亞等候，不表示每段都與保羅同船。",
+          "refs": [
+            "徒20:4",
+            "徒20:5"
+          ]
+        }
+      ]
+    },
+    "third-assos-walk": {
+      "people": [],
+      "refs": [
+        "徒20:13",
+        "徒20:14"
+      ],
+      "note": "保羅打算步行到亞朔，同伴則先乘船；經文未列出與保羅同走陸路的人，不能把乘船者列成這段步行同行。",
+      "related": [
+        {
+          "text": "敘事者一行先乘船到亞朔接保羅；到亞朔後再接他上船。",
+          "refs": [
+            "徒20:13",
+            "徒20:14"
+          ]
+        }
+      ]
+    },
+    "third-asian-coast": {
+      "people": [
+        {
+          "name": "路加（敘事者）",
+          "role": "敘事者說「我們就接他上船」，繼續記錄沿岸航程；身份推定。",
+          "status": "inferred",
+          "refs": [
+            "徒20:14",
+            "徒20:15"
+          ]
+        },
+        {
+          "name": "同船的其他同伴（未逐段點名）",
+          "role": "保羅在亞朔重新與乘船的同伴會合。",
+          "status": "direct",
+          "refs": [
+            "徒20:13",
+            "徒20:14"
+          ]
+        }
+      ],
+      "refs": [
+        "徒20:4",
+        "徒20:5",
+        "徒20:13",
+        "徒20:14",
+        "徒20:15",
+        "徒20:16"
+      ],
+      "note": "七人名單可確認回程隊伍背景；這裡未把七人的每個停靠站逐名重列。",
+      "related": [
+        {
+          "text": "往亞西亞的回程隊伍七人：所巴特、亞里達古、西公都、特庇人該猶、提摩太、推基古、特羅非摩；20:5說這些人先到特羅亞等候，不表示每段都與保羅同船。",
+          "refs": [
+            "徒20:4",
+            "徒20:5"
+          ]
+        }
+      ]
+    },
+    "third-syria-coast": {
+      "people": [
+        {
+          "name": "路加（敘事者）",
+          "role": "本段屬「我們」的航程敘事；身份按卷首作者說明推定。",
+          "status": "inferred",
+          "refs": [
+            "徒21:1",
+            "徒21:3",
+            "徒21:7",
+            "徒21:8"
+          ]
+        },
+        {
+          "name": "同行的其他同伴（未逐段點名）",
+          "role": "經文持續以「我們」描述共同航行與前行。",
+          "status": "direct",
+          "refs": [
+            "徒21:1",
+            "徒21:7",
+            "徒21:8"
+          ]
+        }
+      ],
+      "refs": [
+        "徒21:1",
+        "徒21:2",
+        "徒21:3",
+        "徒21:6",
+        "徒21:7",
+        "徒21:8"
+      ],
+      "note": "不把各城接待、送行的人自動當成繼續同行者；推羅的門徒送行後回家。",
+      "related": [
+        {
+          "text": "往亞西亞的回程隊伍七人：所巴特、亞里達古、西公都、特庇人該猶、提摩太、推基古、特羅非摩；20:5說這些人先到特羅亞等候，不表示每段都與保羅同船。",
+          "refs": [
+            "徒20:4",
+            "徒20:5"
+          ]
+        },
+        {
+          "text": "特羅非摩在20:4的回程名單中，21:29也證實他與保羅同在耶路撒冷；中間各航段沒有逐段具名。",
+          "refs": [
+            "徒20:4",
+            "徒21:29"
+          ]
+        }
+      ]
+    },
+    "third-jerusalem": {
+      "people": [
+        {
+          "name": "路加（敘事者）",
+          "role": "「我們」收拾行李上耶路撒冷；身份依卷首作者說明推定。",
+          "status": "inferred",
+          "refs": [
+            "徒21:15",
+            "徒21:17",
+            "徒21:18"
+          ]
+        },
+        {
+          "name": "該撒利亞的幾位門徒（未具名）",
+          "role": "經文明說這些門徒也和他們同去。",
+          "status": "direct",
+          "refs": [
+            "徒21:16"
+          ]
+        },
+        {
+          "name": "拿孫",
+          "role": "所附譯文為「帶著……拿孫」，並提到與他同住；此處依該譯文列示。",
+          "status": "translation",
+          "refs": [
+            "徒21:16"
+          ]
+        }
+      ],
+      "refs": [
+        "徒21:15",
+        "徒21:16",
+        "徒21:17",
+        "徒21:18",
+        "徒21:29"
+      ],
+      "note": "拿孫的同行表述依使用者提供的譯文，不把接待關係直接當成所有譯本都明說的同行。",
+      "related": [
+        {
+          "text": "特羅非摩在耶路撒冷被看見與保羅同在；這證實到城後同在，沒有交代本段是否同路。",
+          "refs": [
+            "徒21:29"
+          ]
+        }
+      ]
+    },
+    "fourth-departure": {
+      "people": [
+        {
+          "name": "亞里達古",
+          "role": "經文明說與一行人同去。",
+          "status": "direct",
+          "refs": [
+            "徒27:2"
+          ]
+        },
+        {
+          "name": "路加（敘事者）",
+          "role": "「我們」坐船往義大利並上船起行；身份推定。",
+          "status": "inferred",
+          "refs": [
+            "徒27:1",
+            "徒27:2"
+          ]
+        },
+        {
+          "name": "猶流",
+          "role": "百夫長，負責押送保羅與其他囚犯；角色為押送者。",
+          "status": "escort",
+          "refs": [
+            "徒27:1",
+            "徒27:3"
+          ]
+        }
+      ],
+      "refs": [
+        "徒27:1",
+        "徒27:2",
+        "徒27:3"
+      ],
+      "note": "亞里達古是具名同工；猶流是押送的百夫長。船上另有未具名囚犯、兵丁與船員，不全屬宣教同工。",
+      "related": []
+    },
+    "fourth-voyage": {
+      "people": [
+        {
+          "name": "路加（敘事者）",
+          "role": "延續「我們」的航行與船難敘事；身份推定。",
+          "status": "inferred",
+          "refs": [
+            "徒27:4",
+            "徒27:5",
+            "徒27:6",
+            "徒28:1"
+          ]
+        },
+        {
+          "name": "亞里達古",
+          "role": "起航時具名同行，後續依同一航程上下文接續；這段未再點名。",
+          "status": "context",
+          "refs": [
+            "徒27:2"
+          ]
+        },
+        {
+          "name": "猶流",
+          "role": "負責押送的百夫長；換船與船難時仍見其行動，部分經文只稱「百夫長」。",
+          "status": "escort",
+          "refs": [
+            "徒27:1",
+            "徒27:6",
+            "徒27:31",
+            "徒27:43"
+          ]
+        }
+      ],
+      "refs": [
+        "徒27:1",
+        "徒27:2",
+        "徒27:6",
+        "徒27:31",
+        "徒27:43",
+        "徒28:1"
+      ],
+      "note": "亞里達古在27:2具名；後面未逐站重列，不能把「上下文接續」誤讀為每一站都再次點名。",
+      "related": []
+    },
+    "fourth-after-malta": {
+      "people": [
+        {
+          "name": "路加（敘事者）",
+          "role": "米利大之後仍以「我們」敘述上船、抵達各港與進羅馬；身份推定。",
+          "status": "inferred",
+          "refs": [
+            "徒28:11",
+            "徒28:12",
+            "徒28:13",
+            "徒28:14",
+            "徒28:16"
+          ]
+        },
+        {
+          "name": "亞里達古",
+          "role": "起航時明載同行；米利大以後未再具名，只能標為按航程接續。",
+          "status": "context",
+          "refs": [
+            "徒27:2",
+            "徒28:11"
+          ]
+        },
+        {
+          "name": "押送隊伍（百夫長猶流曾具名）",
+          "role": "猶流的名字見27:1；28章末段未重新交代押送軍官姓名。",
+          "status": "escort",
+          "refs": [
+            "徒27:1",
+            "徒27:43",
+            "徒28:16"
+          ]
+        }
+      ],
+      "refs": [
+        "徒27:1",
+        "徒27:2",
+        "徒27:43",
+        "徒28:11",
+        "徒28:12",
+        "徒28:13",
+        "徒28:14",
+        "徒28:15",
+        "徒28:16"
+      ],
+      "note": "到羅馬後看守保羅的兵丁沒有具名；不把他等同猶流，也不將航程同行者一律說成陪伴保羅在羅馬足足兩年。",
+      "related": [
+        {
+          "text": "部丟利的弟兄接待一行人；羅馬弟兄到亞比烏市和三館迎接，姓名未列，也不是全程隨行者。",
+          "refs": [
+            "徒28:14",
+            "徒28:15"
+          ]
+        }
+      ]
+    }
+  },
+  "scriptureEvidence": {
+    "徒12:25": {
+      "text": "巴拿巴和掃羅辦完了供給的事，就從耶路撒冷回去，帶著稱呼馬可的約翰同去。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒13:2": {
+      "text": "他們事奉主，禁食的時候，聖靈說，要為我分別巴拿巴和掃羅，去作我召他們所作的工。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒13:3": {
+      "text": "於是禁食禱告，按手在他們身上，就打發他們去了。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒13:4": {
+      "text": "他們既被聖靈差遣，就下到西流基，從那裡坐船往居比路去。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒13:5": {
+      "text": "到了撒拉米，就在猶太人的各會堂裡宣傳神的話，也有約翰作他們的幫手。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒13:6": {
+      "text": "他們經過全島，到了帕弗，遇見一個猶太人，是個行法術的假申言者，名叫巴耶穌，",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒13:7": {
+      "text": "他常和省長士求保羅同在，士求保羅是個通達人，他請了巴拿巴和掃羅來，切求要聽神的話。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒13:13": {
+      "text": "保羅和他的同伴從帕弗開船，來到旁非利亞的別加；約翰就離開他們，回耶路撒冷去。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒13:43": {
+      "text": "散會以後，猶太人和敬神入猶太教的人，多有跟從保羅、巴拿巴的，二人對他們講論，勸勉他們要一直留於神的恩中。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒13:50": {
+      "text": "但猶太人挑唆敬神的尊貴婦女，和城內首要的人，掀起逼迫，反對保羅、巴拿巴，將他們趕出境外。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒14:14": {
+      "text": "巴拿巴、保羅二使徒聽見，就撕開衣服，衝進群眾中間，喊著說，",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒14:20": {
+      "text": "門徒正圍著他，他就起來，進城裡去。第二天，同巴拿巴往特庇去。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒14:21": {
+      "text": "他們對那城傳了福音，使好些人作了門徒；就回路司得、以哥念、安提阿去，",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒14:23": {
+      "text": "二人在各召會中為他們選立了長老，又禁食禱告，就把他們交託所信入的主。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒14:26": {
+      "text": "從那裡坐船往安提阿去。當初他們被托與神的恩典，去作他們現在所已經完成之工的，就是在這地方。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒14:28": {
+      "text": "二人就同門徒住了不少時候。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒15:38": {
+      "text": "但保羅以為不帶他同去是適宜的，因為馬可從前曾在旁非利亞離開他們，不和他們同去作工。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒15:39": {
+      "text": "於是二人起了爭執，甚至彼此分開；巴拿巴帶著馬可，坐船往居比路去；",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒15:40": {
+      "text": "保羅卻揀選了西拉，也出去，蒙弟兄們把他交與主的恩典。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒15:41": {
+      "text": "他就走遍敘利亞和基利家，堅固眾召會。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒16:1": {
+      "text": "保羅來到特庇，又到路司得。看哪，在那裡有一個門徒，名叫提摩太，是信主之猶太婦人的兒子，父親卻是希利尼人。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒16:2": {
+      "text": "路司得和以哥念的弟兄們都稱讚他。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒16:3": {
+      "text": "保羅有意要他一同出去，只因那些地方的猶太人，就帶他去，給他行了割禮，因為他們都知道他父親是希利尼人。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒16:4": {
+      "text": "他們經過各城，把耶路撒冷的使徒和長老所定的規條，交給門徒遵守。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒16:8": {
+      "text": "他們就越過每西亞，下到特羅亞去。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒16:10": {
+      "text": "保羅既看見這異象，我們便推斷是神召我們去傳福音給那裡的人，就立刻想要往馬其頓去。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒16:11": {
+      "text": "於是從特羅亞開船，一直行到撒摩特喇，第二天到了尼亞波利。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒16:12": {
+      "text": "從那裡來到腓立比，就是馬其頓區的頭一個城，也是羅馬的駐防城。我們在這城裡住了幾天。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒16:17": {
+      "text": "她跟隨保羅和我們，喊著說，這些人是至高神的奴僕，向你們宣傳救人的道路。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒16:19": {
+      "text": "使女的主人們見自己得利的指望沒有了，便揪住保羅和西拉，拉到市場上首領面前；",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒16:25": {
+      "text": "約在半夜，保羅和西拉禱告唱詩讚美神，眾囚犯也側耳聽他們。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒16:40": {
+      "text": "二人出了監，就到呂底亞家裡去，見了弟兄們，勸勉他們一番，就走了。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒17:1": {
+      "text": "保羅和西拉路過暗妃波裡、亞波羅尼亞，來到帖撒羅尼迦，在那裡有猶太人的會堂。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒17:10": {
+      "text": "弟兄們隨即在夜間打發保羅和西拉往庇哩亞去，二人到了，就進入猶太人的會堂。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒17:14": {
+      "text": "當時弟兄們便立刻打發保羅往海邊去，西拉和提摩太仍留在庇哩亞。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒17:15": {
+      "text": "護送保羅的人帶他到了雅典；既領了保羅給西拉和提摩太的命令，叫他們趕緊到他這裡來，就回去了。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒17:16": {
+      "text": "保羅在雅典等候他們的時候，看見滿城都是偶像，他裡面的靈就受到激憤。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒18:1": {
+      "text": "這些事以後，保羅離開雅典，來到哥林多，",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒18:2": {
+      "text": "遇見一位猶太人，名叫亞居拉，他按籍貫是本都人；因為革老丟曾命令猶太人都離開羅馬，所以新近帶著妻子百基拉從義大利來，保羅就到他們那裡去。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒18:3": {
+      "text": "他們本是以製造帳棚為業的，保羅因與他們同業，就和他們同住作工。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒18:5": {
+      "text": "西拉和提摩太從馬其頓下來的時候，保羅為道迫切，向猶太人鄭重見證耶穌是基督。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒18:18": {
+      "text": "保羅又住了許多日，就辭別了弟兄，坐船往敘利亞去，百基拉、亞居拉和他同去。他因為有願在身，就在堅革哩剪了頭髮。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒18:19": {
+      "text": "到了以弗所，保羅就把他們留在那裡，自己進了會堂，和猶太人辯論。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒18:21": {
+      "text": "就辭別他們說，神若願意，我還要回到你們這裡來。於是開船離了以弗所。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒18:22": {
+      "text": "在該撒利亞下了船，就上耶路撒冷問候召會，隨後下安提阿去。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒18:23": {
+      "text": "住了些時候，就起行，挨次經過加拉太地區和弗呂家，堅固眾門徒。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒18:26": {
+      "text": "他在會堂裡放膽講論起來，百基拉和亞居拉聽見，就接他來，將神的道路給他講解得更加詳確。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒19:1": {
+      "text": "亞波羅在哥林多的時候，保羅經過上邊一帶地方，就來到以弗所，遇見幾位門徒，",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒19:22": {
+      "text": "於是從服事他的人中，打發提摩太和以拉都二人，往馬其頓去，自己暫時留在亞西亞。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒19:29": {
+      "text": "滿城都混亂起來，眾人抓住與保羅同行的馬其頓人該猶和亞里達古，同心合意衝進劇場裡去。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒20:1": {
+      "text": "亂定之後，保羅請門徒來，勸勉了他們，就辭別起行，往馬其頓去。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒20:2": {
+      "text": "他走遍了那一帶地方，用許多話勸勉眾人，然後來到希臘。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒20:3": {
+      "text": "住了三個月，正要坐船往敘利亞去的時候，猶太人設計要害他，他就定意從馬其頓回去。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒20:4": {
+      "text": "同他到亞西亞去的，有庇哩亞人畢羅斯的兒子所巴特，帖撒羅尼迦人亞里達古和西公都，還有特庇人該猶並提摩太，又有亞西亞人推基古和特羅非摩。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒20:5": {
+      "text": "這些人先走，在特羅亞等候我們。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒20:6": {
+      "text": "過了除酵的日子，我們從腓立比開船，五天後到了特羅亞他們那裡，在那裡住了七天。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒20:13": {
+      "text": "我們先上船開往亞朔去，意思要在那裡接保羅，因為他是這樣安排的，他自己打算要步行。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒20:14": {
+      "text": "他既在亞朔與我們相會，我們就接他上船，來到米推利尼。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒20:15": {
+      "text": "從那裡開船，次日到了基阿的對面，又次日越過去，在撒摩靠岸，又次日來到米利都。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒20:16": {
+      "text": "因為保羅早已定意越過以弗所，免得在亞西亞耽延時日；他急忙前行，巴不得趕五旬節能到耶路撒冷。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒21:1": {
+      "text": "我們離別了眾人，就開船直航，來到哥士，第二天到了羅底，從那裡到帕大喇；",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒21:2": {
+      "text": "遇見一隻船要開往腓尼基去，就上船起行。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒21:3": {
+      "text": "望見居比路，就從左邊駛過，往敘利亞去，我們就在推羅上岸，因為船要在那裡卸貨。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒21:6": {
+      "text": "我們上了船，他們就回自己家裡去了。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒21:7": {
+      "text": "我們行完了航程，從推羅來到多利買，問候弟兄們，同他們住了一天。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒21:8": {
+      "text": "第二天，我們離開那裡，來到該撒利亞，就進了傳福音者腓利家裡，和他同住，他是那七個執事裡的一個。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒21:15": {
+      "text": "過了幾天，我們便收拾行李，上耶路撒冷去。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒21:16": {
+      "text": "有該撒利亞的幾個門徒也和我們同去，帶著一個久為門徒的居比路人拿孫，我們好與他同住。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒21:17": {
+      "text": "到了耶路撒冷，弟兄們歡歡喜喜的接待我們。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒21:18": {
+      "text": "第二天，保羅同我們去見雅各，長老們也都在那裡。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒21:29": {
+      "text": "原來他們先前看見以弗所人特羅非摩同保羅在城裡，就以為保羅帶他進了殿。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒27:1": {
+      "text": "他們既定規了，叫我們坐船往義大利去，就將保羅和別的囚犯，交給御營裡一個名叫猶流的百夫長。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒27:2": {
+      "text": "有一隻亞大米田的船，要開往亞西亞沿岸一帶地方，我們上去，船就開行，和我們同去的，還有馬其頓的帖撒羅尼迦人亞里達古。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒27:3": {
+      "text": "第二天，我們在西頓靠了岸，猶流寬待保羅，准他往朋友那裡去，受他們的照應。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒27:4": {
+      "text": "從那裡又開船，因為風不順，就貼著居比路的背風岸航行。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒27:5": {
+      "text": "過了基利家、旁非利亞一帶的海，就到了呂家的每拉。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒27:6": {
+      "text": "在那裡，百夫長找到一隻亞力山大的船，要開往義大利去，便叫我們上了那船。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒27:31": {
+      "text": "保羅對百夫長和兵丁說，這些人若不留在船上，你們必不能得救。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒27:43": {
+      "text": "但百夫長願意叫保羅安全得救，不准他們任意而行，就吩咐會泅水的，跳下水去先上岸；",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒28:1": {
+      "text": "我們既已安全得救，才認出那島名叫米利大。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒28:11": {
+      "text": "過了三個月，我們上了一隻亞力山大的船，這船以丟斯雙子為記，是在那島上過了冬的。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒28:12": {
+      "text": "到了敘拉古，我們停泊三日。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒28:13": {
+      "text": "又從那裡繞行，來到利基翁。過了一天，起了南風，第二天就來到部丟利，",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒28:14": {
+      "text": "在那裡遇見弟兄們，懇求我們與他們同住了七天；這樣，我們來到了羅馬。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒28:15": {
+      "text": "那裡的弟兄們，一聽見我們的事，便來到亞比烏市和三館迎接我們，保羅見了他們，就感謝神，壯起膽來。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    },
+    "徒28:16": {
+      "text": "當我們進了羅馬，保羅蒙准和一個看守他的兵丁另住一處。",
+      "source": "使用者提供的《使徒行傳.docx》；移除註號，合併同節分段。"
+    }
+  },
+  "companionMethod": "每站顯示由前站抵達此站的一段；播放途中則顯示正在前往的路段。每一段都列出可確認的同行者、分隊或未具名情況，並區分經文明載、上下文接續及敘事者身份推定。"
+}
