@@ -7,6 +7,8 @@ const modeNames = { start: '出發', land: '陸路', sea: '海路', drift: '海�
 let data, map, current, progress = 0, selected = 0, playing = false, mode = '2d';
 let segments = [], markers = [], traveller, lastFrame = 0, lastDraw = 0, lastFollow = 0, frame = 0;
 let ready = false, toastTimer;
+let stepMotion = null;
+let fittingJourney = true;
 let companionSegment = -1;
 let activePanel = null;
 let boundaryMode = 'ancient';
@@ -16,7 +18,7 @@ const companionStatuses = { direct: '經文明載', context: '上下文接續', 
 
 function openExplorer(name) {
   if (!ready || !panelNames[name]) return;
-  if (['journeys', 'stops', 'stoplist'].includes(name)) pause();
+  if (['journeys', 'stops', 'stoplist'].includes(name)) { pause(); drawProgress(); }
   if (name === 'stops') renderCompanions(selected);
   if (activePanel && activePanel !== name) $('journey-panel').append($(`panel-${activePanel}`));
   activePanel = name;
@@ -84,9 +86,13 @@ function partial(points, t) {
 function drawProgress() {
   if (!ready || !segments.length) return;
   const count = Math.floor(progress), fraction = progress - count;
+  const moving = playing || !!stepMotion;
+  const backwards = stepMotion && stepMotion.to < progress;
+  const activeIndex = backwards ? Math.max(0, Math.ceil(progress) - 1) : count;
   const done = segments.slice(0, count).map((s) => feature(s.coordinates, { mode: s.mode, arrivalIndex: s.arrivalIndex }));
   if (fraction > 0 && segments[count]) done.push(feature(partial(segments[count].coordinates, fraction), { mode: segments[count].mode, arrivalIndex: segments[count].arrivalIndex }));
   map.getSource('completed').setData(collection(done));
+  map.getSource('active-leg').setData((moving || fraction > 0) && segments[activeIndex] ? collection([feature(segments[activeIndex].coordinates)]) : empty());
   const position = progress >= segments.length ? segments.at(-1).coordinates.at(-1) : coordinateAt(segments[count].coordinates, fraction);
   traveller.setLngLat(position);
   layoutLabels();
@@ -94,8 +100,15 @@ function drawProgress() {
   $('progress').setAttribute('aria-valuetext', `${current.stops[count].name}，第 ${count + 1} 站，共 ${current.stops.length} 站`);
   const percent = progress / segments.length * 100;
   $('progress').style.setProperty('--progress', `${percent}%`);
+  document.documentElement.style.setProperty('--journey-progress', `${percent}%`);
   if (count !== selected) showStop(count);
-  renderCompanions(fraction > 0 && segments[count] ? count + 1 : count);
+  renderCompanions((moving || fraction > 0) && segments[activeIndex] ? activeIndex + 1 : count);
+  const destination = current.stops[backwards ? activeIndex : Math.min(count + 1, current.stops.length - 1)];
+  $('movement-caption').textContent = moving || fraction > 0 ? `${moving ? (backwards ? '返回' : '前往') : '已暫停，前往'} ${destination.name}` : current.stops[count].title;
+  $('current-station').classList.toggle('in-transit', moving || fraction > 0);
+  const controlIndex = stepMotion ? stepMotion.to : selected;
+  $('prev-btn').disabled = controlIndex <= 0;
+  $('next-btn').disabled = controlIndex >= current.stops.length - 1;
   if (playing && $('follow-camera').checked && performance.now() - lastFollow > 500) {
     lastFollow = performance.now();
     map.easeTo({ center: position, duration: reducedMotion ? 0 : 600, essential: false });
@@ -104,6 +117,7 @@ function drawProgress() {
 
 function pause() {
   playing = false;
+  stepMotion = null;
   document.documentElement.classList.remove('is-playing');
   cancelAnimationFrame(frame);
   $('play-label').textContent = '播放';
@@ -130,7 +144,7 @@ function animate(time) {
 
 function play() {
   if (!ready) return;
-  if (playing) { pause(); return; }
+  if (playing || stepMotion) { pause(); drawProgress(); return; }
   if (progress >= segments.length) { progress = 0; showStop(0); drawProgress(); }
   playing = true;
   document.documentElement.classList.add('is-playing');
@@ -141,6 +155,38 @@ function play() {
   frame = requestAnimationFrame(animate);
 }
 
+function stepBy(direction) {
+  if (!ready) return;
+  const target = Math.max(0, Math.min(current.stops.length - 1, (stepMotion ? stepMotion.to : selected) + direction));
+  const from = progress;
+  pause();
+  if (Math.abs(target - from) < .00001) { drawProgress(); return; }
+  stepMotion = { from, to: target, start: performance.now(), duration: reducedMotion ? 300 : Math.min(4200, Math.max(1400, Math.abs(target - from) * 1700 / Number($('speed').value))) };
+  fittingJourney = false;
+  document.documentElement.classList.add('is-playing');
+  $('play-label').textContent = '暫停'; $('play-icon').textContent = 'Ⅱ';
+  $('play-btn').setAttribute('aria-label', '暫停單段移動');
+  const bounds = new maplibregl.LngLatBounds();
+  const first = Math.floor(Math.min(from, target)), last = Math.ceil(Math.max(from, target));
+  for (const segment of segments.slice(first, last)) for (const point of segment.coordinates) bounds.extend(point);
+  map.fitBounds(bounds, { padding: innerWidth <= 720 ? {top:55,bottom:55,left:60,right:75} : 100, maxZoom: 6.3, bearing: map.getBearing(), pitch: map.getPitch(), duration: reducedMotion ? 0 : 650 });
+  drawProgress();
+  const tick = (time) => {
+    if (!stepMotion) return;
+    const t = Math.min(1, Math.max(0, (time - stepMotion.start) / stepMotion.duration));
+    const eased = t * t * (3 - 2 * t);
+    progress = stepMotion.from + (stepMotion.to - stepMotion.from) * eased;
+    if (t === 1) {
+      progress = stepMotion.to;
+      pause(); drawProgress();
+      return;
+    }
+    drawProgress();
+    frame = requestAnimationFrame(tick);
+  };
+  frame = requestAnimationFrame(tick);
+}
+
 function showStop(index) {
   selected = Math.max(0, Math.min(current.stops.length - 1, index));
   const stop = current.stops[selected], place = data.places[stop.place];
@@ -149,8 +195,9 @@ function showStop(index) {
   $('station-name').textContent = stop.name;
   $('station-title').textContent = stop.title;
   $('station-text').textContent = stop.text;
-  $('station-note').hidden = !stop.note;
-  $('station-note').textContent = stop.note || '';
+  const geographicNote = [stop.note, place.coordinateNote].filter(Boolean).join(' ');
+  $('station-note').hidden = !geographicNote;
+  $('station-note').textContent = geographicNote;
   $('station-ref').textContent = stop.ref;
   $('place-source').href = place.source;
   $('play-position').textContent = `${selected + 1} / ${current.stops.length}`;
@@ -244,12 +291,14 @@ function goTo(index, focusMap = true) {
   showStop(Math.floor(progress));
   drawProgress();
   if (focusMap) {
+    fittingJourney = false;
     map.easeTo({ center: data.places[current.stops[selected].place].coordinates, duration: reducedMotion ? 0 : 750 });
   }
 }
 
 function fitJourney(duration = 800) {
   if (!ready) return;
+  fittingJourney = true;
   const bounds = new maplibregl.LngLatBounds();
   for (const segment of segments) for (const coordinate of segment.coordinates) bounds.extend(coordinate);
   const mobile = innerWidth <= 720;
@@ -318,6 +367,8 @@ function selectJourney(id, initialStop = 0) {
   $('journey-books').textContent = current.books;
   $('stop-total').textContent = `${current.stops.length} 個路線節點`;
   $('map-journey-caption').textContent = current.name;
+  $('atlas-subtitle').textContent = current.subtitle;
+  $('atlas-reference').textContent = current.ref;
   $('progress').max = String(current.stops.length - 1);
   for (const button of $('journey-tabs').children) button.setAttribute('aria-pressed', String(Number(button.dataset.id) === current.id));
   $('stop-list').replaceChildren();
@@ -415,8 +466,8 @@ function openDialog(type) {
 function bindControls() {
   $('boundary-mode').addEventListener('change', () => setBoundaries($('boundary-mode').value));
   $('play-btn').addEventListener('click', play);
-  $('prev-btn').addEventListener('click', () => goTo(selected - 1));
-  $('next-btn').addEventListener('click', () => goTo(selected + 1));
+  $('prev-btn').addEventListener('click', () => stepBy(-1));
+  $('next-btn').addEventListener('click', () => stepBy(1));
   $('restart-btn').addEventListener('click', () => { goTo(0, false); fitJourney(); closeExplorer(); });
   $('progress').addEventListener('input', () => { pause(); progress = Number($('progress').value); drawProgress(); });
   $('mode-2d').addEventListener('click', () => setMode('2d'));
@@ -425,7 +476,7 @@ function bindControls() {
   $('zoom-in').addEventListener('click', () => map.zoomIn({ duration: reducedMotion ? 0 : 300 }));
   $('zoom-out').addEventListener('click', () => map.zoomOut({ duration: reducedMotion ? 0 : 300 }));
   $('reset-bearing').addEventListener('click', () => map.easeTo({ bearing: 0, duration: reducedMotion ? 0 : 500 }));
-  $('globe-btn').addEventListener('click', () => { closeExplorer(); setMode('3d', false); map.easeTo({ center: [28, 28], zoom: 1.25, pitch: 0, bearing: 0, duration: reducedMotion ? 0 : 1200 }); });
+  $('globe-btn').addEventListener('click', () => { closeExplorer(); setMode('3d', false); fittingJourney = false; map.easeTo({ center: [28, 28], zoom: 1.25, pitch: 0, bearing: 0, duration: reducedMotion ? 0 : 1200 }); });
   document.querySelectorAll('[data-panel]').forEach((button) => {
     button.disabled = false;
     button.addEventListener('click', () => openExplorer(button.dataset.panel));
@@ -443,8 +494,9 @@ function bindControls() {
     const r = $(id).getBoundingClientRect();
     if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) $(id).close();
   });
-  document.addEventListener('visibilitychange', () => { if (document.hidden) pause(); });
+  document.addEventListener('visibilitychange', () => { if (document.hidden) { pause(); if (ready) drawProgress(); } });
   map.on('dragstart', () => { $('follow-camera').checked = false; });
+  map.on('movestart', (event) => { if (event.originalEvent) fittingJourney = false; });
   map.on('move', cameraChanged);
   map.on('resize', layoutLabels);
   for (const layer of ['route-land', 'route-sea', 'route-uncertain', 'completed-land', 'completed-sea', 'completed-uncertain']) {
@@ -456,7 +508,7 @@ function bindControls() {
     map.on('mouseleave', layer, () => { map.getCanvas().style.cursor = ''; });
   }
   window.addEventListener('resize', () => map.resize());
-  new ResizeObserver(() => map.resize()).observe(document.querySelector('.map-stage'));
+  new ResizeObserver(() => { map.resize(); if (ready && fittingJourney) requestAnimationFrame(() => fitJourney(0)); }).observe(document.querySelector('.map-stage'));
   window.addEventListener('hashchange', () => {
     const h = new URLSearchParams(location.hash.slice(1));
     if (!h.has('journey')) return;
@@ -507,7 +559,7 @@ async function init() {
     });
     map.on('load', () => {
       clearTimeout(loadTimeout);
-      for (const id of ['route', 'completed']) map.addSource(id, { type: 'geojson', data: empty() });
+      for (const id of ['route', 'completed', 'active-leg']) map.addSource(id, { type: 'geojson', data: empty() });
       map.addLayer({ id: 'route-halo', type: 'line', source: 'route', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': '#fff', 'line-width': 6, 'line-opacity': .65 } });
       for (const [source, prefix, opacity, width] of [['route', 'route', .85, 2.8], ['completed', 'completed', 1, 4]]) {
         for (const kind of ['land', 'sea', 'uncertain']) {
@@ -518,10 +570,12 @@ async function init() {
           map.addLayer({ id: `${prefix}-${kind}`, type: 'line', source, filter, layout: { 'line-cap': 'round', 'line-join': 'round' }, paint });
         }
       }
+      map.addLayer({ id: 'active-leg-glow', type: 'line', source: 'active-leg', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': '#fff', 'line-width': 10, 'line-opacity': .65, 'line-blur': 2 } });
+      map.addLayer({ id: 'active-leg-focus', type: 'line', source: 'active-leg', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': '#e43753', 'line-width': 3.8, 'line-opacity': .95 } });
       const el = document.createElement('div'); el.className = 'traveller'; el.setAttribute('aria-hidden', 'true');
       el.innerHTML = '<span class="paul-pulse"></span><span class="paul-core">保</span><span class="paul-label">保羅</span>';
       traveller = new maplibregl.Marker({ element: el }).setLngLat([36, 36]).addTo(map);
-      const regions = [['小亞細亞', [31.8, 40.7]], ['亞西亞', [28.3, 38.4]], ['加拉太', [32.4, 39.6]], ['基利家', [34.8, 36.9]], ['旁非利亞', [31, 36.9]], ['馬其頓', [22.4, 41.6]], ['亞該亞', [22.2, 37.2]], ['敘利亞', [38.1, 35.2]], ['猶太地', [36, 31.5]], ['義大利', [12.4, 43]], ['地 中 海', [23.4, 33.3], true], ['居比路', [33.15, 34.65]], ['革哩底', [24.8, 35.6]]];
+      const regions = [['小亞細亞', [31.8, 40.7]], ['亞西亞', [28.3, 38.4]], ['加拉太', [32.4, 39.6]], ['基利家', [34.8, 36.9]], ['旁非利亞', [31, 36.9]], ['馬其頓', [22.4, 41.6]], ['亞該亞', [22.2, 37.2]], ['敘利亞', [38.1, 35.2]], ['猶太地', [35.15, 31.9]], ['義大利', [12.4, 43]], ['地 中 海', [23.4, 33.3], true], ['居比路', [33.2, 35.0]], ['革哩底', [24.9, 35.18]]];
       for (const [label, coordinate, water] of regions) {
         const element = document.createElement('div'); element.className = 'region-label' + (water ? ' water' : ''); element.textContent = label; element.setAttribute('aria-hidden', 'true');
         new maplibregl.Marker({ element }).setLngLat(coordinate).addTo(map);
@@ -537,7 +591,10 @@ async function init() {
         button.style.setProperty('--tab-color', journey.color);
         const dot = document.createElement('i'); dot.setAttribute('aria-hidden', 'true');
         const label = document.createElement('span'); label.textContent = journey.name;
-        button.append(dot, label); button.addEventListener('click', () => { selectJourney(journey.id); closeExplorer(); });
+        const subtitle = document.createElement('small'); subtitle.textContent = journey.subtitle;
+        const text = document.createElement('span'); text.className = 'journey-tab-text'; text.append(label, subtitle);
+        button.setAttribute('aria-label', journey.name);
+        button.append(dot, text); button.addEventListener('click', () => { selectJourney(journey.id); closeExplorer(); });
         $('journey-tabs').append(button);
       });
       ready = true;
@@ -547,6 +604,7 @@ async function init() {
       setBoundaries(initialBoundaries);
       $('pitch').disabled = mode === '2d';
       $('loading').hidden = true;
+      requestAnimationFrame(() => { map.resize(); fitJourney(0); });
       if (innerWidth <= 720) document.querySelector('.gesture-hint').textContent = '單指移動 · 雙指縮放、旋轉 · 3D雙指上下調整傾斜';
     });
   } catch (error) {

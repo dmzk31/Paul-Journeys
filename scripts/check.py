@@ -5,6 +5,13 @@ from pathlib import Path
 
 root = Path(__file__).resolve().parents[1]
 data = json.loads((root/'assets/data/journeys.json').read_text(encoding='utf-8'))
+coordinate_index = json.loads((root/'assets/data/coordinate-index.json').read_text(encoding='utf-8'))
+assert set(data['places']) == set(coordinate_index['places'])
+for key, place in data['places'].items():
+    baseline = coordinate_index['places'][key]
+    assert place['coordinates'] == baseline['coordinates'], ('coordinate differs from source snapshot', key)
+    assert place['sourceId'] == baseline['sourceId'], key
+    assert place['coordinateType'] == baseline['type'], key
 assert [j['id'] for j in data['journeys']] == [1, 2, 3, 4]
 allowed = {'start', 'land', 'sea', 'drift', 'uncertain'}
 for journey in data['journeys']:

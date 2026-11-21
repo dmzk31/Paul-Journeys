@@ -8,7 +8,9 @@
         36.226691
       ],
       "source": "https://www.openbible.info/geo/antioch-1",
-      "sourceId": "ae41ab4"
+      "sourceId": "ae41ab4",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Seleucia": {
       "name": "西流基",
@@ -18,7 +20,9 @@
         36.124
       ],
       "source": "https://www.openbible.info/geo/seleucia",
-      "sourceId": "a6d306d"
+      "sourceId": "a6d306d",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Salamis": {
       "name": "撒拉米",
@@ -28,7 +32,9 @@
         35.184944
       ],
       "source": "https://www.openbible.info/geo/salamis",
-      "sourceId": "afa863b"
+      "sourceId": "afa863b",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Paphos": {
       "name": "帕弗",
@@ -38,7 +44,9 @@
         34.755667
       ],
       "source": "https://www.openbible.info/geo/paphos",
-      "sourceId": "a314765"
+      "sourceId": "a314765",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Perga": {
       "name": "別加",
@@ -48,7 +56,9 @@
         36.960353
       ],
       "source": "https://www.openbible.info/geo/perga",
-      "sourceId": "aff04b8"
+      "sourceId": "aff04b8",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Antioch 2": {
       "name": "彼西底的安提阿",
@@ -58,7 +68,9 @@
         38.306111
       ],
       "source": "https://www.openbible.info/geo/antioch-2",
-      "sourceId": "a6c704a"
+      "sourceId": "a6c704a",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Iconium": {
       "name": "以哥念",
@@ -68,7 +80,9 @@
         37.872202
       ],
       "source": "https://www.openbible.info/geo/iconium",
-      "sourceId": "ae425aa"
+      "sourceId": "ae425aa",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Lystra": {
       "name": "路司得",
@@ -78,7 +92,9 @@
         37.6017
       ],
       "source": "https://www.openbible.info/geo/lystra",
-      "sourceId": "af0719d"
+      "sourceId": "af0719d",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Derbe": {
       "name": "特庇",
@@ -88,7 +104,9 @@
         37.348569
       ],
       "source": "https://www.openbible.info/geo/derbe",
-      "sourceId": "aa401a9"
+      "sourceId": "aa401a9",
+      "coordinateNote": "採較受支持的 Kerti Hüyük 候選遺址；仍有其他位置辨識。",
+      "coordinateType": "settlement"
     },
     "Attalia": {
       "name": "亞大利",
@@ -98,7 +116,9 @@
         36.881272
       ],
       "source": "https://www.openbible.info/geo/attalia",
-      "sourceId": "ac744c1"
+      "sourceId": "ac744c1",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Troas": {
       "name": "特羅亞",
@@ -108,7 +128,9 @@
         39.751944
       ],
       "source": "https://www.openbible.info/geo/troas",
-      "sourceId": "a91c509"
+      "sourceId": "a91c509",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Samothrace": {
       "name": "撒摩特喇",
@@ -118,7 +140,9 @@
         40.45
       ],
       "source": "https://www.openbible.info/geo/samothrace",
-      "sourceId": "a68750d"
+      "sourceId": "a68750d",
+      "coordinateNote": "島嶼代表點，不表示已考證的上岸位置。",
+      "coordinateType": "island"
     },
     "Neapolis": {
       "name": "尼亞波利",
@@ -128,7 +152,9 @@
         40.935
       ],
       "source": "https://www.openbible.info/geo/neapolis",
-      "sourceId": "a6a7150"
+      "sourceId": "a6a7150",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Philippi": {
       "name": "腓立比",
@@ -138,7 +164,9 @@
         41.012072
       ],
       "source": "https://www.openbible.info/geo/philippi",
-      "sourceId": "a49e1d0"
+      "sourceId": "a49e1d0",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Amphipolis": {
       "name": "暗妃波里",
@@ -148,7 +176,9 @@
         40.820159
       ],
       "source": "https://www.openbible.info/geo/amphipolis",
-      "sourceId": "a4bdea7"
+      "sourceId": "a4bdea7",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Apollonia": {
       "name": "亞波羅尼亞",
@@ -158,7 +188,9 @@
         40.623703
       ],
       "source": "https://www.openbible.info/geo/apollonia",
-      "sourceId": "ab20df9"
+      "sourceId": "ab20df9",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Thessalonica": {
       "name": "帖撒羅尼迦",
@@ -168,7 +200,9 @@
         40.637771
       ],
       "source": "https://www.openbible.info/geo/thessalonica",
-      "sourceId": "afa9d8e"
+      "sourceId": "afa9d8e",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Berea": {
       "name": "庇哩亞",
@@ -178,7 +212,9 @@
         40.518333
       ],
       "source": "https://www.openbible.info/geo/berea",
-      "sourceId": "a62fe31"
+      "sourceId": "a62fe31",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Athens": {
       "name": "雅典",
@@ -188,7 +224,9 @@
         37.971851
       ],
       "source": "https://www.openbible.info/geo/athens",
-      "sourceId": "a1fe6e7"
+      "sourceId": "a1fe6e7",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Corinth": {
       "name": "哥林多",
@@ -198,7 +236,9 @@
         37.905785
       ],
       "source": "https://www.openbible.info/geo/corinth",
-      "sourceId": "a6f437a"
+      "sourceId": "a6f437a",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Cenchreae": {
       "name": "堅革哩",
@@ -208,7 +248,9 @@
         37.884335
       ],
       "source": "https://www.openbible.info/geo/cenchreae",
-      "sourceId": "aa31dd3"
+      "sourceId": "aa31dd3",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Ephesus": {
       "name": "以弗所",
@@ -218,7 +260,9 @@
         37.939125
       ],
       "source": "https://www.openbible.info/geo/ephesus",
-      "sourceId": "a5feb15"
+      "sourceId": "a5feb15",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Caesarea": {
       "name": "該撒利亞",
@@ -228,7 +272,9 @@
         32.5
       ],
       "source": "https://www.openbible.info/geo/caesarea",
-      "sourceId": "a58735e"
+      "sourceId": "a58735e",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Jerusalem": {
       "name": "耶路撒冷",
@@ -238,7 +284,9 @@
         31.776667
       ],
       "source": "https://www.openbible.info/geo/jerusalem",
-      "sourceId": "a15257a"
+      "sourceId": "a15257a",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Galatia": {
       "name": "加拉太地區",
@@ -248,7 +296,9 @@
         39.266667
       ],
       "source": "https://www.openbible.info/geo/galatia",
-      "sourceId": "a0f440a"
+      "sourceId": "a0f440a",
+      "coordinateNote": "地區代表點，非確定停靠城市或實際路徑。",
+      "coordinateType": "region"
     },
     "Phrygia": {
       "name": "弗呂家",
@@ -258,7 +308,9 @@
         39.0
       ],
       "source": "https://www.openbible.info/geo/phrygia",
-      "sourceId": "ab8ae56"
+      "sourceId": "ab8ae56",
+      "coordinateNote": "地區代表點，非確定停靠城市或實際路徑。",
+      "coordinateType": "region"
     },
     "Assos": {
       "name": "亞朔",
@@ -268,7 +320,9 @@
         39.490556
       ],
       "source": "https://www.openbible.info/geo/assos",
-      "sourceId": "a0a2ca7"
+      "sourceId": "a0a2ca7",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Mitylene": {
       "name": "米推利尼",
@@ -278,7 +332,9 @@
         39.110475
       ],
       "source": "https://www.openbible.info/geo/mitylene",
-      "sourceId": "a33910d"
+      "sourceId": "a33910d",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Miletus": {
       "name": "米利都",
@@ -288,7 +344,9 @@
         37.531111
       ],
       "source": "https://www.openbible.info/geo/miletus",
-      "sourceId": "a55027d"
+      "sourceId": "a55027d",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Cos": {
       "name": "哥士",
@@ -298,7 +356,9 @@
         36.815278
       ],
       "source": "https://www.openbible.info/geo/cos",
-      "sourceId": "a398e5d"
+      "sourceId": "a398e5d",
+      "coordinateNote": "島嶼代表點，不表示已考證的上岸位置。",
+      "coordinateType": "island"
     },
     "Rhodes 1": {
       "name": "羅底",
@@ -308,7 +368,9 @@
         36.4402
       ],
       "source": "https://www.openbible.info/geo/rhodes-1",
-      "sourceId": "a4218ee"
+      "sourceId": "a4218ee",
+      "coordinateNote": "島嶼代表點，不表示已考證的上岸位置。",
+      "coordinateType": "island"
     },
     "Patara": {
       "name": "帕大喇",
@@ -318,7 +380,9 @@
         36.260278
       ],
       "source": "https://www.openbible.info/geo/patara",
-      "sourceId": "ade301b"
+      "sourceId": "ade301b",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Tyre": {
       "name": "推羅",
@@ -328,7 +392,9 @@
         33.270833
       ],
       "source": "https://www.openbible.info/geo/tyre",
-      "sourceId": "a160272"
+      "sourceId": "a160272",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Ptolemais": {
       "name": "多利買",
@@ -338,7 +404,9 @@
         32.9214
       ],
       "source": "https://www.openbible.info/geo/ptolemais",
-      "sourceId": "abc2af0"
+      "sourceId": "abc2af0",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Sidon": {
       "name": "西頓",
@@ -348,7 +416,9 @@
         33.560985
       ],
       "source": "https://www.openbible.info/geo/sidon",
-      "sourceId": "a98e4d7"
+      "sourceId": "a98e4d7",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Myra": {
       "name": "每拉",
@@ -358,7 +428,9 @@
         36.259167
       ],
       "source": "https://www.openbible.info/geo/myra",
-      "sourceId": "aa4b3e2"
+      "sourceId": "aa4b3e2",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Cnidus": {
       "name": "革尼土一帶",
@@ -368,7 +440,9 @@
         36.685833
       ],
       "source": "https://www.openbible.info/geo/cnidus",
-      "sourceId": "ab793ce"
+      "sourceId": "ab793ce",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Salmone": {
       "name": "撒摩尼對面",
@@ -378,7 +452,9 @@
         35.31603
       ],
       "source": "https://www.openbible.info/geo/salmone",
-      "sourceId": "a1c44ea"
+      "sourceId": "a1c44ea",
+      "coordinateNote": "",
+      "coordinateType": "promontory"
     },
     "Fair Havens": {
       "name": "佳澳",
@@ -388,7 +464,9 @@
         34.929694
       ],
       "source": "https://www.openbible.info/geo/fair-havens",
-      "sourceId": "aae626a"
+      "sourceId": "aae626a",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Cauda": {
       "name": "高大",
@@ -398,7 +476,9 @@
         34.833333
       ],
       "source": "https://www.openbible.info/geo/cauda",
-      "sourceId": "aca2b0a"
+      "sourceId": "aca2b0a",
+      "coordinateNote": "島嶼代表點，不表示已考證的上岸位置。",
+      "coordinateType": "island"
     },
     "Malta": {
       "name": "米利大島",
@@ -408,7 +488,9 @@
         35.933464
       ],
       "source": "https://www.openbible.info/geo/malta",
-      "sourceId": "a57835d"
+      "sourceId": "a57835d",
+      "coordinateNote": "島嶼代表點，不表示已考證的上岸位置。",
+      "coordinateType": "island"
     },
     "Syracuse": {
       "name": "敘拉古",
@@ -418,7 +500,9 @@
         37.063889
       ],
       "source": "https://www.openbible.info/geo/syracuse",
-      "sourceId": "a1e3697"
+      "sourceId": "a1e3697",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Rhegium": {
       "name": "利基翁",
@@ -428,7 +512,9 @@
         38.1088
       ],
       "source": "https://www.openbible.info/geo/rhegium",
-      "sourceId": "a63bb26"
+      "sourceId": "a63bb26",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Puteoli": {
       "name": "部丟利",
@@ -438,7 +524,9 @@
         40.826111
       ],
       "source": "https://www.openbible.info/geo/puteoli",
-      "sourceId": "a4488e9"
+      "sourceId": "a4488e9",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Forum of Appius": {
       "name": "亞比烏市",
@@ -448,7 +536,9 @@
         41.46639
       ],
       "source": "https://www.openbible.info/geo/forum-of-appius",
-      "sourceId": "a121d5e"
+      "sourceId": "a121d5e",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Three Taverns": {
       "name": "三館",
@@ -458,7 +548,9 @@
         41.561944
       ],
       "source": "https://www.openbible.info/geo/three-taverns",
-      "sourceId": "afef438"
+      "sourceId": "afef438",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     },
     "Rome": {
       "name": "羅馬",
@@ -468,7 +560,9 @@
         41.8922
       ],
       "source": "https://www.openbible.info/geo/rome",
-      "sourceId": "afc8e7a"
+      "sourceId": "afc8e7a",
+      "coordinateNote": "",
+      "coordinateType": "settlement"
     }
   },
   "journeys": [

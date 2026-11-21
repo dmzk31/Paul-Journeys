@@ -1,0 +1,382 @@
+{
+  "source": "https://github.com/openbibleinfo/Bible-Geocoding-Data/blob/main/data/ancient.jsonl",
+  "sourceSha256": "b8187aa4737e8517ccc090f765d2be11da4c548cd2a59d3cdcb62e952cb8c0f2",
+  "places": {
+    "Antioch 1": {
+      "coordinates": [
+        36.171743,
+        36.226691
+      ],
+      "sourceId": "ae41ab4",
+      "type": "settlement"
+    },
+    "Seleucia": {
+      "coordinates": [
+        35.922,
+        36.124
+      ],
+      "sourceId": "a6d306d",
+      "type": "settlement"
+    },
+    "Salamis": {
+      "coordinates": [
+        33.901944,
+        35.184944
+      ],
+      "sourceId": "afa863b",
+      "type": "settlement"
+    },
+    "Paphos": {
+      "coordinates": [
+        32.404167,
+        34.755667
+      ],
+      "sourceId": "a314765",
+      "type": "settlement"
+    },
+    "Perga": {
+      "coordinates": [
+        30.853686,
+        36.960353
+      ],
+      "sourceId": "aff04b8",
+      "type": "settlement"
+    },
+    "Antioch 2": {
+      "coordinates": [
+        31.189167,
+        38.306111
+      ],
+      "sourceId": "a6c704a",
+      "type": "settlement"
+    },
+    "Iconium": {
+      "coordinates": [
+        32.492331,
+        37.872202
+      ],
+      "sourceId": "ae425aa",
+      "type": "settlement"
+    },
+    "Lystra": {
+      "coordinates": [
+        32.3384,
+        37.6017
+      ],
+      "sourceId": "af0719d",
+      "type": "settlement"
+    },
+    "Derbe": {
+      "coordinates": [
+        33.361453,
+        37.348569
+      ],
+      "sourceId": "aa401a9",
+      "type": "settlement"
+    },
+    "Attalia": {
+      "coordinates": [
+        30.703614,
+        36.881272
+      ],
+      "sourceId": "ac744c1",
+      "type": "settlement"
+    },
+    "Troas": {
+      "coordinates": [
+        26.158611,
+        39.751944
+      ],
+      "sourceId": "a91c509",
+      "type": "settlement"
+    },
+    "Samothrace": {
+      "coordinates": [
+        25.583333,
+        40.45
+      ],
+      "sourceId": "a68750d",
+      "type": "island"
+    },
+    "Neapolis": {
+      "coordinates": [
+        24.415,
+        40.935
+      ],
+      "sourceId": "a6a7150",
+      "type": "settlement"
+    },
+    "Philippi": {
+      "coordinates": [
+        24.284576,
+        41.012072
+      ],
+      "sourceId": "a49e1d0",
+      "type": "settlement"
+    },
+    "Amphipolis": {
+      "coordinates": [
+        23.847209,
+        40.820159
+      ],
+      "sourceId": "a4bdea7",
+      "type": "settlement"
+    },
+    "Apollonia": {
+      "coordinates": [
+        23.469685,
+        40.623703
+      ],
+      "sourceId": "ab20df9",
+      "type": "settlement"
+    },
+    "Thessalonica": {
+      "coordinates": [
+        22.945767,
+        40.637771
+      ],
+      "sourceId": "afa9d8e",
+      "type": "settlement"
+    },
+    "Berea": {
+      "coordinates": [
+        22.2,
+        40.518333
+      ],
+      "sourceId": "a62fe31",
+      "type": "settlement"
+    },
+    "Athens": {
+      "coordinates": [
+        23.726738,
+        37.971851
+      ],
+      "sourceId": "a1fe6e7",
+      "type": "settlement"
+    },
+    "Corinth": {
+      "coordinates": [
+        22.878741,
+        37.905785
+      ],
+      "sourceId": "a6f437a",
+      "type": "settlement"
+    },
+    "Cenchreae": {
+      "coordinates": [
+        22.996816,
+        37.884335
+      ],
+      "sourceId": "aa31dd3",
+      "type": "settlement"
+    },
+    "Ephesus": {
+      "coordinates": [
+        27.3407,
+        37.939125
+      ],
+      "sourceId": "a5feb15",
+      "type": "settlement"
+    },
+    "Caesarea": {
+      "coordinates": [
+        34.891667,
+        32.5
+      ],
+      "sourceId": "a58735e",
+      "type": "settlement"
+    },
+    "Jerusalem": {
+      "coordinates": [
+        35.234167,
+        31.776667
+      ],
+      "sourceId": "a15257a",
+      "type": "settlement"
+    },
+    "Galatia": {
+      "coordinates": [
+        32.983333,
+        39.266667
+      ],
+      "sourceId": "a0f440a",
+      "type": "region"
+    },
+    "Phrygia": {
+      "coordinates": [
+        31.0,
+        39.0
+      ],
+      "sourceId": "ab8ae56",
+      "type": "region"
+    },
+    "Assos": {
+      "coordinates": [
+        26.336667,
+        39.490556
+      ],
+      "sourceId": "a0a2ca7",
+      "type": "settlement"
+    },
+    "Mitylene": {
+      "coordinates": [
+        26.547048,
+        39.110475
+      ],
+      "sourceId": "a33910d",
+      "type": "settlement"
+    },
+    "Miletus": {
+      "coordinates": [
+        27.275556,
+        37.531111
+      ],
+      "sourceId": "a55027d",
+      "type": "settlement"
+    },
+    "Cos": {
+      "coordinates": [
+        27.110278,
+        36.815278
+      ],
+      "sourceId": "a398e5d",
+      "type": "island"
+    },
+    "Rhodes 1": {
+      "coordinates": [
+        28.2109,
+        36.4402
+      ],
+      "sourceId": "a4218ee",
+      "type": "island"
+    },
+    "Patara": {
+      "coordinates": [
+        29.314167,
+        36.260278
+      ],
+      "sourceId": "ade301b",
+      "type": "settlement"
+    },
+    "Tyre": {
+      "coordinates": [
+        35.196111,
+        33.270833
+      ],
+      "sourceId": "a160272",
+      "type": "settlement"
+    },
+    "Ptolemais": {
+      "coordinates": [
+        35.0692,
+        32.9214
+      ],
+      "sourceId": "abc2af0",
+      "type": "settlement"
+    },
+    "Sidon": {
+      "coordinates": [
+        35.371944,
+        33.560985
+      ],
+      "sourceId": "a98e4d7",
+      "type": "settlement"
+    },
+    "Myra": {
+      "coordinates": [
+        29.985278,
+        36.259167
+      ],
+      "sourceId": "aa4b3e2",
+      "type": "settlement"
+    },
+    "Cnidus": {
+      "coordinates": [
+        27.375,
+        36.685833
+      ],
+      "sourceId": "ab793ce",
+      "type": "settlement"
+    },
+    "Salmone": {
+      "coordinates": [
+        26.31155,
+        35.31603
+      ],
+      "sourceId": "a1c44ea",
+      "type": "promontory"
+    },
+    "Fair Havens": {
+      "coordinates": [
+        24.800306,
+        34.929694
+      ],
+      "sourceId": "aae626a",
+      "type": "settlement"
+    },
+    "Cauda": {
+      "coordinates": [
+        24.083333,
+        34.833333
+      ],
+      "sourceId": "aca2b0a",
+      "type": "island"
+    },
+    "Malta": {
+      "coordinates": [
+        14.411732,
+        35.933464
+      ],
+      "sourceId": "a57835d",
+      "type": "island"
+    },
+    "Syracuse": {
+      "coordinates": [
+        15.293056,
+        37.063889
+      ],
+      "sourceId": "a1e3697",
+      "type": "settlement"
+    },
+    "Rhegium": {
+      "coordinates": [
+        15.64412,
+        38.1088
+      ],
+      "sourceId": "a63bb26",
+      "type": "settlement"
+    },
+    "Puteoli": {
+      "coordinates": [
+        14.120556,
+        40.826111
+      ],
+      "sourceId": "a4488e9",
+      "type": "settlement"
+    },
+    "Forum of Appius": {
+      "coordinates": [
+        12.9975,
+        41.46639
+      ],
+      "sourceId": "a121d5e",
+      "type": "settlement"
+    },
+    "Three Taverns": {
+      "coordinates": [
+        12.873889,
+        41.561944
+      ],
+      "sourceId": "afef438",
+      "type": "settlement"
+    },
+    "Rome": {
+      "coordinates": [
+        12.4852,
+        41.8922
+      ],
+      "sourceId": "afc8e7a",
+      "type": "settlement"
+    }
+  }
+}
