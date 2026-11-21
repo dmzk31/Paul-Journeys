@@ -323,6 +323,7 @@ function layoutLabels() {
     const candidates = [
       { l: p.x + 13, t: p.y - height / 2 },
       { l: p.x - 13 - width, t: p.y - height / 2 },
+      { l: p.x - 35 - width, t: p.y - height / 2 },
       { l: p.x - width / 2, t: p.y - height - 31 },
       { l: p.x - width / 2, t: p.y + 31 },
     ].map((b) => ({ ...b, r: b.l + width, b: b.t + height }));
@@ -330,11 +331,6 @@ function layoutLabels() {
       && !boxes.some((a) => b.l - 4 < a.r && b.r + 4 > a.l && b.t - 4 < a.b && b.b + 4 > a.t)
       && !points.some((other) => other.place !== m.place && other.x > b.l - 8 && other.x < b.r + 8 && other.y > b.t - 8 && other.y < b.b + 8));
     const pointVisible = p.x > 0 && p.x < rect.width && p.y > 0 && p.y < rect.height - 16;
-    if (!box && isActive && pointVisible) {
-      const l = Math.max(6, Math.min(rect.width - width - 6, p.x + 13));
-      const t = Math.max(6, Math.min(rect.height - height - 22, p.y - height / 2));
-      box = { l, r: l + width, t, b: t + height };
-    }
     const show = pointVisible && !!box && (isActive || map.getZoom() > 2.1);
     m.element.classList.toggle('label-hidden', !show);
     if (show) {
