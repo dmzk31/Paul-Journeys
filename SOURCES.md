@@ -68,13 +68,24 @@
 - [原始 GeoJSON](https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_50m_land.geojson)
 - 公有領域；網站採現代海岸線輪廓，不含地形高程。
 
-## 可切換的地區邊界
+## 主要參考圖與古代地區（2026-11-22）
+
+使用者明確指定兩張新提供圖片為主要參考：
+
+1. 《保羅的行程》：整體地區分色、每西亞／弗呂家／彼西底／呂高尼等名稱與分界關係。
+2. 《新約時代的巴勒斯坦》：加利利、撒瑪利亞、猶太、比利亞、低加波利等細部分區。
+
+原圖保留在本機 `參考資料/補充地圖`，未把原始圖片上傳網站或GitHub。網站使用校準後的向量分區與文字標籤；主圖以27個城市控制點平滑校準，詳圖以10個控制點作二次式校準。控制點與圖檔雜湊保存在 `reference-calibration.json`。教學參考圖含製圖概括和非均一圖繪變形，分界是示意，不能用控制點吻合程度宣稱界線精度，也不把地理區域與不同年代統治範圍混為單一行政省。
+
+城市座標仍以OpenBible主要候選為依據；不從圖像像素反推停靠城市。水域：加利利海、死海使用OpenBible自有幾何（CC BY 4.0）；約旦河、基順河、雅博河使用其提供的OpenStreetMap precise幾何（ODbL 1.0）。各項原始連結、授權及幾何識別碼附於 `reference-water.geojson`。
+
+## 其他可切換的地區邊界
 
 - **古代行省**：採 [Ancient World Mapping Center (AWMC) 官方地理資料庫](https://github.com/AWMC/geodata)，`Cultural Shapefiles Apr 2024.zip` 內的 `roman_empire_ad_69_provinces` 與 `roman_empire_ad_69_extent`，即**西元69年概況**。此時間切面接近保羅活動年代，但不表示四次行程各年份的精確行政狀態；行省邊界也不等同所有聖經地理名詞的範圍。歷史邊界採虛線。
 - 原始依據為 Barrington Atlas of the Greek and Roman World，以及 AWMC 的 OpenStreetMap 修改資料；依官方資料庫 [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/) 提供。授權全文保留於 `assets/data/AWMC-LICENSE.txt`；本站衍生的古代邊界與分色 GeoJSON 亦以 ODbL 1.0 提供。
 - 轉製：選取地中海及近東視野所需幾何、轉成 GeoJSON、簡化折點與座標精度；分色面由原始邊界及帝國輪廓組面，僅為底色閉合小於0.08度的數位化接縫，畫面虛線仍採原始邊界線。底色為視覺分區，並非歷史政治立場或統一省名分類。古代海岸線與現代底圖可能有小幅差異。
 - **現代國界**：採 [Natural Earth 1:50m Admin 0 – Countries](https://www.naturalearthdata.com/downloads/50m-cultural-vectors/50m-admin-0-countries-2/)（公有領域），[原始 GeoJSON](https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_50m_admin_0_countries.geojson)。只用於現代地理對照，保留資料集的實際控制界線表述，不當作古代邊界。依分區欄位配色，簡化幾何並篩選所需範圍。
-- 預設顯示古代行省，可在地圖上方切換現代國界或隱藏邊界；網址會保留所選圖層。所有資料隨網站提供，瀏覽時不向外部圖資服務查詢。
+- 預設顯示參考圖古代地區，可在地圖上方切換69年羅馬行省、現代國界或隱藏邊界；網址會保留所選圖層。所有資料隨網站提供，瀏覽時不向外部圖資服務查詢。
 - 2026-11-21 再核對：47個座標與重新取得的官方主要候選資料一致；邊界簡化容差由0.008度降為0.001度，古代分色裁切至同一陸地底圖，避免溢到海面，並修正猶太地、居比路、革哩底標籤的錨點。原始資料雜湊、幾何偏差與逐點核對表見 [GEOGRAPHY.md](./GEOGRAPHY.md)。上述偏差量測是製圖轉製檢查，不是古代位置或疆界無爭議的保證。
 
 ## 程式庫

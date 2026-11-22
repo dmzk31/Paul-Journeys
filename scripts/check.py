@@ -67,6 +67,18 @@ for url in re.findall(r'(?:src|href)="(\./[^"]+)"', html):
 assert 'href="/' not in html and 'src="/' not in html, 'root paths break project Pages'
 land = json.loads((root/'assets/data/land.geojson').read_text(encoding='utf-8'))
 assert land['type'] == 'FeatureCollection' and land['features']
+for filename in ['reference-regions.geojson','reference-boundaries.geojson','reference-water.geojson']:
+    layer=json.loads((root/'assets/data'/filename).read_text(encoding='utf-8'))
+    assert layer['type']=='FeatureCollection' and layer['features'],filename
+    for item in layer['features']: assert item['geometry']['coordinates'],filename
+labels=json.loads((root/'assets/data/reference-labels.json').read_text(encoding='utf-8'))['labels']
+names={item['name'] for item in labels}
+assert {'每西亞','弗呂家','彼西底','呂高尼','加利利','撒瑪利亞','猶太','比利亞','低加波利'} <= names
+water=json.loads((root/'assets/data/reference-water.geojson').read_text(encoding='utf-8'))['features']
+assert {'lake','river'} <= {f['properties']['kind'] for f in water}
+assert all(f['properties']['source'] and f['properties']['license'] for f in water)
+calibration=json.loads((root/'assets/data/reference-calibration.json').read_text(encoding='utf-8'))
+assert len(calibration['reference1']['controls'])==27 and len(calibration['reference2']['controls'])==10
 for filename, types in [('ancient-boundaries.geojson', {'LineString', 'MultiLineString'}), ('ancient-regions.geojson', {'Polygon','MultiPolygon'}), ('modern-countries.geojson', {'Polygon','MultiPolygon'})]:
     layer = json.loads((root/'assets/data'/filename).read_text(encoding='utf-8'))
     assert layer['features'] and layer['license'], filename

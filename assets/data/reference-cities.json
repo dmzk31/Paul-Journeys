@@ -1,0 +1,124 @@
+{
+  "description": "參考圖中的地理對照城市，不自動視為保羅本次行程停靠站。",
+  "source": "OpenBible Bible Geocoding",
+  "license": "CC BY 4.0",
+  "cities": [
+    {
+      "key": "Caesarea",
+      "name": "該撒利亞",
+      "coordinates": [
+        34.891667,
+        32.5
+      ],
+      "source": "https://www.openbible.info/geo/caesarea"
+    },
+    {
+      "key": "Jerusalem",
+      "name": "耶路撒冷",
+      "coordinates": [
+        35.234167,
+        31.776667
+      ],
+      "source": "https://www.openbible.info/geo/jerusalem"
+    },
+    {
+      "key": "Tyre",
+      "name": "推羅",
+      "coordinates": [
+        35.196111,
+        33.270833
+      ],
+      "source": "https://www.openbible.info/geo/tyre"
+    },
+    {
+      "key": "Ptolemais",
+      "name": "多利買",
+      "coordinates": [
+        35.0692,
+        32.9214
+      ],
+      "source": "https://www.openbible.info/geo/ptolemais"
+    },
+    {
+      "key": "Sidon",
+      "name": "西頓",
+      "coordinates": [
+        35.371944,
+        33.560985
+      ],
+      "source": "https://www.openbible.info/geo/sidon"
+    },
+    {
+      "key": "Capernaum",
+      "name": "迦百農",
+      "coordinates": [
+        35.575,
+        32.881111
+      ],
+      "source": "https://www.openbible.info/geo/capernaum"
+    },
+    {
+      "key": "Chorazin",
+      "name": "哥拉汛",
+      "coordinates": [
+        35.563889,
+        32.911389
+      ],
+      "source": "https://www.openbible.info/geo/chorazin"
+    },
+    {
+      "key": "Nazareth",
+      "name": "拿撒勒",
+      "coordinates": [
+        35.29769,
+        32.70214
+      ],
+      "source": "https://www.openbible.info/geo/nazareth"
+    },
+    {
+      "key": "Joppa",
+      "name": "約帕",
+      "coordinates": [
+        34.753039,
+        32.054481
+      ],
+      "source": "https://www.openbible.info/geo/joppa"
+    },
+    {
+      "key": "Lod",
+      "name": "呂大",
+      "coordinates": [
+        34.9,
+        31.95
+      ],
+      "source": "https://www.openbible.info/geo/lod"
+    },
+    {
+      "key": "Ashdod",
+      "name": "亞鎖都",
+      "coordinates": [
+        34.6578,
+        31.7572
+      ],
+      "source": "https://www.openbible.info/geo/ashdod"
+    },
+    {
+      "key": "Nain",
+      "name": "拿因",
+      "coordinates": [
+        35.350139,
+        32.630694
+      ],
+      "source": "https://www.openbible.info/geo/nain"
+    },
+    {
+      "key": "Gergesa",
+      "name": "格拉森",
+      "coordinates": [
+        35.650378,
+        32.826086
+      ],
+      "source": "https://www.openbible.info/geo/gergesa"
+    }
+  ]
+}

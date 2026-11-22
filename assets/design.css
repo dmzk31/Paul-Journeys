@@ -41,6 +41,17 @@ body { background: #edf2f4; }
 .boundary-row { justify-self: end; padding: 0; border: 0; margin: 0; max-width: none; gap: 25px; font-size: 14px; }
 .boundary-row label { color: #718491; gap: 9px; }
 .boundary-row select { border-color: #dce5eb; background-color: #fff; min-height: 40px; font-size: 14px; border-radius: 7px; max-width: 220px; }
+.boundary-actions { display:flex;align-items:center;gap:18px; }
+.detail-map-btn { border:1px solid #c9dbe5;border-radius:6px;padding:0 11px;min-height:40px;font-size:14px;color:#285d7c;background:#f4f8fb;white-space:nowrap; }
+.detail-map-btn:hover { background:#e6f0f6; }
+.detail-map-btn[aria-pressed=true] { background:#244e68;color:#fff;border-color:#244e68; }
+.reference-label { color:#33455fe6;font-weight:600;letter-spacing:.06em; }
+.region-label.reference-label { color:#27384df2;font-size:15px;font-weight:600;letter-spacing:.05em;text-shadow:0 0 4px #ffffffd9; }
+.region-label.reference-label.reference-detail { writing-mode:vertical-rl;letter-spacing:.13em;line-height:1.3; }
+.water-detail { color:#326d9de0;font-size:13px;letter-spacing:.04em; }
+.region-label.water.water-detail { writing-mode:vertical-rl; font-style:normal; font-size:14px; letter-spacing:.09em; line-height:1.3; color:#286891; }
+.context-place { display:flex;align-items:center;gap:4px;white-space:nowrap;pointer-events:none;color:#324451;font-size:12px;line-height:19px;background:#ffffffbc;border-radius:3px;padding:0 3px; }
+.context-place::before { content:'';display:block;width:4px;height:4px;background:#3e4c59;border-radius:50%; }
 .traveller-key { color: #9c3150; font-size: 12px; }
 .traveller-key i { width: 8px; height: 8px; box-shadow: 0 0 0 3px #e82d5017; }
 .map-stage { border-top: 1px solid #d5e2e8; }
@@ -122,6 +133,7 @@ dialog::backdrop { background: #0b253d8f; backdrop-filter: blur(4px); }
   .boundary-row { grid-column: 1/-1; justify-self: stretch; justify-content: space-between; border-top: 1px solid #e9eff2; padding-top: 5px; font-size: 12px; }
   .boundary-row select { min-height: 31px; font-size: 13px; max-width: 210px; border: 0; padding-left: 0; background-color: transparent; }
   .traveller-key { display: flex; font-size: 11px; gap: 6px; }
+  .boundary-actions .traveller-key { display:none; }.boundary-actions { gap:0; }.detail-map-btn { font-size:13px;min-height:34px;padding-inline:9px; }
   .station-bar { min-height: 80px; padding: 10px 14px; gap: 9px; }
   .current-station { display: flex; gap: 11px; }.station-meta { padding-right: 10px; gap: 4px; }
   .current-station .station-meta small { font-size: 13px; line-height: 1.3; }.station-meta>span { font-size: 9px; letter-spacing: .03em; }

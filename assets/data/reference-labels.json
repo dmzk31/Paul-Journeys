@@ -1,0 +1,389 @@
+{
+  "description": "依參考圖校準之古代地區示意；混合地理區域與統治範圍，不是同一年份的精確行政界線。",
+  "labels": [
+    {
+      "name": "義大利",
+      "coordinates": [
+        15.467266602276746,
+        40.415713160530814
+      ],
+      "reference": "reference1",
+      "minZoom": 3
+    },
+    {
+      "name": "西西里",
+      "coordinates": [
+        14.040715687504557,
+        37.50872935188447
+      ],
+      "reference": "reference1",
+      "minZoom": 3
+    },
+    {
+      "name": "以利哩古",
+      "coordinates": [
+        18.51259667276093,
+        42.24909927806438
+      ],
+      "reference": "reference1",
+      "minZoom": 3
+    },
+    {
+      "name": "摩細亞",
+      "coordinates": [
+        21.136215508931567,
+        42.635921176909676
+      ],
+      "reference": "reference1",
+      "minZoom": 3
+    },
+    {
+      "name": "脫拉西",
+      "coordinates": [
+        25.21543820134777,
+        41.83727957955191
+      ],
+      "reference": "reference1",
+      "minZoom": 3
+    },
+    {
+      "name": "馬其頓",
+      "coordinates": [
+        20.20454153320681,
+        40.480047318461246
+      ],
+      "reference": "reference1",
+      "minZoom": 3
+    },
+    {
+      "name": "亞該亞",
+      "coordinates": [
+        22.218165192930037,
+        37.31410873827477
+      ],
+      "reference": "reference1",
+      "minZoom": 3
+    },
+    {
+      "name": "庇推尼",
+      "coordinates": [
+        30.73623097150782,
+        40.768674787829056
+      ],
+      "reference": "reference1",
+      "minZoom": 3
+    },
+    {
+      "name": "本都",
+      "coordinates": [
+        36.734134236974526,
+        40.83788119506347
+      ],
+      "reference": "reference1",
+      "minZoom": 3
+    },
+    {
+      "name": "加拉太",
+      "coordinates": [
+        33.68512348014618,
+        40.11112750202366
+      ],
+      "reference": "reference1",
+      "minZoom": 3
+    },
+    {
+      "name": "加帕多家",
+      "coordinates": [
+        35.80395497993684,
+        38.93458534805073
+      ],
+      "reference": "reference1",
+      "minZoom": 3
+    },
+    {
+      "name": "每西亞",
+      "coordinates": [
+        27.635264127775425,
+        40.24732699801577
+      ],
+      "reference": "reference1",
+      "minZoom": 4.2
+    },
+    {
+      "name": "亞西亞",
+      "coordinates": [
+        28.965815800998474,
+        40.033061524582465
+      ],
+      "reference": "reference1",
+      "minZoom": 4.2
+    },
+    {
+      "name": "弗呂家",
+      "coordinates": [
+        29.936007793671845,
+        39.4736451918563
+      ],
+      "reference": "reference1",
+      "minZoom": 4.2
+    },
+    {
+      "name": "彼西底",
+      "coordinates": [
+        32.31786267857385,
+        37.95567217895087
+      ],
+      "reference": "reference1",
+      "minZoom": 4.2
+    },
+    {
+      "name": "呂高尼",
+      "coordinates": [
+        32.376061202579216,
+        38.599100477082644
+      ],
+      "reference": "reference1",
+      "minZoom": 4.2
+    },
+    {
+      "name": "基利家",
+      "coordinates": [
+        33.93271534995716,
+        36.71327445076566
+      ],
+      "reference": "reference1",
+      "minZoom": 3
+    },
+    {
+      "name": "旁非利亞",
+      "coordinates": [
+        31.612950677712433,
+        36.992753944798324
+      ],
+      "reference": "reference1",
+      "minZoom": 4.2
+    },
+    {
+      "name": "呂家",
+      "coordinates": [
+        29.65057023486018,
+        36.70507521411475
+      ],
+      "reference": "reference1",
+      "minZoom": 4.2
+    },
+    {
+      "name": "敘利亞",
+      "coordinates": [
+        36.24347677844071,
+        35.53513257067545
+      ],
+      "reference": "reference1",
+      "minZoom": 3
+    },
+    {
+      "name": "腓尼基",
+      "coordinates": [
+        35.839193609470584,
+        34.156655154075374
+      ],
+      "reference": "reference1",
+      "minZoom": 3
+    },
+    {
+      "name": "居比路",
+      "coordinates": [
+        33.01815636384006,
+        35.53634932850203
+      ],
+      "reference": "reference1",
+      "minZoom": 3
+    },
+    {
+      "name": "革哩底",
+      "coordinates": [
+        24.852081946238215,
+        35.53088294883005
+      ],
+      "reference": "reference1",
+      "minZoom": 3
+    },
+    {
+      "name": "呂彼亞",
+      "coordinates": [
+        22.372067470394157,
+        31.493136408434
+      ],
+      "reference": "reference1",
+      "minZoom": 3
+    },
+    {
+      "name": "埃及",
+      "coordinates": [
+        29.265712869534603,
+        30.22488428111098
+      ],
+      "reference": "reference1",
+      "minZoom": 3
+    },
+    {
+      "name": "亞拉伯",
+      "coordinates": [
+        34.49000706156347,
+        30.394596377939756
+      ],
+      "reference": "reference1",
+      "minZoom": 3
+    },
+    {
+      "name": "腓尼基",
+      "coordinates": [
+        35.253422931154354,
+        33.07258371966207
+      ],
+      "reference": "reference2",
+      "minZoom": 5.5
+    },
+    {
+      "name": "加利利",
+      "coordinates": [
+        35.4217867333336,
+        32.871178566763724
+      ],
+      "reference": "reference2",
+      "minZoom": 5.5
+    },
+    {
+      "name": "哥蘭",
+      "coordinates": [
+        35.7219795610957,
+        32.8877660763519
+      ],
+      "reference": "reference2",
+      "minZoom": 5.5
+    },
+    {
+      "name": "腓力所管之地",
+      "coordinates": [
+        35.74921179621684,
+        33.06703883479976
+      ],
+      "reference": "reference2",
+      "minZoom": 5.5
+    },
+    {
+      "name": "低加波利",
+      "coordinates": [
+        35.62234530883367,
+        32.62387971297316
+      ],
+      "reference": "reference2",
+      "minZoom": 5.5
+    },
+    {
+      "name": "撒瑪利亞",
+      "coordinates": [
+        35.28358544457158,
+        32.19725105065784
+      ],
+      "reference": "reference2",
+      "minZoom": 5.5
+    },
+    {
+      "name": "猶太",
+      "coordinates": [
+        35.21462654679124,
+        31.621801214071862
+      ],
+      "reference": "reference2",
+      "minZoom": 5.5
+    },
+    {
+      "name": "以土買",
+      "coordinates": [
+        35.19010802804989,
+        31.404521342179223
+      ],
+      "reference": "reference2",
+      "minZoom": 5.5
+    },
+    {
+      "name": "比利亞",
+      "coordinates": [
+        35.78,
+        31.95
+      ],
+      "reference": "reference2",
+      "minZoom": 5.5
+    },
+    {
+      "name": "尼拜約",
+      "coordinates": [
+        35.3352658675571,
+        31.60820289454373
+      ],
+      "reference": "reference2",
+      "minZoom": 5.5
+    },
+    {
+      "name": "沙崙平原",
+      "coordinates": [
+        34.915736662599784,
+        32.29132196445622
+      ],
+      "reference": "reference2",
+      "minZoom": 5.5
+    },
+    {
+      "name": "地中海",
+      "coordinates": [
+        21.599550184106405,
+        34.182899112833056
+      ],
+      "water": true,
+      "minZoom": 2.4
+    },
+    {
+      "name": "黑海",
+      "coordinates": [
+        29.36936375512713,
+        41.90508448924555
+      ],
+      "water": true,
+      "minZoom": 2.4
+    },
+    {
+      "name": "愛琴海",
+      "coordinates": [
+        24.814782626313434,
+        39.0587534190348
+      ],
+      "water": true,
+      "minZoom": 2.4
+    },
+    {
+      "name": "亞得里亞海",
+      "coordinates": [
+        17.666681197730334,
+        41.47648170970838
+      ],
+      "water": true,
+      "minZoom": 2.4
+    },
+    {
+      "name": "第勒尼安海",
+      "coordinates": [
+        13.689413305231017,
+        39.16376722602184
+      ],
+      "water": true,
+      "minZoom": 2.4
+    }
+  ],
+  "detailBounds": [
+    34.0446553461038,
+    31.241725802107688,
+    35.92313440280973,
+    33.56200021987012
+  ]
+}
