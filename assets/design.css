@@ -60,8 +60,7 @@ body { background: #edf2f4; }
 .place-marker .dot { box-shadow: 0 1px 4px #254d6266; }
 .region-label { font-weight: 400; font-family: var(--serif); font-size: 15px; letter-spacing: .15em; color: #494f64bd; text-shadow: 0 0 4px #fff; }
 .region-label.water { font-style: italic; font-size: 20px; color: #2d72859c; }
-.paul-core { font-family: 'Microsoft JhengHei','PingFang TC',sans-serif; box-shadow: 0 0 0 2px #9c1938,0 3px 10px #4e1b3e55; }
-.paul-label { font-size: 13px; letter-spacing: .08em; }
+.paul-core { box-shadow: 0 0 0 2px #9c1938,0 3px 10px #4e1b3e55; }
 .station-bar { position: relative; background: #fff; min-height: 90px; padding: 13px 25px; gap: 20px; border-top-color: #d7e3e7; }
 .station-bar::before { content: ''; position: absolute; height: 3px; left: 0; top: -1px; width: var(--journey-progress,0%); background: var(--accent); transition: width .08s linear; }
 .current-station { display: flex; align-items: center; gap: 20px; }

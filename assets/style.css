@@ -29,12 +29,10 @@ dialog{width:calc(100% - 32px);max-width:580px;max-height:84dvh;border:0;border-
 .region-label.water{color:#28708da6;text-shadow:none}.modern-label{color:#325672d9}
 .place-marker .place-label{background:#fffffff0;color:#283c53;font-size:14px;box-shadow:0 1px 5px #34577824}
 .place-marker.active .place-label{background:var(--accent);color:#fff}.place-marker .dot{background:#fff;border-color:var(--accent);width:9px;height:9px}
-.traveller{position:absolute;z-index:8!important;width:30px;height:30px;border:0;background:none;box-shadow:none;pointer-events:none}
+.traveller{position:absolute;z-index:8!important;width:22px;height:22px;border:0;background:none;box-shadow:none;pointer-events:none}
 .paul-core{position:absolute;inset:0;display:grid;place-items:center;border:3px solid #fff;border-radius:50%;background:#e82d50;color:#fff;font-size:15px;font-weight:700;box-shadow:0 0 0 2px #a81735,0 3px 9px #72172e66}
-.paul-pulse{position:absolute;inset:-7px;border-radius:50%;border:2px solid #e82d50;background:#e82d5029}
-.paul-label{position:absolute;left:35px;top:3px;font-size:14px;line-height:24px;padding:0 7px;border-radius:5px;background:#bd173b;color:#fff;font-weight:700;white-space:nowrap;box-shadow:0 2px 5px #60213d44}
+.paul-pulse{position:absolute;inset:-6px;border-radius:50%;border:2px solid #e82d50;background:#e82d5029}
 .is-playing .paul-pulse{animation:paul-beacon 1.6s ease-out infinite}
-.traveller.flip-label .paul-label{left:auto;right:35px}
 @keyframes paul-beacon{0%{transform:scale(.8);opacity:.9}85%,100%{transform:scale(1.7);opacity:0}}
 @media(max-width:720px){.map-topbar{gap:6px 8px}.boundary-row{padding-top:4px}.boundary-row select{max-width:200px}.explorer-nav button{font-size:14px}.place-marker .place-label{font-size:14px;line-height:22px}.map-button,.header-actions .text-btn{font-size:14px}.brand small{font-size:11px}}
 @media(max-width:370px){.boundary-row{gap:6px}.boundary-row label{gap:5px}.boundary-row select{max-width:180px}.traveller-key{font-size:12px}.explorer-nav button{font-size:13px}.map-button{font-size:13px}.brand small{display:none}}

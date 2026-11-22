@@ -315,9 +315,7 @@ function layoutLabels() {
   const priority = [...markers].sort((a, b) => Number(b.place === current.stops[selected].place) - Number(a.place === current.stops[selected].place));
   const points = markers.map((marker) => ({ place: marker.place, ...map.project(data.places[marker.place].coordinates) }));
   const paul = map.project(traveller.getLngLat());
-  const flipPaul = paul.x > rect.width - 85;
-  traveller.getElement().classList.toggle('flip-label', flipPaul);
-  boxes.push({ l: paul.x - (flipPaul ? 70 : 23), r: paul.x + (flipPaul ? 23 : 70), t: paul.y - 25, b: paul.y + 22 });
+  boxes.push({ l: paul.x - 21, r: paul.x + 21, t: paul.y - 21, b: paul.y + 21 });
   for (const m of priority) {
     const p = map.project(data.places[m.place].coordinates);
     const label = m.element.querySelector('.place-label');
@@ -585,7 +583,7 @@ async function init() {
       map.addLayer({ id: 'active-leg-glow', type: 'line', source: 'active-leg', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': '#fff', 'line-width': 10, 'line-opacity': .65, 'line-blur': 2 } });
       map.addLayer({ id: 'active-leg-focus', type: 'line', source: 'active-leg', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': '#e43753', 'line-width': 3.8, 'line-opacity': .95 } });
       const el = document.createElement('div'); el.className = 'traveller'; el.setAttribute('aria-hidden', 'true');
-      el.innerHTML = '<span class="paul-pulse"></span><span class="paul-core">保</span><span class="paul-label">保羅</span>';
+      el.innerHTML = '<span class="paul-pulse"></span><span class="paul-core"></span>';
       traveller = new maplibregl.Marker({ element: el }).setLngLat([36, 36]).addTo(map);
       const regions = [['小亞細亞', [31.8, 40.7]], ['亞西亞', [28.3, 38.4]], ['加拉太', [32.4, 39.6]], ['基利家', [34.8, 36.9]], ['旁非利亞', [31, 36.9]], ['馬其頓', [22.4, 41.6]], ['亞該亞', [22.2, 37.2]], ['敘利亞', [38.1, 35.2]], ['猶太地', [35.15, 31.9]], ['義大利', [12.4, 43]], ['地 中 海', [23.4, 33.3], true], ['居比路', [33.2, 35.0]], ['革哩底', [24.9, 35.18]]];
       for (const [label, coordinate, water] of regions) {
