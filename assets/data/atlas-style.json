@@ -1,0 +1,735 @@
+{
+  "version": 1,
+  "date": "2026-11-22",
+  "window": [
+    -12.0,
+    15.0,
+    62.0,
+    58.0
+  ],
+  "displayOnly": true,
+  "palette": [
+    "#e8d5c6",
+    "#d8d4e3",
+    "#c7ddce",
+    "#ece3be",
+    "#d3dce0"
+  ],
+  "referenceColorMap": {
+    "#f3c5b4": "#e8d5c6",
+    "#c0b5d6": "#d8d4e3",
+    "#b7ddc4": "#c7ddce",
+    "#fffcbd": "#ece3be",
+    "#c3c3c2": "#d3dce0"
+  },
+  "lineColor": "#7a9099",
+  "feather": {
+    "widthDegrees": 1.0,
+    "rings": 16,
+    "curve": "smoothstep",
+    "scope": "inside union of warped paper-map frames only",
+    "referenceCoreAlpha": 1,
+    "contextFillAlpha": 1,
+    "contextLineCoreAlpha": 0,
+    "ringSchedule": [
+      {
+        "ring": 0,
+        "minDistance": 0.0,
+        "maxDistance": 0.0625,
+        "referenceAlpha": 0.00286865234375,
+        "contextLineAlpha": 0.99713134765625
+      },
+      {
+        "ring": 1,
+        "minDistance": 0.0625,
+        "maxDistance": 0.125,
+        "referenceAlpha": 0.02471923828125,
+        "contextLineAlpha": 0.97528076171875
+      },
+      {
+        "ring": 2,
+        "minDistance": 0.125,
+        "maxDistance": 0.1875,
+        "referenceAlpha": 0.06561279296875,
+        "contextLineAlpha": 0.93438720703125
+      },
+      {
+        "ring": 3,
+        "minDistance": 0.1875,
+        "maxDistance": 0.25,
+        "referenceAlpha": 0.12261962890625,
+        "contextLineAlpha": 0.87738037109375
+      },
+      {
+        "ring": 4,
+        "minDistance": 0.25,
+        "maxDistance": 0.3125,
+        "referenceAlpha": 0.19281005859375,
+        "contextLineAlpha": 0.80718994140625
+      },
+      {
+        "ring": 5,
+        "minDistance": 0.3125,
+        "maxDistance": 0.375,
+        "referenceAlpha": 0.27325439453125,
+        "contextLineAlpha": 0.72674560546875
+      },
+      {
+        "ring": 6,
+        "minDistance": 0.375,
+        "maxDistance": 0.4375,
+        "referenceAlpha": 0.36102294921875,
+        "contextLineAlpha": 0.63897705078125
+      },
+      {
+        "ring": 7,
+        "minDistance": 0.4375,
+        "maxDistance": 0.5,
+        "referenceAlpha": 0.45318603515625,
+        "contextLineAlpha": 0.54681396484375
+      },
+      {
+        "ring": 8,
+        "minDistance": 0.5,
+        "maxDistance": 0.5625,
+        "referenceAlpha": 0.54681396484375,
+        "contextLineAlpha": 0.45318603515625
+      },
+      {
+        "ring": 9,
+        "minDistance": 0.5625,
+        "maxDistance": 0.625,
+        "referenceAlpha": 0.63897705078125,
+        "contextLineAlpha": 0.36102294921875
+      },
+      {
+        "ring": 10,
+        "minDistance": 0.625,
+        "maxDistance": 0.6875,
+        "referenceAlpha": 0.72674560546875,
+        "contextLineAlpha": 0.27325439453125
+      },
+      {
+        "ring": 11,
+        "minDistance": 0.6875,
+        "maxDistance": 0.75,
+        "referenceAlpha": 0.80718994140625,
+        "contextLineAlpha": 0.19281005859375
+      },
+      {
+        "ring": 12,
+        "minDistance": 0.75,
+        "maxDistance": 0.8125,
+        "referenceAlpha": 0.87738037109375,
+        "contextLineAlpha": 0.12261962890625
+      },
+      {
+        "ring": 13,
+        "minDistance": 0.8125,
+        "maxDistance": 0.875,
+        "referenceAlpha": 0.93438720703125,
+        "contextLineAlpha": 0.06561279296875
+      },
+      {
+        "ring": 14,
+        "minDistance": 0.875,
+        "maxDistance": 0.9375,
+        "referenceAlpha": 0.97528076171875,
+        "contextLineAlpha": 0.02471923828125
+      },
+      {
+        "ring": 15,
+        "minDistance": 0.9375,
+        "maxDistance": 1.0,
+        "referenceAlpha": 0.99713134765625,
+        "contextLineAlpha": 0.00286865234375
+      }
+    ]
+  },
+  "notes": "原始參考圖與補充資料未改動。完整來源政體色面為連續底層，原圖色面及邊線只在圖框邊緣作透明過渡。過渡遮罩不是政治分區，沒有遮罩邊緣作邊界；自然地理標籤色塊不納入顯示。",
+  "colorAssignment": {
+    "method": "dominant reference overlap, then deterministic adjacency coloring",
+    "anchoredRegions": {
+      "polity-Q220594": {
+        "color": "#d3dce0",
+        "overlapDegrees2": 2.443638150457366,
+        "shareOfReferenceOverlap": 1.0
+      },
+      "roman-0b168c7d209d": {
+        "color": "#c7ddce",
+        "overlapDegrees2": 3.6298118231002956,
+        "shareOfReferenceOverlap": 0.6023480604513597
+      },
+      "roman-1691170a6f2e": {
+        "color": "#ece3be",
+        "overlapDegrees2": 4.591895569376558,
+        "shareOfReferenceOverlap": 0.9693461248080081
+      },
+      "roman-2365e372685b": {
+        "color": "#c7ddce",
+        "overlapDegrees2": 0.0003102601238535627,
+        "shareOfReferenceOverlap": 1.0
+      },
+      "roman-252b9349ac0a": {
+        "color": "#ece3be",
+        "overlapDegrees2": 0.046765104964501245,
+        "shareOfReferenceOverlap": 1.0
+      },
+      "roman-2a0fb82fa295": {
+        "color": "#ece3be",
+        "overlapDegrees2": 0.7574353751521001,
+        "shareOfReferenceOverlap": 1.0
+      },
+      "roman-2ee73d5e8ca7": {
+        "color": "#e8d5c6",
+        "overlapDegrees2": 1.8726291296093036,
+        "shareOfReferenceOverlap": 0.9999507452624498
+      },
+      "roman-389467e6fbc5": {
+        "color": "#ece3be",
+        "overlapDegrees2": 0.005374832940629043,
+        "shareOfReferenceOverlap": 0.6379841468511906
+      },
+      "roman-45b71c1767d6": {
+        "color": "#e8d5c6",
+        "overlapDegrees2": 0.1866699983287165,
+        "shareOfReferenceOverlap": 1.0
+      },
+      "roman-48a4add2fb14": {
+        "color": "#c7ddce",
+        "overlapDegrees2": 0.009716013990620706,
+        "shareOfReferenceOverlap": 1.0
+      },
+      "roman-492cfaaca376": {
+        "color": "#d3dce0",
+        "overlapDegrees2": 0.170833204133112,
+        "shareOfReferenceOverlap": 1.0
+      },
+      "roman-4d7a0b3160a6": {
+        "color": "#ece3be",
+        "overlapDegrees2": 5.698692521562398,
+        "shareOfReferenceOverlap": 0.7767688021895
+      },
+      "roman-5774c308cb5c": {
+        "color": "#d8d4e3",
+        "overlapDegrees2": 2.3529796610786176,
+        "shareOfReferenceOverlap": 1.0
+      },
+      "roman-5c818d6a78a0": {
+        "color": "#c7ddce",
+        "overlapDegrees2": 9.92055686968476,
+        "shareOfReferenceOverlap": 0.4663267532703978
+      },
+      "roman-60afdb2126da": {
+        "color": "#e8d5c6",
+        "overlapDegrees2": 2.391565940238784,
+        "shareOfReferenceOverlap": 0.9706906603589931
+      },
+      "roman-6a66a9b9bf07": {
+        "color": "#c7ddce",
+        "overlapDegrees2": 1.4396802626773209,
+        "shareOfReferenceOverlap": 0.7363578793414517
+      },
+      "roman-7427a536fc5d": {
+        "color": "#d3dce0",
+        "overlapDegrees2": 0.32616429139008557,
+        "shareOfReferenceOverlap": 0.43736486903560345
+      },
+      "roman-7c51b61994cc": {
+        "color": "#ece3be",
+        "overlapDegrees2": 0.00957084570387243,
+        "shareOfReferenceOverlap": 1.0
+      },
+      "roman-7e983f4c27ff": {
+        "color": "#e8d5c6",
+        "overlapDegrees2": 3.029610457107364,
+        "shareOfReferenceOverlap": 0.9322678871792992
+      },
+      "roman-81cc2469a9d2": {
+        "color": "#c7ddce",
+        "overlapDegrees2": 0.029305971826166576,
+        "shareOfReferenceOverlap": 1.0
+      },
+      "roman-99ae9efb5555": {
+        "color": "#e8d5c6",
+        "overlapDegrees2": 7.214128287602617,
+        "shareOfReferenceOverlap": 0.5853379744635046
+      },
+      "roman-9b2b90e8f903": {
+        "color": "#e8d5c6",
+        "overlapDegrees2": 0.4738372135987254,
+        "shareOfReferenceOverlap": 1.0
+      },
+      "roman-aaf128f6ab5b": {
+        "color": "#c7ddce",
+        "overlapDegrees2": 6.169719645574185,
+        "shareOfReferenceOverlap": 1.0
+      },
+      "roman-ae6d36c68bc6": {
+        "color": "#e8d5c6",
+        "overlapDegrees2": 0.0015453792685497906,
+        "shareOfReferenceOverlap": 1.0
+      },
+      "roman-b953fe8cd426": {
+        "color": "#e8d5c6",
+        "overlapDegrees2": 1.2240730139793512,
+        "shareOfReferenceOverlap": 0.9937668025592206
+      },
+      "roman-bf0957fc8e17": {
+        "color": "#e8d5c6",
+        "overlapDegrees2": 2.1362193780472523,
+        "shareOfReferenceOverlap": 1.0
+      },
+      "roman-bf1359ac1793": {
+        "color": "#c7ddce",
+        "overlapDegrees2": 0.017654870500281233,
+        "shareOfReferenceOverlap": 1.0
+      },
+      "roman-c1df6e1878a8": {
+        "color": "#c7ddce",
+        "overlapDegrees2": 0.006118767316519981,
+        "shareOfReferenceOverlap": 1.0
+      },
+      "roman-ca63bffeb4d2": {
+        "color": "#ece3be",
+        "overlapDegrees2": 5.650535986999447,
+        "shareOfReferenceOverlap": 1.0
+      },
+      "roman-cba15c267f06": {
+        "color": "#e8d5c6",
+        "overlapDegrees2": 1.1087959071686426,
+        "shareOfReferenceOverlap": 0.9870565623694735
+      },
+      "roman-d276a4c84192": {
+        "color": "#e8d5c6",
+        "overlapDegrees2": 16.148165252168432,
+        "shareOfReferenceOverlap": 0.5248268337906273
+      },
+      "roman-d6801bd1f4a6": {
+        "color": "#c7ddce",
+        "overlapDegrees2": 1.0035629634027816,
+        "shareOfReferenceOverlap": 0.6394773455781821
+      },
+      "roman-dd4ca99342c4": {
+        "color": "#c7ddce",
+        "overlapDegrees2": 0.007599206938991704,
+        "shareOfReferenceOverlap": 1.0
+      },
+      "roman-dd8cedfb3c1a": {
+        "color": "#e8d5c6",
+        "overlapDegrees2": 2.215983418538809,
+        "shareOfReferenceOverlap": 0.9961846875748956
+      },
+      "roman-ed6745ef2196": {
+        "color": "#e8d5c6",
+        "overlapDegrees2": 0.010452766288918568,
+        "shareOfReferenceOverlap": 1.0
+      },
+      "roman-f4f055d2973e": {
+        "color": "#ece3be",
+        "overlapDegrees2": 0.013137708377165828,
+        "shareOfReferenceOverlap": 1.0
+      },
+      "roman-ff8845991cd9": {
+        "color": "#c7ddce",
+        "overlapDegrees2": 0.007797558333715342,
+        "shareOfReferenceOverlap": 1.0
+      }
+    },
+    "assignment": {
+      "polity-Q220594": "#d3dce0",
+      "roman-0b168c7d209d": "#c7ddce",
+      "roman-1691170a6f2e": "#ece3be",
+      "roman-2365e372685b": "#c7ddce",
+      "roman-252b9349ac0a": "#ece3be",
+      "roman-2a0fb82fa295": "#ece3be",
+      "roman-2ee73d5e8ca7": "#e8d5c6",
+      "roman-389467e6fbc5": "#ece3be",
+      "roman-45b71c1767d6": "#e8d5c6",
+      "roman-48a4add2fb14": "#c7ddce",
+      "roman-492cfaaca376": "#d3dce0",
+      "roman-4d7a0b3160a6": "#ece3be",
+      "roman-5774c308cb5c": "#d8d4e3",
+      "roman-5c818d6a78a0": "#c7ddce",
+      "roman-60afdb2126da": "#e8d5c6",
+      "roman-6a66a9b9bf07": "#c7ddce",
+      "roman-7427a536fc5d": "#d3dce0",
+      "roman-7c51b61994cc": "#ece3be",
+      "roman-7e983f4c27ff": "#e8d5c6",
+      "roman-81cc2469a9d2": "#c7ddce",
+      "roman-99ae9efb5555": "#e8d5c6",
+      "roman-9b2b90e8f903": "#e8d5c6",
+      "roman-aaf128f6ab5b": "#c7ddce",
+      "roman-ae6d36c68bc6": "#e8d5c6",
+      "roman-b953fe8cd426": "#e8d5c6",
+      "roman-bf0957fc8e17": "#e8d5c6",
+      "roman-bf1359ac1793": "#c7ddce",
+      "roman-c1df6e1878a8": "#c7ddce",
+      "roman-ca63bffeb4d2": "#ece3be",
+      "roman-cba15c267f06": "#e8d5c6",
+      "roman-d276a4c84192": "#e8d5c6",
+      "roman-d6801bd1f4a6": "#c7ddce",
+      "roman-dd4ca99342c4": "#c7ddce",
+      "roman-dd8cedfb3c1a": "#e8d5c6",
+      "roman-ed6745ef2196": "#e8d5c6",
+      "roman-f4f055d2973e": "#ece3be",
+      "roman-ff8845991cd9": "#c7ddce",
+      "roman-1586b83edfe1": "#d8d4e3",
+      "polity-Q208404": "#d8d4e3",
+      "polity-Q2626105": "#d3dce0",
+      "roman-49dcdf2168aa": "#ece3be",
+      "polity-Q237234": "#d8d4e3",
+      "polity-Q332137": "#ece3be",
+      "polity-Q29237": "#ece3be",
+      "polity-Q1986139": "#d3dce0",
+      "polity-Q149747": "#c7ddce",
+      "roman-76de95589740": "#c7ddce",
+      "roman-83aebb862ea0": "#c7ddce",
+      "roman-a0768f16468d": "#ece3be",
+      "roman-d7f9b0983137": "#d8d4e3",
+      "roman-a863b98c5440": "#c7ddce",
+      "roman-af70eb0c3c24": "#d8d4e3",
+      "roman-a42db87474d3": "#ece3be",
+      "roman-9af90a91a2d6": "#c7ddce",
+      "roman-c90c4bbfe15b": "#e8d5c6",
+      "roman-79ade77470af": "#d8d4e3",
+      "roman-36d973c5aafc": "#e8d5c6",
+      "roman-808c2a034bff": "#ece3be",
+      "roman-bb42921d26d9": "#e8d5c6",
+      "roman-04af8d960ff0": "#ece3be",
+      "roman-fec4a6b5f158": "#c7ddce",
+      "roman-89071abd242e": "#ece3be",
+      "roman-d6b130a9379d": "#d8d4e3",
+      "roman-01f18f50ce9a": "#ece3be",
+      "polity-Q19083": "#ece3be",
+      "polity-Q177076": "#e8d5c6",
+      "polity-Q136884": "#c7ddce",
+      "roman-5eb1fa72256b": "#ece3be",
+      "polity-Q289577": "#ece3be",
+      "roman-ac5262e83a10": "#ece3be",
+      "roman-efe16d3e5a34": "#e8d5c6",
+      "roman-d447e09ce037": "#d8d4e3",
+      "roman-632358c95260": "#ece3be",
+      "polity-Q241790": "#d8d4e3",
+      "polity-Q1517159": "#d8d4e3",
+      "roman-a7771c8e3d2b": "#c7ddce",
+      "roman-03055dfc3374": "#d8d4e3",
+      "roman-aaa1c53d34b3": "#d8d4e3",
+      "roman-e3bdb6b6f7bd": "#c7ddce",
+      "roman-14a154490033": "#c7ddce",
+      "roman-fd896c0eedcf": "#d8d4e3",
+      "roman-467a7d1cf63d": "#d8d4e3",
+      "polity-Q42193": "#c7ddce",
+      "roman-fd74ecd9b4c8": "#e8d5c6",
+      "roman-951d328f1896": "#ece3be",
+      "polity-Q139377": "#ece3be",
+      "roman-5454bef398ae": "#e8d5c6",
+      "roman-3578e7a0fe2f": "#ece3be",
+      "roman-0f68fb69afdd": "#ece3be",
+      "roman-f3fd75228102": "#ece3be",
+      "roman-2d1464f59745": "#e8d5c6",
+      "roman-40a92d05f4e3": "#ece3be",
+      "roman-72ee9983a774": "#e8d5c6",
+      "roman-dbbd1f8d4f76": "#ece3be",
+      "roman-b7f26c3878b7": "#e8d5c6",
+      "roman-82542f1cf78e": "#ece3be",
+      "roman-5af9da9062df": "#e8d5c6",
+      "roman-66c787736578": "#ece3be",
+      "roman-9baa16958873": "#e8d5c6",
+      "roman-772043f5e4ea": "#ece3be",
+      "roman-a53dbdf57ec2": "#e8d5c6",
+      "roman-c39e02c3007a": "#ece3be",
+      "roman-ff2aee7db8ce": "#e8d5c6",
+      "roman-166c15c0c9c9": "#ece3be",
+      "roman-052be91d5f4c": "#e8d5c6",
+      "roman-274873aab4ce": "#ece3be",
+      "roman-0aaa8565da1b": "#e8d5c6",
+      "roman-704403a9e0d2": "#ece3be",
+      "roman-7681f5b23796": "#e8d5c6",
+      "roman-3035479db34e": "#e8d5c6",
+      "roman-298cf5cf29de": "#ece3be"
+    }
+  },
+  "sources": [
+    {
+      "name": "AWMC cultural archive",
+      "url": "https://github.com/AWMC/geodata/blob/master/Cultural%20Shapefiles%20Apr%202024.zip",
+      "license": "ODbL-1.0",
+      "sha256": "ae209bd54b2cea712881e75b88f4957f11eee8ae846fd4d7dbe3fe50a7681bc8"
+    },
+    {
+      "name": "Cliopatria v0.2.0, 69 CE selection",
+      "url": "https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0",
+      "license": "CC-BY-4.0",
+      "archiveSha256": "d01ae3a20d358cc5d54f69d9d725d390767d9c8759ac89ad6f90c58d106f3370",
+      "selectionSha256": "e9b6965e1095d2882aa114ba85ed74683c72f8a64f8734538e239274ac49b902"
+    },
+    {
+      "name": "Natural Earth land coastline",
+      "url": "https://www.naturalearthdata.com/downloads/50m-physical-vectors/",
+      "license": "Public domain",
+      "sha256": "e874b27a51d146452be360cafb3cc50c86001074a67d534113e6534682f9826b"
+    }
+  ],
+  "rawEvidenceHashes": {
+    "reference-boundaries.geojson": "57d2a9301f7166ac27efe543bcdba6603b23d0997dd6f29544d06a986f1d6667",
+    "reference-calibration.json": "e87ed6095a3ab59d2e604d7645680a5ee0d4f7f7ed7871cb062f63903a87e15c",
+    "reference-cities.json": "cd6c997b528b570e49de11ea3519095726252d44e43f2d0c77adf7354f7bca57",
+    "reference-labels.json": "a72fa5433407f0e27d7de4e35803858d3bfa539e983011bd5c4512ed897fd533",
+    "reference-regions.geojson": "da2474c56cbabbad833e16715a193cb1081814c5f9297546c8a825b5f5a89e24",
+    "reference-water.geojson": "7f6ae8235b0ab8f236fbe03a5d02aa61e58c84d28c6e715fff80942dd4d3ca5c",
+    "context-labels.json": "9c98402e92615a2fea6913ce50f1161d45e96c3fa4b6cd747f2c89eddd05503b",
+    "context-physical.geojson": "1038df5d2aa3350bdd6525af6436639a756bbdfdadfb741291ea6d4aabaf0db6",
+    "context-polities.geojson": "f7b8616706c5a0dd96e42e8882c1197cdecbf481e7dc4a59502e8d26404615f7",
+    "context-polity-lines.geojson": "a134dcf446c709e1df8bcd6febf796c0b0d431fe7373c8c3446f58bddd1dd088",
+    "context-provenance.json": "fe747ea317160ac59a74fb4b3095deab5abbbfda1f1c23573f695b572b4f2656",
+    "context-roman-lines.geojson": "841c1e9305d33ae193dad374f2b47227c804ff07d108ef258ac6ae067f9113d0",
+    "context-roman.geojson": "b41dfc42248f58929b947c7b03307bc971f502f78d3dba86e3cd22977ac212d4"
+  },
+  "files": {
+    "atlas-reference-fill.geojson": {
+      "features": 329,
+      "bytes": 489607,
+      "sha256": "feac47b8732be84714792836c37c25f9538290fa4978ce890bce473cb8d0f11f",
+      "allGeometriesValid": true,
+      "alphaRange": [
+        0.00286865234375,
+        1.0
+      ]
+    },
+    "atlas-reference-lines.geojson": {
+      "features": 17,
+      "bytes": 92992,
+      "sha256": "075f59a6a00d6ca5a933c30d530509d5d5b336a24fd609f6ee60a3f848c48c76",
+      "allGeometriesValid": true,
+      "alphaRange": [
+        0.00286865234375,
+        1.0
+      ]
+    },
+    "atlas-roman-fill.geojson": {
+      "features": 95,
+      "bytes": 329778,
+      "sha256": "66e001f7a3e3ab11e3b57f2e909960d2c1eb4ce6f911d4e64e3faed685b66ac0",
+      "allGeometriesValid": true,
+      "alphaRange": [
+        1.0,
+        1.0
+      ]
+    },
+    "atlas-roman-lines.geojson": {
+      "features": 17,
+      "bytes": 178375,
+      "sha256": "aa7d5693779d4c7578ab0ab6f76ef2c87180a979b3f2e7275c00874aac229420",
+      "allGeometriesValid": true,
+      "alphaRange": [
+        0.00286865234375,
+        1.0
+      ]
+    },
+    "atlas-polity-fill.geojson": {
+      "features": 16,
+      "bytes": 37495,
+      "sha256": "a6e0c25f9e81fcbf29f70dd3231c46ca7b05edb350fc3c54a908884587d19742",
+      "allGeometriesValid": true,
+      "alphaRange": [
+        1.0,
+        1.0
+      ]
+    },
+    "atlas-polity-lines.geojson": {
+      "features": 32,
+      "bytes": 32248,
+      "sha256": "4e09298593fe20326ea2169681d2683a659fa36ad9940d422ccffaa42cb8645c",
+      "allGeometriesValid": true,
+      "alphaRange": [
+        0.00286865234375,
+        1.0
+      ]
+    }
+  },
+  "audit": {
+    "rawEvidenceUnchanged": true,
+    "ringCoverageSymmetricDifferenceDegrees2": 0.0,
+    "referenceFillReconstructionDifferenceDegrees2": 1.3208481051145239e-05,
+    "monotonicAlpha": true,
+    "ringInteriorsDisjoint": true,
+    "pointAlphaChecks": [
+      {
+        "ring": 0,
+        "point": [
+          37.27784649134823,
+          36.160953991791004
+        ],
+        "distanceFromFrameDegrees": 0.03125000000000106,
+        "referenceAlpha": 0.00286865234375,
+        "contextLineAlpha": 0.99713134765625
+      },
+      {
+        "ring": 1,
+        "point": [
+          37.21580430658436,
+          36.1709850865385
+        ],
+        "distanceFromFrameDegrees": 0.09374999999999331,
+        "referenceAlpha": 0.02471923828125,
+        "contextLineAlpha": 0.97528076171875
+      },
+      {
+        "ring": 2,
+        "point": [
+          37.15376212182058,
+          36.18101618128637
+        ],
+        "distanceFromFrameDegrees": 0.15625000000000025,
+        "referenceAlpha": 0.06561279296875,
+        "contextLineAlpha": 0.93438720703125
+      },
+      {
+        "ring": 3,
+        "point": [
+          37.091719937056794,
+          36.19104727603424
+        ],
+        "distanceFromFrameDegrees": 0.218750000000009,
+        "referenceAlpha": 0.12261962890625,
+        "contextLineAlpha": 0.87738037109375
+      },
+      {
+        "ring": 4,
+        "point": [
+          37.02918464594809,
+          36.19926536785064
+        ],
+        "distanceFromFrameDegrees": 0.2812500000000068,
+        "referenceAlpha": 0.19281005859375,
+        "contextLineAlpha": 0.80718994140625
+      },
+      {
+        "ring": 5,
+        "point": [
+          36.96667184056206,
+          36.207566132870355
+        ],
+        "distanceFromFrameDegrees": 0.34375000000000233,
+        "referenceAlpha": 0.27325439453125,
+        "contextLineAlpha": 0.72674560546875
+      },
+      {
+        "ring": 6,
+        "point": [
+          36.904720681440644,
+          36.217931901382066
+        ],
+        "distanceFromFrameDegrees": 0.40624999999999833,
+        "referenceAlpha": 0.36102294921875,
+        "contextLineAlpha": 0.63897705078125
+      },
+      {
+        "ring": 7,
+        "point": [
+          36.84276952231923,
+          36.228297669893784
+        ],
+        "distanceFromFrameDegrees": 0.46874999999999595,
+        "referenceAlpha": 0.45318603515625,
+        "contextLineAlpha": 0.54681396484375
+      },
+      {
+        "ring": 8,
+        "point": [
+          36.78081836319778,
+          36.23866343840542
+        ],
+        "distanceFromFrameDegrees": 0.5312500000000056,
+        "referenceAlpha": 0.54681396484375,
+        "contextLineAlpha": 0.45318603515625
+      },
+      {
+        "ring": 9,
+        "point": [
+          36.71886720407637,
+          36.24902920691713
+        ],
+        "distanceFromFrameDegrees": 0.5937500000000014,
+        "referenceAlpha": 0.63897705078125,
+        "contextLineAlpha": 0.36102294921875
+      },
+      {
+        "ring": 10,
+        "point": [
+          36.656916044954954,
+          36.25939497542885
+        ],
+        "distanceFromFrameDegrees": 0.6562499999999992,
+        "referenceAlpha": 0.72674560546875,
+        "contextLineAlpha": 0.27325439453125
+      },
+      {
+        "ring": 11,
+        "point": [
+          36.59496488583362,
+          36.269760743940864
+        ],
+        "distanceFromFrameDegrees": 0.7187499999999998,
+        "referenceAlpha": 0.80718994140625,
+        "contextLineAlpha": 0.19281005859375
+      },
+      {
+        "ring": 12,
+        "point": [
+          36.52182604294569,
+          36.239174042554595
+        ],
+        "distanceFromFrameDegrees": 0.7812974272600266,
+        "referenceAlpha": 0.87738037109375,
+        "contextLineAlpha": 0.12261962890625
+      },
+      {
+        "ring": 13,
+        "point": [
+          36.445980655072226,
+          36.20066722131198
+        ],
+        "distanceFromFrameDegrees": 0.8437499999999997,
+        "referenceAlpha": 0.93438720703125,
+        "contextLineAlpha": 0.06561279296875
+      },
+      {
+        "ring": 14,
+        "point": [
+          36.38395445803113,
+          36.21103298982362
+        ],
+        "distanceFromFrameDegrees": 0.9062500000000024,
+        "referenceAlpha": 0.97528076171875,
+        "contextLineAlpha": 0.02471923828125
+      },
+      {
+        "ring": 15,
+        "point": [
+          36.32192826099005,
+          36.22139875833533
+        ],
+        "distanceFromFrameDegrees": 0.968750000000004,
+        "referenceAlpha": 0.99713134765625,
+        "contextLineAlpha": 0.00286865234375
+      }
+    ],
+    "sourceLineChecks": {
+      "reference": {
+        "unsupportedLineDegrees": 0.0,
+        "noMaskEdgesAsBoundaries": true
+      },
+      "roman": {
+        "unsupportedLineDegrees": 0.0,
+        "noMaskEdgesAsBoundaries": true
+      },
+      "polity": {
+        "unsupportedLineDegrees": 0.0,
+        "noMaskEdgesAsBoundaries": true
+      }
+    },
+    "physicalLabelPolygonsRendered": false
+  }
+}

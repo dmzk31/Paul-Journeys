@@ -105,3 +105,11 @@
 - 程式庫隨網站提供，不使用外部CDN動態載入。
 - [MapLibre 官方地球投影範例](https://maplibre.org/maplibre-gl-js/docs/examples/display-a-globe-with-a-vector-map/)
 - [GitHub Pages 自訂工作流程](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)
+
+## 2026-11-22：統一地圖美編與圖域銜接
+
+原始 `reference-*`、`context-*` 資料及行程座標不改動。新增 `atlas-*` 顯示資料：以連續的AWMC／Cliopatria補充底圖承接原圖，兩張參考圖的聯合圖框內側約1度採透明度過渡；只處理圖框邊緣，原圖內部分區線仍按原幾何。過渡帶不是新歷史界線，也不是重新推定的疆界。AWMC底圖優先於Cliopatria，兩種資料的授權與來源仍各自保留。
+
+分色統一使用沙岩、淡紫、鼠尾草綠、淡赭與藍灰五色；補充地區若與原圖相接，優先採其重疊最多的原圖區域色彩。其餘依相鄰關係分色。細實線統一表示地區分界，海岸略強，行程彩線最醒目；線條不再按資料來源混用虛線與實線。獨立「羅馬行省（69年）」與現代國界對照模式仍可選用。
+
+Natural Earth自然地理標籤範圍的多邊形停止作底色顯示，保留自然地名，避免沙漠、半島等標示區與政體分色互相干擾。`atlas-style.json`保存顯示檔雜湊、色票、透明度過渡檢查及來源檔保留檢查；原本的 `context-provenance.json` 仍只描述未覆蓋參考圖的原始補充資料。

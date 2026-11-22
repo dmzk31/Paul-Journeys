@@ -94,6 +94,23 @@ for filename, audit in context_audit['audit'].items():
 context_names=json.loads((root/'assets/data/context-labels.json').read_text(encoding='utf-8'))['labels']
 assert {'達契亞','日耳曼尼亞','薩爾馬提亞','撒哈拉沙漠','阿拉伯半島','帕提亞帝國'} <= {entry['name'] for entry in context_names}
 assert all(entry['source'] and entry['license'] for entry in context_names)
+# Display styling must preserve the original geography and each source's license.
+atlas_style=json.loads((root/'assets/data/atlas-style.json').read_text(encoding='utf-8'))
+for filename, baseline_hash in atlas_style['rawEvidenceHashes'].items():
+    assert hashlib.sha256((root/'assets/data'/filename).read_bytes()).hexdigest()==baseline_hash, ('style altered source geography',filename)
+for filename, audit in atlas_style['files'].items():
+    assert hashlib.sha256((root/'assets/data'/filename).read_bytes()).hexdigest()==audit['sha256'], ('atlas audit stale',filename)
+assert atlas_style['audit']['rawEvidenceUnchanged'] and atlas_style['audit']['monotonicAlpha']
+assert atlas_style['audit']['ringInteriorsDisjoint'] and not atlas_style['audit']['physicalLabelPolygonsRendered']
+assert all(a['noMaskEdgesAsBoundaries'] and a['unsupportedLineDegrees']<1e-6 for a in atlas_style['audit']['sourceLineChecks'].values())
+for filename in ['atlas-reference-fill.geojson','atlas-reference-lines.geojson','atlas-roman-fill.geojson','atlas-roman-lines.geojson','atlas-polity-fill.geojson','atlas-polity-lines.geojson']:
+    layer=json.loads((root/'assets/data'/filename).read_text(encoding='utf-8'))
+    assert layer['features'],filename
+    for item in layer['features']:
+        pr=item['properties']
+        assert 0<=pr['alpha']<=1 and pr['source'] and pr['license'],filename
+        assert item['geometry']['type'] in ({'Polygon','MultiPolygon'} if 'fill' in filename else {'LineString','MultiLineString'}),filename
+        if 'fill' in filename: assert re.fullmatch(r'#[0-9a-fA-F]{6}',pr['color']),filename
 water=json.loads((root/'assets/data/reference-water.geojson').read_text(encoding='utf-8'))['features']
 assert {'lake','river'} <= {f['properties']['kind'] for f in water}
 assert all(f['properties']['source'] and f['properties']['license'] for f in water)
