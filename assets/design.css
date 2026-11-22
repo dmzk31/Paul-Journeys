@@ -48,6 +48,8 @@ body { background: #edf2f4; }
 .reference-label { color:#33455fe6;font-weight:600;letter-spacing:.06em; }
 .region-label.reference-label { color:#27384df2;font-size:15px;font-weight:600;letter-spacing:.05em;text-shadow:0 0 4px #ffffffd9; }
 .region-label.reference-label.reference-detail { writing-mode:vertical-rl;letter-spacing:.13em;line-height:1.3; }
+.region-label.context-region { color:#46516c;font-size:14px;font-weight:600;letter-spacing:.05em;text-shadow:0 0 4px #fff,0 1px 2px #fff; }
+.region-label.context-region.context-natural { color:#796d46;font-weight:400;font-style:italic;letter-spacing:.1em; }
 .water-detail { color:#326d9de0;font-size:13px;letter-spacing:.04em; }
 .region-label.water.water-detail { writing-mode:vertical-rl; font-style:normal; font-size:14px; letter-spacing:.09em; line-height:1.3; color:#286891; }
 .context-place { display:flex;align-items:center;gap:4px;white-space:nowrap;pointer-events:none;color:#324451;font-size:12px;line-height:19px;background:#ffffffbc;border-radius:3px;padding:0 3px; }

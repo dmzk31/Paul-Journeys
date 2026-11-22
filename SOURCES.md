@@ -88,6 +88,17 @@
 - 預設顯示參考圖古代地區，可在地圖上方切換69年羅馬行省、現代國界或隱藏邊界；網址會保留所選圖層。所有資料隨網站提供，瀏覽時不向外部圖資服務查詢。
 - 2026-11-21 再核對：47個座標與重新取得的官方主要候選資料一致；邊界簡化容差由0.008度降為0.001度，古代分色裁切至同一陸地底圖，避免溢到海面，並修正猶太地、居比路、革哩底標籤的錨點。原始資料雜湊、幾何偏差與逐點核對表見 [GEOGRAPHY.md](./GEOGRAPHY.md)。上述偏差量測是製圖轉製檢查，不是古代位置或疆界無爭議的保證。
 
+## 參考圖外的補充圖域（2026-11-22）
+
+保留兩張主要參考圖的完整校準圖域，補充資料只裁切在其外。資料按以下優先順序顯示：使用者參考圖、AWMC羅馬行省、Cliopatria周邊政體、Natural Earth自然地理。補充虛線只來自來源原線，不把裁切框或為分色閉合的連線當作歷史邊界。
+
+- **羅馬行省**：AWMC官方封存資料的西元69年線與帝國範圍，ODbL 1.0；將同一來源擴展至參考圖之外的歐洲、北非等地。`context-roman.geojson`、`context-roman-lines.geojson`及AWMC來源的文字標籤是衍生資料，仍按ODbL 1.0提供。
+- **周邊政體**：[Seshat Global History Databank／Cliopatria v0.2.0](https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0)，[資料研究論文](https://doi.org/10.1038/s41597-025-04516-9)。依官方欄位 `FromYear <= 69 <= ToYear` 且 `Type=POLITY` 篩選，含帕提亞、亞美尼亞、拿巴泰、古實等16項視野內資料；保留原始名稱與各紀錄生效年份。授權[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)；變更包括裁切圖域與陸地、優先避開參考圖和AWMC範圍、簡化折點、加入繁體中文名稱和配色。相關檔案為 `context-polities.geojson`、`context-polity-lines.geojson`，授權文字保留於 `Cliopatria-LICENSE.md`。參考引用：Chalstrey, E. & Bennett, J. (2026), v0.2.0, [Zenodo](https://doi.org/10.5281/zenodo.20274630)。
+- **自然地理**：[Natural Earth 1:50m Physical Labels](https://www.naturalearthdata.com/downloads/50m-physical-vectors/50m-physical-labels/)，[原始GeoJSON](https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_50m_geography_regions_polys.geojson)，公有領域。選取撒哈拉沙漠、阿拉伯半島、北歐平原、黑海北岸草原及山脈等8項。此來源的多邊形是自然地理標示範圍，不是古代政治疆界；只加淡底色，沒有政治邊線。
+- **古代地區名稱**：日耳曼尼亞、達契亞、薩爾馬提亞、潘諾尼亞等採AWMC `regional_names`，以原標籤線中點作名稱錨點，並保留Pleiades識別碼。名稱範圍不等同政體多邊形，未將粗定位格網轉為國界。
+
+補充政體為69年重建，接近保羅活動年代，但不聲稱四次行程每一年的政治情況一致；來源本身的疆界亦有概括及不確定性。無政體資料的地區只加可靠的自然地理或地區名稱，不杜撰封閉國界。所有資料隨網站提供，沒有新增外部圖資API。每一補充項目可追溯來源及授權；`context-provenance.json`保存來源版本、原檔SHA-256、處理優先順序，以及未覆蓋原圖的檢查結果。
+
 ## 程式庫
 
 - [MapLibre GL JS 5.6.2](https://github.com/maplibre/maplibre-gl-js/tree/v5.6.2)，BSD-3-Clause；授權全文與附屬聲明保留於 `assets/vendor/maplibre-LICENSE.txt`。

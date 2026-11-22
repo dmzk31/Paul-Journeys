@@ -1,0 +1,72 @@
+{
+  "date": "2026-11-22",
+  "year": 69,
+  "window": [
+    -12.0,
+    15.0,
+    62.0,
+    58.0
+  ],
+  "priority": [
+    "user reference maps",
+    "AWMC Roman provinces 69 CE",
+    "Cliopatria polities 69 CE",
+    "Natural Earth physical context"
+  ],
+  "notes": "兩張參考圖圖域維持原狀；補充政體為69年重建，不表示保羅各次行程每年的精確疆界。無政體資料區僅標自然地理或古代地區名稱，未杜撰國界。",
+  "sources": [
+    {
+      "name": "AWMC cultural archive",
+      "url": "https://github.com/AWMC/geodata/blob/master/Cultural%20Shapefiles%20Apr%202024.zip",
+      "license": "ODbL-1.0",
+      "sha256": "ae209bd54b2cea712881e75b88f4957f11eee8ae846fd4d7dbe3fe50a7681bc8"
+    },
+    {
+      "name": "Cliopatria v0.2.0",
+      "url": "https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0",
+      "license": "CC-BY-4.0",
+      "sha256": "d01ae3a20d358cc5d54f69d9d725d390767d9c8759ac89ad6f90c58d106f3370"
+    },
+    {
+      "name": "Natural Earth 1:50m physical labels",
+      "url": "https://www.naturalearthdata.com/downloads/50m-physical-vectors/50m-physical-labels/",
+      "license": "Public domain",
+      "sha256": "33396643d8f0eed408e80bf5ca43dcdb7993f790fdc4eadae311660f8b91fe76"
+    }
+  ],
+  "audit": {
+    "context-roman.geojson": {
+      "features": 56,
+      "protectedMapOverlapDegrees2": 0.0,
+      "sha256": "b41dfc42248f58929b947c7b03307bc971f502f78d3dba86e3cd22977ac212d4"
+    },
+    "context-roman-lines.geojson": {
+      "features": 1,
+      "protectedMapOverlapDegrees2": 0.0,
+      "sha256": "841c1e9305d33ae193dad374f2b47227c804ff07d108ef258ac6ae067f9113d0"
+    },
+    "context-polities.geojson": {
+      "features": 16,
+      "protectedMapOverlapDegrees2": 0.0,
+      "sha256": "f7b8616706c5a0dd96e42e8882c1197cdecbf481e7dc4a59502e8d26404615f7"
+    },
+    "context-polity-lines.geojson": {
+      "features": 16,
+      "protectedMapOverlapDegrees2": 0.0,
+      "sha256": "a134dcf446c709e1df8bcd6febf796c0b0d431fe7373c8c3446f58bddd1dd088"
+    },
+    "context-physical.geojson": {
+      "features": 8,
+      "protectedMapOverlapDegrees2": 0.0,
+      "sha256": "1038df5d2aa3350bdd6525af6436639a756bbdfdadfb741291ea6d4aabaf0db6"
+    }
+  },
+  "preservedReferenceHashes": {
+    "reference-boundaries.geojson": "57d2a9301f7166ac27efe543bcdba6603b23d0997dd6f29544d06a986f1d6667",
+    "reference-calibration.json": "e87ed6095a3ab59d2e604d7645680a5ee0d4f7f7ed7871cb062f63903a87e15c",
+    "reference-cities.json": "cd6c997b528b570e49de11ea3519095726252d44e43f2d0c77adf7354f7bca57",
+    "reference-labels.json": "a72fa5433407f0e27d7de4e35803858d3bfa539e983011bd5c4512ed897fd533",
+    "reference-regions.geojson": "da2474c56cbabbad833e16715a193cb1081814c5f9297546c8a825b5f5a89e24",
+    "reference-water.geojson": "7f6ae8235b0ab8f236fbe03a5d02aa61e58c84d28c6e715fff80942dd4d3ca5c"
+  }
+}

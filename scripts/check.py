@@ -74,6 +74,26 @@ for filename in ['reference-regions.geojson','reference-boundaries.geojson','ref
 labels=json.loads((root/'assets/data/reference-labels.json').read_text(encoding='utf-8'))['labels']
 names={item['name'] for item in labels}
 assert {'每西亞','弗呂家','彼西底','呂高尼','加利利','撒瑪利亞','猶太','比利亞','低加波利'} <= names
+# Supplementary context must be sourced, dated, and leave the supplied maps intact.
+import hashlib
+context_audit=json.loads((root/'assets/data/context-provenance.json').read_text(encoding='utf-8'))
+for filename, baseline_hash in context_audit['preservedReferenceHashes'].items():
+    assert hashlib.sha256((root/'assets/data'/filename).read_bytes()).hexdigest()==baseline_hash, ('reference changed', filename)
+for filename, audit in context_audit['audit'].items():
+    path=root/'assets/data'/filename
+    assert hashlib.sha256(path.read_bytes()).hexdigest()==audit['sha256'], ('context audit stale', filename)
+    assert audit['protectedMapOverlapDegrees2']<1e-8, filename
+    layer=json.loads(path.read_text(encoding='utf-8'))
+    assert layer['source'].startswith('https://') and layer['license']
+    assert layer['features'] and len(layer['features'])==audit['features']
+    if 'year' in layer: assert layer['year']==69
+    for item in layer['features']:
+        assert item['properties']['source'] and item['properties']['license']
+        if 'fromYear' in item['properties']:
+            assert item['properties']['fromYear']<=69<=item['properties']['toYear']
+context_names=json.loads((root/'assets/data/context-labels.json').read_text(encoding='utf-8'))['labels']
+assert {'達契亞','日耳曼尼亞','薩爾馬提亞','撒哈拉沙漠','阿拉伯半島','帕提亞帝國'} <= {entry['name'] for entry in context_names}
+assert all(entry['source'] and entry['license'] for entry in context_names)
 water=json.loads((root/'assets/data/reference-water.geojson').read_text(encoding='utf-8'))['features']
 assert {'lake','river'} <= {f['properties']['kind'] for f in water}
 assert all(f['properties']['source'] and f['properties']['license'] for f in water)

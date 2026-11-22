@@ -1,0 +1,437 @@
+{
+  "description": "參考圖外補充標籤；地區名稱錨點不代表政治疆界。",
+  "labels": [
+    {
+      "name": "古實王國",
+      "coordinates": [
+        32.66178336563041,
+        19.507661819458008
+      ],
+      "kind": "polity",
+      "source": "https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0",
+      "license": "CC-BY-4.0",
+      "minZoom": 2.4
+    },
+    {
+      "name": "哈德拉毛",
+      "coordinates": [
+        48.90540566841641,
+        15.875410556793213
+      ],
+      "kind": "polity",
+      "source": "https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0",
+      "license": "CC-BY-4.0",
+      "minZoom": 3.5
+    },
+    {
+      "name": "戈爾迪尼",
+      "coordinates": [
+        41.4604878233221,
+        37.673994064331055
+      ],
+      "kind": "polity",
+      "source": "https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0",
+      "license": "CC-BY-4.0",
+      "minZoom": 5.5
+    },
+    {
+      "name": "阿迪亞貝尼",
+      "coordinates": [
+        42.00153951432678,
+        36.77154541015625
+      ],
+      "kind": "polity",
+      "source": "https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0",
+      "license": "CC-BY-4.0",
+      "minZoom": 5.5
+    },
+    {
+      "name": "阿克蘇姆",
+      "coordinates": [
+        39.28193937191283,
+        15.294274660298164
+      ],
+      "kind": "polity",
+      "source": "https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0",
+      "license": "CC-BY-4.0",
+      "minZoom": 5.5
+    },
+    {
+      "name": "希木葉爾王國",
+      "coordinates": [
+        40.8259052643655,
+        20.69686609834666
+      ],
+      "kind": "polity",
+      "source": "https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0",
+      "license": "CC-BY-4.0",
+      "minZoom": 2.4
+    },
+    {
+      "name": "拿巴泰王國",
+      "coordinates": [
+        35.46030532964805,
+        28.35448026782604
+      ],
+      "kind": "polity",
+      "source": "https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0",
+      "license": "CC-BY-4.0",
+      "minZoom": 3.5
+    },
+    {
+      "name": "索菲尼",
+      "coordinates": [
+        39.89312553877913,
+        38.480573654174805
+      ],
+      "kind": "polity",
+      "source": "https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0",
+      "license": "CC-BY-4.0",
+      "minZoom": 5.5
+    },
+    {
+      "name": "哥德人地區",
+      "coordinates": [
+        14.710971135118658,
+        57.226416
+      ],
+      "kind": "polity",
+      "source": "https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0",
+      "license": "CC-BY-4.0",
+      "minZoom": 3.5
+    },
+    {
+      "name": "奧斯若恩",
+      "coordinates": [
+        39.75621015377267,
+        36.816793547762195
+      ],
+      "kind": "polity",
+      "source": "https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0",
+      "license": "CC-BY-4.0",
+      "minZoom": 3.5
+    },
+    {
+      "name": "帕提亞帝國",
+      "coordinates": [
+        46.0,
+        33.0
+      ],
+      "kind": "polity",
+      "source": "https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0",
+      "license": "CC-BY-4.0",
+      "minZoom": 2.4
+    },
+    {
+      "name": "伊比利亞王國",
+      "coordinates": [
+        44.11417566645661,
+        42.07382583618164
+      ],
+      "kind": "polity",
+      "source": "https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0",
+      "license": "CC-BY-4.0",
+      "minZoom": 3.5
+    },
+    {
+      "name": "高加索阿爾巴尼亞",
+      "coordinates": [
+        46.87658597074024,
+        40.970781326293945
+      ],
+      "kind": "polity",
+      "source": "https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0",
+      "license": "CC-BY-4.0",
+      "minZoom": 3.5
+    },
+    {
+      "name": "拉齊卡",
+      "coordinates": [
+        42.41242626341717,
+        42.49618148803711
+      ],
+      "kind": "polity",
+      "source": "https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0",
+      "license": "CC-BY-4.0",
+      "minZoom": 5.5
+    },
+    {
+      "name": "科馬吉尼",
+      "coordinates": [
+        39.148725817004674,
+        38.29040932006865
+      ],
+      "kind": "polity",
+      "source": "https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0",
+      "license": "CC-BY-4.0",
+      "minZoom": 5.5
+    },
+    {
+      "name": "亞美尼亞王國",
+      "coordinates": [
+        44.6807179912052,
+        39.28801918029785
+      ],
+      "kind": "polity",
+      "source": "https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0",
+      "license": "CC-BY-4.0",
+      "minZoom": 2.4
+    },
+    {
+      "name": "阿爾卑斯山脈",
+      "coordinates": [
+        7.260062459441829,
+        45.889594
+      ],
+      "kind": "physical",
+      "minZoom": 4.5,
+      "source": "https://www.naturalearthdata.com/downloads/50m-physical-vectors/50m-physical-labels/",
+      "license": "Public domain"
+    },
+    {
+      "name": "高加索山脈",
+      "coordinates": [
+        44.33437766384962,
+        42.717580999999996
+      ],
+      "kind": "physical",
+      "minZoom": 4.5,
+      "source": "https://www.naturalearthdata.com/downloads/50m-physical-vectors/50m-physical-labels/",
+      "license": "Public domain"
+    },
+    {
+      "name": "北歐平原",
+      "coordinates": [
+        3.41249884317062,
+        50.77937
+      ],
+      "kind": "physical",
+      "minZoom": 3,
+      "source": "https://www.naturalearthdata.com/downloads/50m-physical-vectors/50m-physical-labels/",
+      "license": "Public domain"
+    },
+    {
+      "name": "阿拉伯半島",
+      "coordinates": [
+        43.5,
+        26.5
+      ],
+      "kind": "physical",
+      "minZoom": 2.4,
+      "source": "https://www.naturalearthdata.com/downloads/50m-physical-vectors/50m-physical-labels/",
+      "license": "Public domain"
+    },
+    {
+      "name": "撒哈拉沙漠",
+      "coordinates": [
+        24.0,
+        26.0
+      ],
+      "kind": "physical",
+      "minZoom": 2.4,
+      "source": "https://www.naturalearthdata.com/downloads/50m-physical-vectors/50m-physical-labels/",
+      "license": "Public domain"
+    },
+    {
+      "name": "阿特拉斯山脈",
+      "coordinates": [
+        -3.8852426941379443,
+        32.8029545
+      ],
+      "kind": "physical",
+      "minZoom": 4.5,
+      "source": "https://www.naturalearthdata.com/downloads/50m-physical-vectors/50m-physical-labels/",
+      "license": "Public domain"
+    },
+    {
+      "name": "黑海北岸草原",
+      "coordinates": [
+        39.03992689172928,
+        48.7398135
+      ],
+      "kind": "physical",
+      "minZoom": 3,
+      "source": "https://www.naturalearthdata.com/downloads/50m-physical-vectors/50m-physical-labels/",
+      "license": "Public domain"
+    },
+    {
+      "name": "喀爾巴阡山脈",
+      "coordinates": [
+        24.514869382781768,
+        47.3039005
+      ],
+      "kind": "physical",
+      "minZoom": 4.5,
+      "source": "https://www.naturalearthdata.com/downloads/50m-physical-vectors/50m-physical-labels/",
+      "license": "Public domain"
+    },
+    {
+      "name": "達契亞",
+      "coordinates": [
+        24.510746631576808,
+        46.26240359327123
+      ],
+      "kind": "region",
+      "source": "https://github.com/AWMC/geodata/blob/master/Cultural%20Shapefiles%20Apr%202024.zip",
+      "license": "ODbL-1.0",
+      "pleiadesId": "207065",
+      "minZoom": 3
+    },
+    {
+      "name": "美索不達米亞",
+      "coordinates": [
+        40.64630147847909,
+        37.67018447340601
+      ],
+      "kind": "region",
+      "source": "https://github.com/AWMC/geodata/blob/master/Cultural%20Shapefiles%20Apr%202024.zip",
+      "license": "ODbL-1.0",
+      "pleiadesId": "874602",
+      "minZoom": 4.5
+    },
+    {
+      "name": "盧西塔尼亞",
+      "coordinates": [
+        -8.113311937059757,
+        38.850978977313
+      ],
+      "kind": "region",
+      "source": "https://github.com/AWMC/geodata/blob/master/Cultural%20Shapefiles%20Apr%202024.zip",
+      "license": "ODbL-1.0",
+      "pleiadesId": "1101",
+      "minZoom": 4.5
+    },
+    {
+      "name": "貝提卡",
+      "coordinates": [
+        -2.3589640892321313,
+        39.40167286328257
+      ],
+      "kind": "region",
+      "source": "https://github.com/AWMC/geodata/blob/master/Cultural%20Shapefiles%20Apr%202024.zip",
+      "license": "ODbL-1.0",
+      "pleiadesId": "862",
+      "minZoom": 4.5
+    },
+    {
+      "name": "凱撒毛里塔尼亞",
+      "coordinates": [
+        2.6418414962439245,
+        36.25774212851636
+      ],
+      "kind": "region",
+      "source": "https://github.com/AWMC/geodata/blob/master/Cultural%20Shapefiles%20Apr%202024.zip",
+      "license": "ODbL-1.0",
+      "pleiadesId": "285482",
+      "minZoom": 4.5
+    },
+    {
+      "name": "努米底亞",
+      "coordinates": [
+        6.603684296566069,
+        36.4714862888499
+      ],
+      "kind": "region",
+      "source": "https://github.com/AWMC/geodata/blob/master/Cultural%20Shapefiles%20Apr%202024.zip",
+      "license": "ODbL-1.0",
+      "pleiadesId": "305120",
+      "minZoom": 4.5
+    },
+    {
+      "name": "日耳曼尼亞",
+      "coordinates": [
+        9.271534360812732,
+        53.07779611413527
+      ],
+      "kind": "region",
+      "source": "https://github.com/AWMC/geodata/blob/master/Cultural%20Shapefiles%20Apr%202024.zip",
+      "license": "ODbL-1.0",
+      "pleiadesId": "20468",
+      "minZoom": 3
+    },
+    {
+      "name": "諾里庫姆",
+      "coordinates": [
+        13.61009850827183,
+        48.09528807968854
+      ],
+      "kind": "region",
+      "source": "https://github.com/AWMC/geodata/blob/master/Cultural%20Shapefiles%20Apr%202024.zip",
+      "license": "ODbL-1.0",
+      "pleiadesId": "187490",
+      "minZoom": 4.5
+    },
+    {
+      "name": "雷蒂亞",
+      "coordinates": [
+        11.677847581000721,
+        48.520828558063634
+      ],
+      "kind": "region",
+      "source": "https://github.com/AWMC/geodata/blob/master/Cultural%20Shapefiles%20Apr%202024.zip",
+      "license": "ODbL-1.0",
+      "pleiadesId": "187523",
+      "minZoom": 4.5
+    },
+    {
+      "name": "盧格敦高盧",
+      "coordinates": [
+        0.13738413221364082,
+        47.926762143107034
+      ],
+      "kind": "region",
+      "source": "https://github.com/AWMC/geodata/blob/master/Cultural%20Shapefiles%20Apr%202024.zip",
+      "license": "ODbL-1.0",
+      "pleiadesId": "981528",
+      "minZoom": 4.5
+    },
+    {
+      "name": "阿奎塔尼亞",
+      "coordinates": [
+        0.9903936442576888,
+        45.83896300845993
+      ],
+      "kind": "region",
+      "source": "https://github.com/AWMC/geodata/blob/master/Cultural%20Shapefiles%20Apr%202024.zip",
+      "license": "ODbL-1.0",
+      "pleiadesId": "138187",
+      "minZoom": 4.5
+    },
+    {
+      "name": "潘諾尼亞",
+      "coordinates": [
+        16.598980673568963,
+        45.73412099649811
+      ],
+      "kind": "region",
+      "source": "https://github.com/AWMC/geodata/blob/master/Cultural%20Shapefiles%20Apr%202024.zip",
+      "license": "ODbL-1.0",
+      "pleiadesId": "197425",
+      "minZoom": 4.5
+    },
+    {
+      "name": "廷吉毛里塔尼亞",
+      "coordinates": [
+        -5.468478278151456,
+        34.744853744226226
+      ],
+      "kind": "region",
+      "source": "https://github.com/AWMC/geodata/blob/master/Cultural%20Shapefiles%20Apr%202024.zip",
+      "license": "ODbL-1.0",
+      "pleiadesId": "275673",
+      "minZoom": 4.5
+    },
+    {
+      "name": "薩爾馬提亞",
+      "coordinates": [
+        41.07273802920413,
+        46.02825355545219
+      ],
+      "kind": "region",
+      "source": "https://github.com/AWMC/geodata/blob/master/Cultural%20Shapefiles%20Apr%202024.zip",
+      "license": "ODbL-1.0",
+      "pleiadesId": "825371",
+      "minZoom": 3
+    }
+  ]
+}

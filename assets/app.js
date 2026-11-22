@@ -426,7 +426,7 @@ function setBoundaries(value) {
   boundaryMode = ['ancient', 'modern', 'roman', 'none'].includes(value) ? value : 'ancient';
   $('boundary-mode').value = boundaryMode;
   for (const layer of ['ancient-fill', 'ancient-border']) map.setLayoutProperty(layer, 'visibility', boundaryMode === 'roman' ? 'visible' : 'none');
-  for (const layer of ['reference-fill', 'reference-border']) map.setLayoutProperty(layer, 'visibility', boundaryMode === 'ancient' ? 'visible' : 'none');
+  for (const layer of ['reference-fill', 'reference-border', 'context-physical-fill', 'context-roman-fill', 'context-roman-border', 'context-polity-fill', 'context-polity-border']) map.setLayoutProperty(layer, 'visibility', boundaryMode === 'ancient' ? 'visible' : 'none');
   for (const layer of ['modern-fill', 'modern-border']) map.setLayoutProperty(layer, 'visibility', boundaryMode === 'modern' ? 'visible' : 'none');
   boundaryLabels.forEach(({ element, type, contextPlace }) => { element.hidden = type === 'context' ? boundaryMode !== 'ancient' || current?.stops.some(stop => stop.place === contextPlace) : type !== 'physical' && type !== boundaryMode; });
   layoutLabels();
@@ -457,7 +457,7 @@ function openDialog(type) {
     $('dialog-body').innerHTML = `<h3>電腦操作</h3><p>左鍵拖曳移動地圖，滾輪縮放。3D 模式下，按住右鍵拖曳可旋轉與傾斜；也可按「調整視角」使用方向與角度滑桿。</p><h3>手機與平板</h3><p>單指拖曳移動，雙指張合縮放，雙指旋轉調整方向；在3D模式下，雙指平行上下拖曳可調整傾斜。按下底部「視角」即可開啟方向與傾斜滑桿。</p><h3>逐站探索</h3><p>按「行程」選擇旅程，按主畫面的「播放」開始，也可按「選站」選擇城市；按「站點」閱讀本站事件、同行者與經文。清單平時收合，選擇後會回到地圖。實線表示陸路，虛線表示海路，點線表示海上漂流或交通方式未詳。回程會保留重訪同一城市的站次。</p><h3>播放與視角</h3><p>可暫停、切換速度、拖動進度，或逐站前後移動。「視角跟隨」會將地圖中心跟隨旅程移動；手動拖曳地圖後會停止跟隨。按「播放設定」調整進度與速度，按「視角」開啟縮放、朝北及地球全景工具；按「完整路線」恢復全程視野。</p><h3>鍵盤與分享</h3><p>所有主要控制都可用 Tab 選取。聚焦地圖後可用方向鍵移動、加減鍵縮放；進度與視角滑桿可用方向鍵調整。網址會記住行程、站次與2D／3D模式，可複製分享。</p>`;
   } else {
     $('dialog-title').textContent = '資料來源與閱讀方式';
-    $('dialog-body').innerHTML = `<h3>行程、事件與經文出處</h3><p>依提供的《保羅的行程v2》（主要參考，第9–18頁）、《保羅的行程v1》、《使徒行傳》，及《使徒行傳一至二十八章鳥瞰、保羅的四次行程、十四封書信的著時》整理。本站事件說明為摘要，經文欄提供查讀位置。</p><h3>四次行程的分段</h3><p>第一次：徒13:4下–14:28；第二次：徒15:40–18:22；第三次：徒18:23–21:17；第四次：徒27:1–28:31。第四次依參考資料指「被解往羅馬」的航程；徒21–26章的被捕、受審與上訴作為背景。</p><h3>地點與路線</h3><p>城市座標採 <a href="https://www.openbible.info/geo/" target="_blank" rel="noopener noreferrer">OpenBible.info Bible Geocoding</a> 的主要候選地點，依其識別評分選取，資料授權為 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>。地區概略標記不代表確定停靠城市。路線依經文次序繪製為示意連線，非精確古道路或航跡；部分途經小站未逐一列出。古代港口與現代海岸線可能不重合。</p><h3>主要古代參考圖</h3><p>古代地區以使用者提供的《保羅的行程》與《新約時代的巴勒斯坦》兩張圖為主，保留其地區名稱、分色與分界關係。兩圖混合地理區域與統治範圍，採校準後的概略分界，不當作同一年份的精確行政圖。城市仍用可查核座標定位；小圓點是地理對照城市，不自動列為保羅本次停靠站。按「巴勒斯坦詳圖」可放大加利利、撒瑪利亞、猶太等分區。</p><h3>地圖底圖與程式庫</h3><p>海岸線與陸地採 <a href="https://www.naturalearthdata.com/downloads/50m-physical-vectors/" target="_blank" rel="noopener noreferrer">Natural Earth 1:50m Land</a>（公有領域）。海岸線使用現代地理輪廓。羅馬行省對照圖層的邊界來自 <a href="https://github.com/AWMC/geodata" target="_blank" rel="noopener noreferrer">Ancient World Mapping Center</a> 官方資料（Barrington Atlas、AWMC / OpenStreetMap，ODbL 1.0），採西元69年概況，以虛線表示，並非四次行程各年份的精確疆界，亦不等同所有聖經地理名詞的範圍。現代國界採 Natural Earth 1:50m Admin 0（公有領域），只作地理對照。上方「邊界」可切換參考圖古代地區、現代國界、羅馬行省（69年）或關閉；分色用於辨識區域。加利利海、死海採 OpenBible 自有幾何（CC BY 4.0）；約旦河、基順河、雅博河採經 OpenBible 提供的 OpenStreetMap 河道（ODbL 1.0）。互動地圖採 <a href="https://maplibre.org/" target="_blank" rel="noopener noreferrer">MapLibre GL JS 5.6.2</a>（BSD-3-Clause）。2D為平面地圖，3D為可旋轉、傾斜的地球投影，不含地形高程。</p><h3>書信著時</h3><p>書信資訊沿用參考資料的安排，屬著時整理，不是《使徒行傳》直接逐項記載。羅馬獲釋後的行程與「可能／也許」的著時推定，未併入四次行程的確定站序。</p>`;
+    $('dialog-body').innerHTML = `<h3>行程、事件與經文出處</h3><p>依提供的《保羅的行程v2》（主要參考，第9–18頁）、《保羅的行程v1》、《使徒行傳》，及《使徒行傳一至二十八章鳥瞰、保羅的四次行程、十四封書信的著時》整理。本站事件說明為摘要，經文欄提供查讀位置。</p><h3>四次行程的分段</h3><p>第一次：徒13:4下–14:28；第二次：徒15:40–18:22；第三次：徒18:23–21:17；第四次：徒27:1–28:31。第四次依參考資料指「被解往羅馬」的航程；徒21–26章的被捕、受審與上訴作為背景。</p><h3>地點與路線</h3><p>城市座標採 <a href="https://www.openbible.info/geo/" target="_blank" rel="noopener noreferrer">OpenBible.info Bible Geocoding</a> 的主要候選地點，依其識別評分選取，資料授權為 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>。地區概略標記不代表確定停靠城市。路線依經文次序繪製為示意連線，非精確古道路或航跡；部分途經小站未逐一列出。古代港口與現代海岸線可能不重合。</p><h3>主要古代參考圖</h3><p>古代地區以使用者提供的《保羅的行程》與《新約時代的巴勒斯坦》兩張圖為主，保留其地區名稱、分色與分界關係。兩圖混合地理區域與統治範圍，採校準後的概略分界，不當作同一年份的精確行政圖。城市仍用可查核座標定位；小圓點是地理對照城市，不自動列為保羅本次停靠站。按「巴勒斯坦詳圖」可放大加利利、撒瑪利亞、猶太等分區。</p><h3>地圖底圖與程式庫</h3><p>海岸線與陸地採 <a href="https://www.naturalearthdata.com/downloads/50m-physical-vectors/" target="_blank" rel="noopener noreferrer">Natural Earth 1:50m Land</a>（公有領域）。海岸線使用現代地理輪廓。羅馬行省對照圖層的邊界來自 <a href="https://github.com/AWMC/geodata" target="_blank" rel="noopener noreferrer">Ancient World Mapping Center</a> 官方資料（Barrington Atlas、AWMC / OpenStreetMap，ODbL 1.0），採西元69年概況，以虛線表示，並非四次行程各年份的精確疆界，亦不等同所有聖經地理名詞的範圍。現代國界採 Natural Earth 1:50m Admin 0（公有領域），只作地理對照。上方「邊界」可切換參考圖古代地區、現代國界、羅馬行省（69年）或關閉；分色用於辨識區域。加利利海、死海採 OpenBible 自有幾何（CC BY 4.0）；約旦河、基順河、雅博河採經 OpenBible 提供的 OpenStreetMap 河道（ODbL 1.0）。互動地圖採 <a href="https://maplibre.org/" target="_blank" rel="noopener noreferrer">MapLibre GL JS 5.6.2</a>（BSD-3-Clause）。2D為平面地圖，3D為可旋轉、傾斜的地球投影，不含地形高程。</p><h3>參考圖外的補充圖域</h3><p>兩張主要參考圖以外，羅馬行省採 AWMC 的西元69年資料；周邊政體採 <a href="https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0" target="_blank" rel="noopener noreferrer">Seshat／Cliopatria v0.2.0</a> 的69年疆域重建（<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>），包含帕提亞、亞美尼亞、拿巴泰、古實等。外圍虛線為補充來源的歷史界線，不表示四次行程各年的精確疆界。撒哈拉沙漠、阿拉伯半島與黑海北岸草原等採 <a href="https://www.naturalearthdata.com/downloads/50m-physical-vectors/50m-physical-labels/" target="_blank" rel="noopener noreferrer">Natural Earth 自然地理</a>（公有領域）；其淡色只表自然地理範圍，不作政治疆界。日耳曼尼亞、達契亞等古代名稱採 AWMC 標籤；無可靠政體圖資的地區不杜撰國界。補充圖層避開兩張主要參考圖，原分區與城市座標維持不變。</p><h3>書信著時</h3><p>書信資訊沿用參考資料的安排，屬著時整理，不是《使徒行傳》直接逐項記載。羅馬獲釋後的行程與「可能／也許」的著時推定，未併入四次行程的確定站序。</p>`;
   }
   $('info-dialog').showModal();
 }
@@ -545,22 +545,32 @@ async function init() {
       if (!response.ok) throw new Error(`邊界資料未載入：${file}`);
       return response.json();
     }));
+    const [contextPhysical, contextRoman, contextRomanLines, contextPolities, contextPolityLines, contextNames] = await Promise.all(['context-physical.geojson', 'context-roman.geojson', 'context-roman-lines.geojson', 'context-polities.geojson', 'context-polity-lines.geojson', 'context-labels.json'].map(async (file) => {
+      const response = await fetch(new URL(`./data/${file}`, import.meta.url));
+      if (!response.ok) throw new Error(`補充地圖資料未載入：${file}`);
+      return response.json();
+    }));
     map = new maplibregl.Map({ container: 'map', center: [28, 36], zoom: 4, minZoom: .7, maxZoom: 10,
       maxPitch: 0, attributionControl: false, renderWorldCopies: false,
-      style: { version: 8, projection: { type: 'mercator' }, sources: { land: { type: 'geojson', data: landData }, ancientAreas: { type: 'geojson', data: ancientAreas }, ancientLines: { type: 'geojson', data: ancientLines }, modernCountries: { type: 'geojson', data: modernCountries }, referenceAreas: {type:'geojson',data:referenceAreas}, referenceLines:{type:'geojson',data:referenceLines}, referenceWater:{type:'geojson',data:referenceWater} },
+      style: { version: 8, projection: { type: 'mercator' }, sources: { land: { type: 'geojson', data: landData }, ancientAreas: { type: 'geojson', data: ancientAreas }, ancientLines: { type: 'geojson', data: ancientLines }, modernCountries: { type: 'geojson', data: modernCountries }, referenceAreas: {type:'geojson',data:referenceAreas}, referenceLines:{type:'geojson',data:referenceLines}, referenceWater:{type:'geojson',data:referenceWater}, contextPhysical:{type:'geojson',data:contextPhysical}, contextRoman:{type:'geojson',data:contextRoman}, contextRomanLines:{type:'geojson',data:contextRomanLines}, contextPolities:{type:'geojson',data:contextPolities}, contextPolityLines:{type:'geojson',data:contextPolityLines} },
         layers: [{ id: 'ocean', type: 'background', paint: { 'background-color': '#b5def8' } },
           { id: 'land', type: 'fill', source: 'land', paint: { 'fill-color': '#e6e7d5' } },
+          { id: 'context-physical-fill', type: 'fill', source: 'contextPhysical', paint: { 'fill-color': ['get', 'color'], 'fill-opacity': .7 } },
+          { id: 'context-roman-fill', type: 'fill', source: 'contextRoman', paint: { 'fill-color': ['get', 'color'], 'fill-opacity': .86 } },
+          { id: 'context-polity-fill', type: 'fill', source: 'contextPolities', paint: { 'fill-color': ['get', 'color'], 'fill-opacity': .86 } },
           { id: 'ancient-fill', type: 'fill', source: 'ancientAreas', layout:{visibility:'none'}, paint: { 'fill-color': ['get', 'color'], 'fill-opacity': .82 } },
           { id: 'reference-fill', type: 'fill', source: 'referenceAreas', paint: { 'fill-color': ['get', 'color'], 'fill-opacity': .96 } },
           { id: 'modern-fill', type: 'fill', source: 'modernCountries', layout: { visibility: 'none' }, paint: { 'fill-color': ['get', 'color'], 'fill-opacity': .85 } },
           { id: 'coast', type: 'line', source: 'land', paint: { 'line-color': '#507a84', 'line-width': .8, 'line-opacity': .55 } },
           { id: 'ancient-border', type: 'line', source: 'ancientLines', layout:{visibility:'none'}, paint: { 'line-color': '#805478', 'line-width': 1.5, 'line-dasharray': [4,2], 'line-opacity': .85 } },
+          { id: 'context-roman-border', type: 'line', source: 'contextRomanLines', paint: { 'line-color': '#7e83aa', 'line-width': 1.15, 'line-dasharray': [4,2], 'line-opacity': .8 } },
+          { id: 'context-polity-border', type: 'line', source: 'contextPolityLines', paint: { 'line-color': '#7e83aa', 'line-width': 1.15, 'line-dasharray': [4,2], 'line-opacity': .8 } },
           { id: 'reference-border', type: 'line', source: 'referenceLines', paint: { 'line-color': '#819bc5', 'line-width': 1.2, 'line-opacity': .95 } },
           { id: 'reference-lakes', type:'fill',source:'referenceWater',filter:['==',['get','kind'],'lake'],paint:{'fill-color':'#b5def8'} },
           { id: 'reference-lakes-shore',type:'line',source:'referenceWater',filter:['==',['get','kind'],'lake'],paint:{'line-color':'#82a3c6','line-width':1.2} },
           { id: 'reference-rivers',type:'line',source:'referenceWater',minzoom:5,filter:['==',['get','kind'],'river'],paint:{'line-color':'#78a9ce','line-width':['interpolate',['linear'],['zoom'],5,.8,8,1.7]} },
           { id: 'modern-border', type: 'line', source: 'modernCountries', layout: { visibility: 'none' }, paint: { 'line-color': '#527783', 'line-width': 1.3, 'line-opacity': .9 } }] } });
-    map.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: 'Natural Earth · OpenBible.info · <a href="https://github.com/AWMC/geodata" target="_blank" rel="noopener noreferrer">AWMC / OSM (ODbL)</a>' }), 'bottom-right');
+    map.addControl(new maplibregl.AttributionControl({ compact: true, customAttribution: 'Natural Earth · OpenBible.info · <a href="https://github.com/AWMC/geodata" target="_blank" rel="noopener noreferrer">AWMC / OSM</a> · <a href="https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0" target="_blank" rel="noopener noreferrer">Cliopatria</a>' }), 'bottom-right');
     map.addControl(new maplibregl.ScaleControl({ maxWidth: 90, unit: 'metric' }), 'bottom-left');
     let loadTimeout = setTimeout(() => { if (!ready) fail('地圖載入較久。請重新整理；若仍無法顯示，請確認瀏覽器支援 WebGL，且網站檔案完整。'); }, 25000);
     map.on('error', (event) => {
@@ -597,6 +607,11 @@ async function init() {
         const element=document.createElement('div'); element.className='region-label reference-label'+(entry.water ? ' water' : '')+(entry.reference==='reference2' ? ' reference-detail' : ''); element.textContent=entry.name; element.setAttribute('aria-hidden','true');
         new maplibregl.Marker({element}).setLngLat(entry.coordinates).addTo(map);
         boundaryLabels.push({element,type:entry.water ? 'physical' : 'ancient',minZoom:entry.minZoom});
+      }
+      for (const entry of contextNames.labels) {
+        const element=document.createElement('div'); element.className='region-label context-region'+(entry.kind==='physical' ? ' context-natural' : ''); element.textContent=entry.name; element.setAttribute('aria-hidden','true');
+        new maplibregl.Marker({element}).setLngLat(entry.coordinates).addTo(map);
+        boundaryLabels.push({element,type:'ancient',minZoom:entry.minZoom});
       }
       for (const entry of referenceWater.features) {
         const element=document.createElement('div'); element.className='region-label water water-detail'; element.textContent=entry.properties.name; element.setAttribute('aria-hidden','true');
