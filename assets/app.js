@@ -15,14 +15,16 @@ let fittingJourney = true;
 let companionSegment = -1;
 let activePanel = null;
 let boundaryMode = 'ancient';
+let comparisonPlace = null, comparingVisits = false;
 const boundaryLabels = [];
-const panelNames = { journeys: '選擇行程', stops: '站點與事件', stoplist: '選擇站點', playback: '播放設定', camera: '調整視角' };
+const panelNames = { journeys: '選擇行程', stops: '站點與事件', stoplist: '搜尋地點', playback: '播放設定', camera: '調整視角' };
 const companionStatuses = { direct: '經文明載', context: '上下文接續', inferred: '敘事推定', translation: '依所附譯文', escort: '押送者' };
 
 function openExplorer(name) {
   if (!ready || !panelNames[name]) return;
+  if (name === 'stops' && comparisonPlace === current.stops[selected].place && !comparingVisits) setEventView(false);
   if (['journeys', 'stops', 'stoplist'].includes(name)) { pause(); drawProgress(); }
-  if (name === 'stops') renderCompanions(selected);
+  if (name === 'stops') { renderCompanions(selected); renderPlaceOverview(comparisonPlace || current.stops[selected].place); }
   if (activePanel && activePanel !== name) $('journey-panel').append($(`panel-${activePanel}`));
   activePanel = name;
   $('explorer-title').textContent = panelNames[name];
@@ -30,6 +32,7 @@ function openExplorer(name) {
   document.querySelectorAll('[data-panel]').forEach((button) => button.setAttribute('aria-expanded', String(button.dataset.panel === name)));
   if (!$('explorer-dialog').open) $('explorer-dialog').showModal();
   $('explorer-dialog').scrollTop = 0;
+  $('explorer-body').scrollTop = 0;
 }
 
 function closeExplorer() {
@@ -196,9 +199,12 @@ function showStop(index) {
   $('station-step').textContent = `第 ${selected + 1} 站 ／ 共 ${current.stops.length} 站`;
   $('station-mode').textContent = stop.returning ? '回程探訪' : stop.approximate ? '地區概略標記' : modeNames[stop.mode];
   $('station-name').textContent = stop.name;
+  comparisonPlace = stop.place;
+  if (activePanel === 'stops') renderPlaceOverview(stop.place);
   $('station-title').textContent = stop.title;
   $('station-text').textContent = stop.text;
   const geographicNote = [stop.note, place.coordinateNote].filter(Boolean).join(' ');
+  $('geo-note').hidden = !geographicNote;
   $('station-note').hidden = !geographicNote;
   $('station-note').textContent = geographicNote;
   $('station-ref').textContent = stop.ref;
@@ -224,6 +230,54 @@ function showStop(index) {
   layoutLabels();
   renderCompanions(selected);
   updateHash();
+}
+
+function setEventView(compare) {
+  comparingVisits = compare;
+  $('visit-comparison').hidden = !compare;
+  $('current-event-body').hidden = compare;
+  $('event-current-btn').setAttribute('aria-pressed', String(!compare));
+  $('event-compare-btn').setAttribute('aria-pressed', String(compare));
+}
+
+function renderPlaceOverview(placeId) {
+  comparisonPlace = placeId;
+  const visits = data.journeys.flatMap(journey => journey.stops.flatMap((stop,index) => stop.place === placeId ? [{journey,stop,index}] : []));
+  $('place-overview-name').textContent = data.places[placeId].name;
+  $('place-overview-count').textContent = `${visits.length} 筆站次 · ${new Set(visits.map(v=>v.journey.id)).size} 次行程`;
+  $('visit-counts').replaceChildren(); $('visit-rows').replaceChildren();
+  for (const journey of data.journeys) {
+    const rows = visits.filter(v=>v.journey.id===journey.id);
+    const count = document.createElement('button'); count.type='button';
+    const countLabel=document.createElement('span');countLabel.textContent=`第${['一','二','三','四'][journey.id-1]}次`;const countValue=document.createElement('strong');countValue.textContent=rows.length ? rows.length+'筆' : '未收錄';count.append(countLabel,countValue);
+    count.addEventListener('click',()=>{setEventView(true); document.getElementById('compare-journey-'+journey.id).scrollIntoView({block:'nearest'});});
+    $('visit-counts').append(count);
+    const group=document.createElement('section'); group.className='compare-group'; group.id='compare-journey-'+journey.id;
+    const heading=document.createElement('h3'); heading.textContent=journey.name; group.append(heading);
+    if (!rows.length) { const note=document.createElement('p');note.className='empty-visit';note.textContent='本行程未收錄此地站次';group.append(note); }
+    rows.forEach(({stop,index})=>{
+      const article=document.createElement('article'); article.className='visit-row';
+      if(journey.id===current.id && index===selected) article.classList.add('current-visit');
+      const title=document.createElement('strong'); title.textContent=`第${index+1}站${index===0?' · 出發':stop.returning?' · 回訪':''}｜${stop.title}`;
+      const text=document.createElement('p');text.textContent=stop.text;
+      const ref=document.createElement('span');ref.className='reference';ref.textContent=stop.ref;
+      const jump=document.createElement('button');jump.type='button';jump.className='visit-jump';jump.textContent='查看此站';
+      jump.addEventListener('click',()=>{if(journey.id!==current.id) selectJourney(journey.id,index);else goTo(index);comparisonPlace=placeId;setEventView(false);renderPlaceOverview(placeId);renderCompanions(index);});
+      const detail=document.createElement('details');detail.className='visit-detail';const summary=document.createElement('summary');summary.append(title);detail.append(summary,text);article.append(detail,ref,jump);group.append(article);
+    });
+    $('visit-rows').append(group);
+  }
+  $('event-current-btn').disabled = placeId !== current.stops[selected].place;
+  setEventView(comparingVisits || placeId !== current.stops[selected].place);
+}
+
+function renderPlaceSearch() {
+  const query=$('place-search').value.trim(); $('place-results').replaceChildren();
+  Object.entries(data.places).filter(([key,place])=>!query || place.name.includes(query) || key.toLowerCase().includes(query.toLowerCase())).sort((a,b)=>a[1].name.localeCompare(b[1].name,'zh-Hant')).forEach(([key,place])=>{
+    const count=data.journeys.reduce((sum,j)=>sum+j.stops.filter(s=>s.place===key).length,0);
+    const button=document.createElement('button');button.type='button';button.textContent=`${place.name} · ${count}筆站次`;
+    button.addEventListener('click',()=>{comparisonPlace=key;comparingVisits=true;openExplorer('stops');});$('place-results').append(button);
+  });
 }
 
 function openScriptures(refs) {
@@ -252,6 +306,7 @@ function renderCompanions(index) {
   if (companionSegment === index) return;
   companionSegment = index;
   const stop = current.stops[index], profile = data.companionProfiles[stop.companionProfile];
+  $('companions-summary').textContent = '同行者與經文 · ' + (profile.people.map(p => p.name).join('、') || '具名同行者未詳');
   $('companion-scope').textContent = index === 0 ? `${stop.name}：出發時的同行情況` : `${current.stops[index - 1].name} 至 ${stop.name}`;
   $('companion-people').replaceChildren();
   for (const person of profile.people) {
@@ -413,7 +468,7 @@ function selectJourney(id, initialStop = 0) {
     const dot = document.createElement('span'); dot.className = 'dot';
     const label = document.createElement('span'); label.className = 'place-label'; label.textContent = place.name;
     element.append(dot, label);
-    element.addEventListener('click', (e) => { e.stopPropagation(); goTo(indices.find((i) => i > selected) ?? indices[0]); openExplorer('stops'); });
+    element.addEventListener('click', (e) => { e.stopPropagation(); goTo(indices.find((i) => i > selected) ?? indices[0]); comparingVisits=false; openExplorer('stops'); });
     const marker = new maplibregl.Marker({ element }).setLngLat(place.coordinates).addTo(map);
     markers.push({ marker, element, indices, place: placeId });
   });
@@ -455,7 +510,7 @@ function openDialog(type) {
     $('dialog-body').innerHTML = `<p>每站的同行者註記指「由前站抵達本站」的一段；第一站列出發情況。播放途中則顯示正在前往的路段。每位人物的經文出處都可點開閱讀。</p><h3>經文明載</h3><p>經文在相關段落直接點名或明說該群體同行；不表示每一個中途站都有再次點名。</p><h3>上下文接續</h3><p>人物在前後文可見，依敘事銜接列示；若該小段沒有重新具名，會明白註記。</p><h3>敘事推定</h3><p>「我們」顯示敘事者參與；將敘事者稱作路加，依所附文件卷首的作者說明，並不是經文在每一站直接寫出路加的名字。也不把16章的「我們」延伸到其後所有路段。</p><h3>分隊與不同角色</h3><p>先行、留守、接待、護送、押送分別說明。徒20:4的七人名單不等於每段都與保羅同船；猶流是押送百夫長，不列為宣教同工。拿孫的列示依所附徒21:16的譯文。</p><h3>經文未詳</h3><p>沒有足夠經文確定姓名時，標為未詳；這不等於斷言保羅獨行。相關人物仍可在「分隊、會合與其他相關人物」查看，但不當成本段確定同行名單。</p>`;
   } else if (type === 'help') {
     $('dialog-title').textContent = '地圖操作說明';
-    $('dialog-body').innerHTML = `<h3>地圖範圍</h3><p>本站使用2D平面地圖，範圍以《保羅的行程》及《新約時代的巴勒斯坦》兩張參考圖為限。按「視角」中的「參考圖全幅」查看整張地圖，或按「巴勒斯坦詳圖」放大細部地區。</p><h3>電腦操作</h3><p>左鍵拖曳移動地圖，滾輪縮放，右鍵拖曳可平面旋轉。按「視角」可使用方向滑桿與縮放按鈕，按「恢復朝北」將地圖轉回正向。</p><h3>手機與平板</h3><p>單指移動，雙指張合縮放，雙指旋轉調整方向。縮放與移動限於參考圖範圍。</p><h3>逐站探索</h3><p>按「行程」選擇旅程，使用左右箭頭沿路線移動；按「選站」選擇城市，按「站點」閱讀本站事件、同行者與經文。清單平時收合，選擇後回到地圖。行程實線表示陸路，虛線表示海路，點線表示漂流或交通方式未詳。</p><h3>播放與完整路線</h3><p>「播放設定」提供進度、速度與視角跟隨。按「完整路線」查看本次行程的全程範圍；參考圖全幅及完整路線均保留四次行程的所有站點。</p><h3>鍵盤與分享</h3><p>所有主要控制都可用 Tab 選取。聚焦地圖後可用方向鍵移動、加減鍵縮放。網址保留行程、站次與所選邊界。</p>`;
+    $('dialog-body').innerHTML = `<h3>選行程、看事件</h3><p>在左上方切換行程；點城市或下方站名看事件、同行者與經文。左右箭頭會沿路線移動，按「完整路線」回到全程視野。</p><h3>同一地點，歷次對照</h3><p>站點視窗上方列出四次行程的收錄筆數。「跨行程對照」可比較事件與經文，點事件標題展開摘要，按「查看此站」跳至該次行程。放大鏡可搜尋所有地點。</p><h3>地圖與播放</h3><p>拖曳移動、雙指或滾輪縮放。地圖上的工具圖示提供平面旋轉與全幅；播放旁的設定圖示調整速度、進度與視角跟隨。地圖限於兩張參考圖範圍，所有視窗都可關閉回到地圖。</p>`;
   } else {
     $('dialog-title').textContent = '資料來源與閱讀方式';
     $('dialog-body').innerHTML = `<h3>行程、事件與經文出處</h3><p>依提供的《保羅的行程v2》（主要參考，第9–18頁）、《保羅的行程v1》、《使徒行傳》，及《使徒行傳一至二十八章鳥瞰、保羅的四次行程、十四封書信的著時》整理。本站事件說明為摘要，經文欄提供查讀位置。</p><h3>四次行程的分段</h3><p>第一次：徒13:4下–14:28；第二次：徒15:40–18:22；第三次：徒18:23–21:17；第四次：徒27:1–28:31。第四次依參考資料指「被解往羅馬」的航程；徒21–26章的被捕、受審與上訴作為背景。</p><h3>地點與路線</h3><p>城市座標採 <a href="https://www.openbible.info/geo/" target="_blank" rel="noopener noreferrer">OpenBible.info Bible Geocoding</a> 的主要候選地點，依其識別評分選取，資料授權為 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>。地區概略標記不代表確定停靠城市。路線依經文次序繪製為示意連線，非精確古道路或航跡；部分途經小站未逐一列出。古代港口與現代海岸線可能不重合。</p><h3>主要古代參考圖</h3><p>古代地區以使用者提供的《保羅的行程》與《新約時代的巴勒斯坦》兩張圖為主，保留其地區名稱、分色與分界關係。兩圖混合地理區域與統治範圍，採校準後的概略分界，不當作同一年份的精確行政圖。城市仍用可查核座標定位；小圓點是地理對照城市，不自動列為保羅本次停靠站。按「巴勒斯坦詳圖」可放大加利利、撒瑪利亞、猶太等分區。</p><h3>地圖底圖與程式庫</h3><p>海岸線與陸地採 <a href="https://www.naturalearthdata.com/downloads/50m-physical-vectors/" target="_blank" rel="noopener noreferrer">Natural Earth 1:50m Land</a>（公有領域）。海岸線使用現代地理輪廓。羅馬行省對照圖層的邊界來自 <a href="https://github.com/AWMC/geodata" target="_blank" rel="noopener noreferrer">Ancient World Mapping Center</a> 官方資料（Barrington Atlas、AWMC / OpenStreetMap，ODbL 1.0），採西元69年概況，以虛線表示，並非四次行程各年份的精確疆界，亦不等同所有聖經地理名詞的範圍。現代國界採 Natural Earth 1:50m Admin 0（公有領域），只作地理對照。上方「邊界」可切換參考圖古代地區、現代國界、羅馬行省（69年）或關閉；分色用於辨識區域。加利利海、死海採 OpenBible 自有幾何（CC BY 4.0）；約旦河、基順河、雅博河採經 OpenBible 提供的 OpenStreetMap 河道（ODbL 1.0）。互動地圖採 <a href="https://maplibre.org/" target="_blank" rel="noopener noreferrer">MapLibre GL JS 5.6.2</a>（BSD-3-Clause）。網站採2D平面地圖，顯示範圍以兩張主要參考圖為限。</p><h3>參考圖範圍內的補充來源</h3><p>參考圖範圍內需要銜接的地區，羅馬行省採 AWMC 的西元69年資料；周邊政體採 <a href="https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0" target="_blank" rel="noopener noreferrer">Seshat／Cliopatria v0.2.0</a> 的69年疆域重建（<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>）。補充政體採69年重建，不表示四次行程各年的精確疆界。全圖統一分區色票；細實線表示地區分界，行程以較粗彩線顯示。自然地理名稱採 <a href="https://www.naturalearthdata.com/downloads/50m-physical-vectors/50m-physical-labels/" target="_blank" rel="noopener noreferrer">Natural Earth 自然地理</a>（公有領域）；保留自然地理名稱，讓地區分色保持清楚。古代地區名稱採 AWMC 標籤；無可靠政體圖資的地區不杜撰國界。兩張主要參考圖的內部分區與城市座標維持不變；原圖邊緣與補充底圖柔和銜接，圖框本身不當作地區界線。</p><h3>書信著時</h3><p>書信資訊沿用參考資料的安排，屬著時整理，不是《使徒行傳》直接逐項記載。羅馬獲釋後的行程與「可能／也許」的著時推定，未併入四次行程的確定站序。</p>`;
@@ -470,6 +525,10 @@ function bindControls() {
     $('palestine-btn').setAttribute('aria-pressed','true'); $('atlas-subtitle').textContent='新約時代的巴勒斯坦'; $('atlas-reference').textContent='依主要參考圖 · 地區、城市與水域對照';
     map.fitBounds([[34.10,31.23],[36.05,33.58]], { padding: innerWidth <= 720 ? {top:30,bottom:40,left:30,right:30} : 65, bearing:0, pitch:0, maxZoom:8, duration:reducedMotion ? 0 : 1000 });
   });
+  $('event-current-btn').addEventListener('click',()=>setEventView(false));
+  $('event-compare-btn').addEventListener('click',()=>setEventView(true));
+  $('place-search').addEventListener('input',renderPlaceSearch);
+  $('search-place-btn').addEventListener('click',()=>{renderPlaceSearch();openExplorer('stoplist');$('place-search').focus();});
   $('boundary-mode').addEventListener('change', () => setBoundaries($('boundary-mode').value));
   $('play-btn').addEventListener('click', play);
   $('prev-btn').addEventListener('click', () => stepBy(-1));
@@ -483,7 +542,7 @@ function bindControls() {
   $('scope-btn').addEventListener('click', () => { closeExplorer(); fitScope(); });
   document.querySelectorAll('[data-panel]').forEach((button) => {
     button.disabled = false;
-    button.addEventListener('click', () => openExplorer(button.dataset.panel));
+    button.addEventListener('click', () => { if (button.dataset.panel === 'stops') { comparisonPlace=current.stops[selected].place; comparingVisits=false; } openExplorer(button.dataset.panel); });
   });
   $('explorer-close').addEventListener('click', closeExplorer);
   $('explorer-dialog').addEventListener('close', restoreExplorer);

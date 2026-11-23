@@ -158,3 +158,10 @@ assert 'panel-stoplist' in panels.parents['stop-list']
 for file in ('assets/vendor/maplibre-gl.js', 'assets/vendor/maplibre-gl.css', 'assets/vendor/maplibre-LICENSE.txt', '.nojekyll', '.github/workflows/pages.yml'):
     assert (root/file).is_file(), file
 print(f"PASS: 4 journeys, {sum(len(j['stops']) for j in data['journeys'])} annotated nodes, {len(data['scriptureEvidence'])} scripture verses; team changes, references, route integrity, assets, DOM IDs and Pages subpaths checked.")
+
+assert 'class="explorer-nav"' not in html
+assert {'settings-btn','search-place-btn','event-compare-btn','visit-comparison'} <= set(ids)
+assert 'renderPlaceOverview' in js and 'stop.place === placeId' in js
+# Repeated stations remain separate; Antioch's two cities never share a key.
+assert [sum(stop['place']=='Antioch 1' for stop in j['stops']) for j in data['journeys']]==[2,2,1,0]
+assert [sum(stop['place']=='Rome' for stop in j['stops']) for j in data['journeys']]==[0,0,0,1]
