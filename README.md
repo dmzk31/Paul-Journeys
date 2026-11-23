@@ -89,3 +89,5 @@ python -m http.server 8080
 外觀：預設採用 Daniel Kao 選定的暖色書卷（Journal）。design-options.html 提供現代地圖集、暖色書卷、深色夜讀三套實際預覽，可使用 theme=atlas/journal/night 切換；主網站記住選擇。參考圖地區與69年羅馬行政行省使用分開的幾何、標籤及色系。資料來源入口收至地圖工具。
 
 Journal 圖片素材：`assets/art/journal-voyage-v1.webp` 為內建 image_gen 生成的地中海帆船蝕刻風格插畫，用於頁首與事件面板標頭；`assets/art/journal-paper-v1.webp` 為生成古紙底紋，用於工具列、控制列與閱讀面板。圖片已轉成 WebP 隨網站部署，合計約523 KiB。插畫是裝飾性想像，並非特定船隻的考古復原或史實圖證；實際地圖與站點不使用生成圖片。完整提示詞保存在 `assets/art/generation-prompts.json`。
+
+行程選擇：點選四次行程的卡片後保留視窗，直接閱讀該次介紹、同工概覽與書信；按「查看該次行程地圖」或關閉視窗後回到地圖。再次點選目前行程保留現有站次。

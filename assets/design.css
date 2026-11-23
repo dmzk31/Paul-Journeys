@@ -187,3 +187,5 @@ dialog::backdrop { background: #0b253d8f; backdrop-filter: blur(4px); }
 #visit-rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 18px}@media(max-width:720px){#visit-rows{grid-template-columns:1fr;gap:0}}
 
 .visit-counts button:disabled{color:#99a3aa;background:#f0f2f3;border-color:#e4e8eb;opacity:.5;cursor:default;box-shadow:none}.visit-counts button:disabled strong{display:none}.visit-counts button:disabled:hover{background:#f0f2f3;color:#99a3aa}
+.journey-map-button{display:block;width:100%;min-height:44px;margin:14px 0 8px;padding:10px 16px;border:1px solid transparent;border-radius:6px;background:var(--accent);color:#fff;font-size:16px;font-weight:600;cursor:pointer}
+.journey-map-button:hover{filter:brightness(.92)}

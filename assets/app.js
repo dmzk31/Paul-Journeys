@@ -436,6 +436,7 @@ function selectJourney(id, initialStop = 0) {
   $('journey-summary').textContent = current.summary;
   $('companions').textContent = current.companions;
   $('journey-books').textContent = current.books;
+  $('journey-map-btn').textContent = `查看${current.name}地圖`;
   $('stop-total').textContent = `${current.stops.length} 個路線節點`;
   $('map-journey-caption').textContent = current.name;
   $('atlas-subtitle').textContent = current.subtitle;
@@ -547,6 +548,7 @@ function bindControls() {
     button.addEventListener('click', () => { if (button.dataset.panel === 'stops') { comparisonPlace=current.stops[selected].place; comparingVisits=false; } openExplorer(button.dataset.panel); });
   });
   $('explorer-close').addEventListener('click', closeExplorer);
+  $('journey-map-btn').addEventListener('click', closeExplorer);
   $('explorer-dialog').addEventListener('close', restoreExplorer);
   $('bearing').addEventListener('input', () => map.setBearing(Number($('bearing').value)));
   $('help-btn').addEventListener('click', () => openDialog('help'));
@@ -710,7 +712,9 @@ async function init() {
         const subtitle = document.createElement('small'); subtitle.textContent = journey.subtitle;
         const text = document.createElement('span'); text.className = 'journey-tab-text'; text.append(label, subtitle);
         button.setAttribute('aria-label', journey.name);
-        button.append(dot, text); button.addEventListener('click', () => { selectJourney(journey.id); closeExplorer(); });
+        button.append(dot, text); button.addEventListener('click', () => {
+          if (current.id !== journey.id) selectJourney(journey.id);
+        });
         $('journey-tabs').append(button);
       });
       const colors = themeMapColors[theme];
