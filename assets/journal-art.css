@@ -1,0 +1,49 @@
+/* Journal uses generated raster artwork, shared by desktop and phone. */
+.journal-caption{display:none}
+html[data-theme=journal]{--brass:#a5793f;--line:#d6c6a9}
+html[data-theme=journal] body,html[data-theme=journal] .workspace{background-color:#f2e6ce;background-image:url('./art/journal-paper-v1.webp');background-size:620px}
+html[data-theme=journal] .site-header{position:relative;min-height:112px;align-items:flex-start;padding-top:20px;padding-bottom:34px;background-color:#f8eed8;background-image:linear-gradient(90deg,#faf5e8 0%,#faf5e8f5 40%,#faf5e899 64%,#faf5e800 83%),url('./art/journal-voyage-v1.webp');background-size:100% 100%,auto 195px;background-position:center,right 56%;background-repeat:no-repeat;border-bottom:4px double #a88855;box-shadow:0 3px 10px #49341616}
+html[data-theme=journal] .brand{position:relative;z-index:1}
+html[data-theme=journal] .brand img{background:#4c432f;border-color:#b28c52;box-shadow:0 2px 5px #5e482d2b}
+html[data-theme=journal] .brand strong{color:#3e3327;text-shadow:0 1px #fff9}
+html[data-theme=journal] .brand small{color:#806338}
+html[data-theme=journal] .journal-caption{display:block;position:absolute;left:111px;bottom:15px;color:#715c3b;font-family:var(--serif);font-size:13px;letter-spacing:.12em;z-index:1}
+html[data-theme=journal] .header-actions{position:relative;z-index:1;align-self:flex-start;border:1px solid #c6af8580;border-radius:5px;background:#faf5e8df}
+html[data-theme=journal] .header-actions .text-btn{color:#5e482d;border-color:transparent}
+html[data-theme=journal] .header-actions .text-btn:hover{background:#dfcea980;color:#3e3327}
+html[data-theme=journal] .atlas-kicker,html[data-theme=journal] .atlas-meta,html[data-theme=journal] .atlas-meta small{color:#806747}
+html[data-theme=journal] .map-area{border:1px solid #b59e76;border-radius:5px;box-shadow:0 6px 24px #5e482d1f,0 0 0 4px #f9f0df99}
+html[data-theme=journal] .map-topbar,html[data-theme=journal] .station-bar,html[data-theme=journal] dialog,html[data-theme=journal] #explorer-body,html[data-theme=journal] #dialog-body{background-color:#faf5e8;background-image:linear-gradient(#faf5e859,#faf5e859),url('./art/journal-paper-v1.webp');background-size:auto,620px}
+html[data-theme=journal] .map-topbar,html[data-theme=journal] .boundary-row,html[data-theme=journal] .map-stage,html[data-theme=journal] .station-bar{border-color:#cbb892}
+html[data-theme=journal] .journey-picker{border:1px solid #c8af82;background:#e8dbbd;box-shadow:inset 0 1px #fff9;color:#473a26}
+html[data-theme=journal] .map-button,html[data-theme=journal] .detail-map-btn,html[data-theme=journal] .icon-button,html[data-theme=journal] .step-btn{background:#fcf7eb;border-color:#cbb892;color:#655132;box-shadow:0 2px 4px #57402612}
+html[data-theme=journal] .detail-map-btn[aria-pressed=true]{background:#6a6244;border-color:#6a6244;color:#fff9ed}
+html[data-theme=journal] .boundary-row label,html[data-theme=journal] .boundary-row select{color:#69583e}
+html[data-theme=journal] .boundary-row select{background-color:transparent}
+html[data-theme=journal] .current-station strong{color:#463822}
+html[data-theme=journal] #movement-caption,html[data-theme=journal] .station-meta>span{color:#826c4a}
+html[data-theme=journal] .station-meta{border-color:#cbb892}
+html[data-theme=journal] .place-marker .place-label{background:#fff8eaf5;border-color:#e4d2b2;color:#53472e;box-shadow:0 1px 3px #49341622}
+html[data-theme=journal] .place-marker.active .place-label{background:var(--accent);color:#fff;border-color:transparent}
+html[data-theme=journal] .dialog-header{background-color:#eadab9;background-image:linear-gradient(90deg,#ede0c6 35%,#ede0c699 80%),url('./art/journal-voyage-v1.webp');background-size:auto,auto 135px;background-position:center,right 60%;background-repeat:no-repeat;border-bottom:3px double #aa8750;color:#493b27}
+html[data-theme=journal] .dialog-header .close-button{color:#59452b;background:#fff7e6e8;border-color:#c6ae85}
+html[data-theme=journal] .place-overview{padding-bottom:7px;border-bottom:1px solid #cbb892}
+html[data-theme=journal] .place-overview>span,html[data-theme=journal] .station-detail>p,html[data-theme=journal] .detail-kicker,html[data-theme=journal] .count-note{color:#776445}
+html[data-theme=journal] .event-tabs{border-color:#cbb892}
+html[data-theme=journal] .event-tabs button{color:#8b7655}
+html[data-theme=journal] .event-tabs button[aria-pressed=true]{color:#6a4c24;box-shadow:inset 0 -2px #a5793f}
+html[data-theme=journal] .visit-row,html[data-theme=journal] .companion-people li{background:#fff9edac;border-color:#cbb892}
+html[data-theme=journal] .visit-row.current-visit{background:#ecdbb7c9;border-color:#a5793f}
+html[data-theme=journal] .visit-counts button:disabled{background:#e9e3d5;color:#a2947e;border-color:#d8cebb}
+html[data-theme=journal] .reference,html[data-theme=journal] .visit-jump,html[data-theme=journal] #companions-details>summary,html[data-theme=journal] .companion-citation{color:#826337}
+@media(max-width:720px){
+  html[data-theme=journal] .site-header{min-height:118px;padding:13px 12px 44px;background-image:linear-gradient(90deg,#faf5e8 0%,#faf5e8ed 40%,#faf5e8a3 61%,#faf5e800 88%),url('./art/journal-voyage-v1.webp');background-size:100% 100%,auto 129px;background-position:center,right bottom}
+  html[data-theme=journal] .journal-caption{left:61px;bottom:18px;max-width:165px;font-size:12px;line-height:1.7;letter-spacing:.05em}
+  html[data-theme=journal] .header-actions{margin-top:1px;gap:0;background:#faf5e8e8}
+  html[data-theme=journal] .header-actions .text-btn{padding-inline:5px;min-height:32px}
+  html[data-theme=journal] .brand{gap:10px}
+  html[data-theme=journal] .brand strong{letter-spacing:.04em}
+  html[data-theme=journal] .map-area{border:0;border-radius:0;box-shadow:none}
+  html[data-theme=journal] .map-topbar{padding-top:8px;padding-bottom:7px}
+}
+@media(max-height:500px) and (orientation:landscape){html[data-theme=journal] .site-header{min-height:48px;padding-block:5px;background-size:100% 100%,auto 110px}html[data-theme=journal] .journal-caption{display:none}}

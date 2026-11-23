@@ -1,0 +1,14 @@
+{
+  "mode": "built-in image_gen",
+  "generated_on": "2026-11-23",
+  "assets": {
+    "journal-voyage-v1.webp": {
+      "prompt": "Use case: historical-scene. Asset type: production website masthead illustration, not a UI mockup. Primary request: an exquisite antique copperplate / pen-and-ink illustration of a small first-century Mediterranean merchant sailing vessel passing a rocky eastern Mediterranean coastline, for a Bible journey atlas with a warm manuscript journal art direction. Wide landscape composition, around 3:1. Ship and fine wave hatching in the RIGHT HALF, distant shore and a few restrained trees to far right, LEFT HALF mostly quiet blank warm ivory paper for live HTML title. A single square sail, simple wooden hull, no modern vessel or recognizable real portrait. Sepia ink, muted olive-grey water wash, honey parchment highlights, meticulous hand-drawn engraving detail. Warm ivory background blends gently with #faf5e8 paper. Illustration extends through lower right, no heavy border. Legible silhouette at mobile header size. No text, letters, words, numbers, labels, logo, typography, UI, interface, map, compass symbol, decorative badge, or watermark. This is a decorative historical atmosphere illustration, not an archaeological reconstruction or a factual route map.",
+      "purpose": "Decorative masthead; does not represent a documented individual ship or route"
+    },
+    "journal-paper-v1.webp": {
+      "prompt": "Use case: stylized-concept. Asset type: seamless quiet paper texture for an actual reading interface, not a UI mockup. Primary request: square macro scan of refined handmade ivory laid paper, soft natural linen fibers, subtle deckle-like mottling without a visible sheet edge, fine horizontal and vertical pulp impressions, restrained warm honey-beige variation. Light warm cream dominant matching #faf5e8. Flat even diffuse light, no shading from objects, no vignette, no dark stains, no burns, no wrinkles, no tears, no frame, no writing, no symbols, no text, no objects. Texture should be clearly tactile but calm enough beneath dark readable text, evenly distributed so repeating it as a background is inconspicuous. Fill the entire image edge to edge.",
+      "purpose": "Paper background for interface panels"
+    }
+  }
+}
