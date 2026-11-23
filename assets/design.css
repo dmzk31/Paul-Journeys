@@ -30,7 +30,7 @@ body { background: #edf2f4; }
 .atlas-meta { text-align: right; font-size: 14px; color: #556e7d; line-height: 1.7; }
 .atlas-meta small { display: block; font-size: 12px; color: #7c8e97; letter-spacing: .05em; }
 .map-area { border: 1px solid #d2dfe5; border-radius: 15px; box-shadow: 0 12px 30px #2044580b; overflow: hidden; }
-.map-topbar { display: grid; grid-template-columns: auto auto auto minmax(0,1fr); gap: 14px; background: #fff; padding: 13px 22px; min-height: 72px; }
+.map-topbar { display: grid; grid-template-columns: auto auto minmax(0,1fr); gap: 14px; background: #fff; padding: 13px 22px; min-height: 72px; }
 .journey-picker { border-color: transparent; background: #f0f5f7; color: var(--navy); border-radius: 7px; padding: 0 17px; min-height: 42px; font-size: 15px; }
 .journey-picker::before { content: ''; width: 4px; height: 18px; border-radius: 3px; background: var(--accent); }
 .view-switch { border: 1px solid #dde6eb; border-radius: 7px; gap: 0; padding: 3px; background: #f4f7f9; }
@@ -126,7 +126,7 @@ dialog::backdrop { background: #0b253d8f; backdrop-filter: blur(4px); }
   .header-actions { gap: 6px; }.header-actions .text-btn { font-size: 13px; padding: 0 5px; min-height: 38px; border-color: transparent; }
   .workspace { padding: 0; }.atlas-heading { display: none; }
   .map-area { border: 0; border-radius: 0; box-shadow: none; }
-  .map-topbar { grid-template-columns: 1fr auto 1fr; gap: 7px 8px; padding: 9px 12px 7px; }
+  .map-topbar { grid-template-columns: 1fr auto; gap: 7px 8px; padding: 9px 12px 7px; }
   .journey-picker { justify-self: start; padding: 0 10px; gap: 8px; min-height: 40px; font-size: 14px; }
   .journey-picker::before { width: 3px; height: 15px; }.chevron { width: 6px; height: 6px; }
   .view-switch button { padding: 0 12px; min-height: 32px; font-size: 14px; }

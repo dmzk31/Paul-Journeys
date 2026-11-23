@@ -1,0 +1,92 @@
+{
+  "date": "2026-11-23",
+  "bounds": [
+    [
+      11.5,
+      29.0
+    ],
+    [
+      38.3,
+      43.35
+    ]
+  ],
+  "projection": "mercator",
+  "pitch": 0,
+  "renderWorldCopies": false,
+  "basis": "Geographic extent of the two user-supplied reference maps, with a small rounded cartographic margin.",
+  "referenceFrameBounds": {
+    "reference1": [
+      11.68311394354348,
+      29.18464143847087,
+      38.12098276916888,
+      43.173499379876
+    ],
+    "reference2": [
+      34.0446553461038,
+      31.241725802107688,
+      35.92313440280973,
+      33.56200021987012
+    ],
+    "union": [
+      11.68311394354348,
+      29.18464143847087,
+      38.12098276916888,
+      43.173499379876
+    ]
+  },
+  "routeBounds": [
+    [
+      12.4852,
+      31.776667
+    ],
+    [
+      36.171743,
+      41.8922
+    ]
+  ],
+  "sourceEvidence": {
+    "calibrationFile": "reference-calibration.json",
+    "calibrationSha256": "e87ed6095a3ab59d2e604d7645680a5ee0d4f7f7ed7871cb062f63903a87e15c",
+    "reference1PixelFrame": [
+      12,
+      11,
+      1518,
+      955
+    ],
+    "reference2PixelFrame": [
+      5,
+      9,
+      598,
+      954
+    ],
+    "reference1ControlPoints": 27,
+    "reference2ControlPoints": 10
+  },
+  "audit": {
+    "placeCount": 47,
+    "viaPointCount": 21,
+    "allPlaceAndViaPointsInsideCalibratedFrames": true,
+    "allPlaceAndViaPointsInsideScope": true,
+    "cameraChecks": {
+      "viewportBearingCombinations": 35,
+      "all47PlacesAndScopeCornersVisibleAtOverview": true,
+      "extremePanZoomCases": 300,
+      "rotatedViewportCornerChecksPassed": true,
+      "portrait390x458FitZoom": 3.2633918390433077
+    }
+  },
+  "notes": "範圍取兩張參考圖校準後的聯集外包框；不表示政治疆界，也未變更站點或路線座標。",
+  "cameraPolicy": {
+    "strategy": "fit-entire-scope, then constrain rotated viewport footprint when zoomed",
+    "neutralLetterbox": true,
+    "paddingPixels": 12,
+    "maxZoom": 10,
+    "pitch": 0,
+    "roll": 0,
+    "bearingAllowed": true,
+    "resizeAware": true,
+    "helper": "../scope-camera.js",
+    "helperSha256": "f8562132a5c53d2e94868042031a5a76db61d06ac5eb81d596a0aa28868dd649",
+    "implementationReference": "https://github.com/maplibre/maplibre-gl-js/blob/v5.6.2/src/ui/camera.ts#L227-L241"
+  }
+}

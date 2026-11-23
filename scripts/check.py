@@ -65,6 +65,18 @@ for element_id in re.findall(r"\$\('([^']+)'\)", js):
 for url in re.findall(r'(?:src|href)="(\./[^"]+)"', html):
     assert (root/url).exists(), url
 assert 'href="/' not in html and 'src="/' not in html, 'root paths break project Pages'
+# The current experience is a bounded 2D atlas; old links cannot restore 3D.
+assert not {'mode-3d','mode-2d','globe-btn','pitch','pitch-value'}.intersection(ids)
+assert 'scope-btn' in ids and 'transformCameraUpdate:' in js
+assert "type: 'globe'" not in js and 'function setMode' not in js
+assert "projection: { type: 'mercator' }" in js and 'touchPitch: false' in js
+scope=json.loads((root/'assets/data/map-scope.json').read_text(encoding='utf-8'))
+assert scope['projection']=='mercator' and scope['pitch']==0
+west,south=scope['bounds'][0]; east,north=scope['bounds'][1]
+scope_points=[p['coordinates'] for p in data['places'].values()]
+scope_points.extend(p for j in data['journeys'] for stop in j['stops'] for p in stop.get('via',[]))
+assert all(west<=p[0]<=east and south<=p[1]<=north for p in scope_points)
+assert (root/'assets/scope-camera.js').is_file()
 land = json.loads((root/'assets/data/land.geojson').read_text(encoding='utf-8'))
 assert land['type'] == 'FeatureCollection' and land['features']
 for filename in ['reference-regions.geojson','reference-boundaries.geojson','reference-water.geojson']:
