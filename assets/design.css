@@ -185,3 +185,5 @@ dialog::backdrop { background: #0b253d8f; backdrop-filter: blur(4px); }
 .visit-counts button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;white-space:nowrap;line-height:1.35;padding:5px 2px}.visit-counts button span{font-size:12px}.visit-counts button strong{font-size:13px}.visit-detail>summary{cursor:pointer;font-size:14px;line-height:1.45}.visit-detail>summary strong{font-weight:500}.visit-detail>p{font-size:14px;line-height:1.55}.visit-row{padding:7px 9px;margin:4px 0}.visit-row>.reference{display:inline-block;margin-top:5px}.compare-group{margin-bottom:8px}#visit-comparison .compare-group>h3{margin:7px 0 4px;font-size:14px!important}.visit-jump{min-height:28px}.visit-detail{margin:0}
 
 #visit-rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 18px}@media(max-width:720px){#visit-rows{grid-template-columns:1fr;gap:0}}
+
+.visit-counts button:disabled{color:#99a3aa;background:#f0f2f3;border-color:#e4e8eb;opacity:.5;cursor:default;box-shadow:none}.visit-counts button:disabled strong{display:none}.visit-counts button:disabled:hover{background:#f0f2f3;color:#99a3aa}

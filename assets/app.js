@@ -249,12 +249,13 @@ function renderPlaceOverview(placeId) {
   for (const journey of data.journeys) {
     const rows = visits.filter(v=>v.journey.id===journey.id);
     const count = document.createElement('button'); count.type='button';
-    const countLabel=document.createElement('span');countLabel.textContent=`第${['一','二','三','四'][journey.id-1]}次`;const countValue=document.createElement('strong');countValue.textContent=rows.length ? rows.length+'筆' : '未收錄';count.append(countLabel,countValue);
+    const countLabel=document.createElement('span');countLabel.textContent=`第${['一','二','三','四'][journey.id-1]}次`;const countValue=document.createElement('strong');countValue.textContent=rows.length ? rows.length+'筆' : '';count.append(countLabel,countValue);
+    count.disabled = rows.length === 0;
     count.addEventListener('click',()=>{setEventView(true); document.getElementById('compare-journey-'+journey.id).scrollIntoView({block:'nearest'});});
     $('visit-counts').append(count);
+    if (!rows.length) continue;
     const group=document.createElement('section'); group.className='compare-group'; group.id='compare-journey-'+journey.id;
     const heading=document.createElement('h3'); heading.textContent=journey.name; group.append(heading);
-    if (!rows.length) { const note=document.createElement('p');note.className='empty-visit';note.textContent='本行程未收錄此地站次';group.append(note); }
     rows.forEach(({stop,index})=>{
       const article=document.createElement('article'); article.className='visit-row';
       if(journey.id===current.id && index===selected) article.classList.add('current-visit');
