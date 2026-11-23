@@ -1,0 +1,33 @@
+
+/* Shared optical alignment: every control uses the same SVG box. */
+.icon-button{display:flex!important;align-items:center!important;justify-content:center!important;line-height:1!important;font-size:0!important;box-sizing:border-box;vertical-align:middle}
+.icon-button svg{display:block;flex:0 0 22px;width:22px;height:22px;margin:0;overflow:visible}
+.map-shortcuts{align-items:center}.map-shortcuts .icon-button{padding:8px!important}.appearance-link{display:inline-flex;align-items:center;justify-content:center;text-decoration:none}.roman-label{color:#414777;font-size:15px;font-weight:600;letter-spacing:.04em}
+html[data-theme=journal]{--ink:#483c2c;--muted:#8c7a60;--navy:#463d2e;--paper:#faf5e8;--serif:Georgia,'Noto Serif TC',serif}
+html[data-theme=journal] body,html[data-theme=journal] .workspace{background:#f0e6d1}
+html[data-theme=journal] .site-header{background:#463d2e;border-bottom:2px solid #b99358}
+html[data-theme=journal] .map-topbar,html[data-theme=journal] .station-bar,html[data-theme=journal] dialog,html[data-theme=journal] .dialog-header,html[data-theme=journal] #explorer-body{background:#faf5e8;color:#483c2c}
+html[data-theme=journal] .journey-picker,html[data-theme=journal] .secondary-button,html[data-theme=journal] .visit-row,html[data-theme=journal] .visit-counts button,html[data-theme=journal] .place-results button{background:#eee3ce;color:#594a36;border-color:#d5c3a0}
+html[data-theme=journal] .region-label{color:#64533d;text-shadow:0 1px 3px #fff8e6}
+html[data-theme=journal] .region-label.water{color:#457365;text-shadow:none}
+html[data-theme=journal] .map-area{border-color:#c9b58e;border-radius:5px}
+html[data-theme=journal] .brand strong,html[data-theme=journal] .atlas-heading h1{letter-spacing:.12em}
+html[data-theme=night]{--ink:#e2edf2;--muted:#9cb0bd;--navy:#0b1a2b;--paper:#172b3d;--line:#30495c}
+html[data-theme=night] body,html[data-theme=night] .workspace{background:#0d1d2c;color:#e2edf2}
+html[data-theme=night] .site-header{background:#091725;border-bottom:1px solid #334b5c}
+html[data-theme=night] .map-topbar,html[data-theme=night] .station-bar,html[data-theme=night] dialog,html[data-theme=night] .dialog-header,html[data-theme=night] #explorer-body{background:#172b3d;color:#e2edf2;border-color:#30495c}
+html[data-theme=night] .journey-picker,html[data-theme=night] .map-button,html[data-theme=night] .detail-map-btn,html[data-theme=night] .secondary-button,html[data-theme=night] .icon-button,html[data-theme=night] .visit-row,html[data-theme=night] .visit-counts button,html[data-theme=night] .place-results button,html[data-theme=night] input,html[data-theme=night] select{background:#223d50;color:#e2edf2;border-color:#3b5669}
+html[data-theme=night] .station-detail>p,html[data-theme=night] .station-detail h2,html[data-theme=night] .place-overview>strong,html[data-theme=night] .event-tabs button,html[data-theme=night] .companions-summary,html[data-theme=night] summary,html[data-theme=night] h2,html[data-theme=night] h3{color:#e2edf2}
+html[data-theme=night] .event-tabs button[aria-pressed=true]{color:#edc784;box-shadow:inset 0 -2px #edc784}
+html[data-theme=night] .region-label{color:#e1e8e8;text-shadow:0 1px 3px #142b3b}
+html[data-theme=night] .region-label.water{color:#8ab4cd;text-shadow:none}
+html[data-theme=night] .place-marker .place-label{color:#e3edf2;background:#21394deF;border-color:#4b6373}
+html[data-theme=night] .place-marker.active .place-label{background:var(--accent);color:#fff}
+html[data-theme=night] .companion-people li,html[data-theme=night] .visit-row.current-visit{background:#284153;color:#e2edf2;border-color:#d9b46c}
+html[data-theme=night] .companion-people p,html[data-theme=night] .companion-scope,html[data-theme=night] .reference,html[data-theme=night] .visit-jump,html[data-theme=night] .companion-citation{color:#b9d3e2}
+html[data-theme=night] .map-area{border-color:#30495c;box-shadow:0 10px 30px #0003}
+html[data-theme=night] .visit-counts button:disabled{background:#172b3d;color:#8194a2;border-color:#30495c}
+html[data-theme=night] #companions-details>summary{color:#b9d3e2}
+html[data-theme=night] .current-station strong{color:#e2edf2}
+html[data-theme=night] .step-btn{background:#223d50;color:#e2edf2;border-color:#3b5669}
+html[data-theme=night] .step-btn:disabled{color:#8194a2;background:#172b3d}

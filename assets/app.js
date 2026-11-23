@@ -1,3 +1,4 @@
+import { theme, themeMapColors } from './themes.js';
 import { constrainScopeCamera, scopeFitZoom } from './scope-camera.js';
 
 const $ = (id) => document.getElementById(id);
@@ -625,11 +626,11 @@ async function init() {
           { id: 'land', type: 'fill', source: 'land', paint: { 'fill-color': '#e5e9df' } },
           { id: 'context-roman-fill', type: 'fill', source: 'contextRoman', paint: { 'fill-color': ['get', 'color'], 'fill-opacity': 1 } },
           { id: 'context-polity-fill', type: 'fill', source: 'contextPolities', paint: { 'fill-color': ['get', 'color'], 'fill-opacity': 1 } },
-          { id: 'ancient-fill', type: 'fill', source: 'ancientAreas', layout:{visibility:'none'}, paint: { 'fill-color': ['get', 'color'], 'fill-opacity': .82 } },
+          { id: 'ancient-fill', type: 'fill', source: 'ancientAreas', layout:{visibility:'none'}, paint: { 'fill-color': ['match',['get','color'],'#e8bfa7','#9fb8d2','#a8cfc0','#b4a8cf','#d4c3e3','#b4c7da','#f1d78c','#c8b8d8','#a9c8e5','#92a9c9','#dbb7c1','#a9c7d1','#c1d597','#c2cbe2','#ebcba6','#94b5bb','#b4c7da'], 'fill-opacity': 1 } },
           { id: 'reference-fill', type: 'fill', source: 'referenceAreas', paint: { 'fill-color': ['get', 'color'], 'fill-opacity': ['get', 'alpha'], 'fill-antialias': false } },
           { id: 'modern-fill', type: 'fill', source: 'modernCountries', layout: { visibility: 'none' }, paint: { 'fill-color': ['get', 'color'], 'fill-opacity': .85 } },
           { id: 'coast', type: 'line', source: 'land', paint: { 'line-color': '#6b909d', 'line-width': ['interpolate', ['linear'], ['zoom'], 2, .65, 5, 1, 10, 1.5], 'line-opacity': .78 } },
-          { id: 'ancient-border', type: 'line', source: 'ancientLines', layout:{visibility:'none'}, paint: { 'line-color': '#805478', 'line-width': 1.5, 'line-dasharray': [4,2], 'line-opacity': .85 } },
+          { id: 'ancient-border', type: 'line', source: 'ancientLines', layout:{visibility:'none'}, paint: { 'line-color': '#4b5589', 'line-width': ['interpolate',['linear'],['zoom'],2,1,6,2], 'line-dasharray': [5,2], 'line-opacity': .95 } },
           { id: 'context-roman-border', type: 'line', source: 'contextRomanLines', layout: {'line-cap':'round','line-join':'round'}, paint: regionStroke },
           { id: 'context-polity-border', type: 'line', source: 'contextPolityLines', layout: {'line-cap':'round','line-join':'round'}, paint: regionStroke },
           { id: 'reference-border', type: 'line', source: 'referenceLines', layout: {'line-cap':'round','line-join':'round'}, paint: regionStroke },
@@ -663,10 +664,10 @@ async function init() {
       const el = document.createElement('div'); el.className = 'traveller'; el.setAttribute('aria-hidden', 'true');
       el.innerHTML = '<span class="paul-pulse"></span><span class="paul-core"></span>';
       traveller = new maplibregl.Marker({ element: el }).setLngLat([36, 36]).addTo(map);
-      const regions = [['小亞細亞', [31.8, 40.7]], ['亞西亞', [28.3, 38.4]], ['加拉太', [32.4, 39.6]], ['基利家', [34.8, 36.9]], ['旁非利亞', [31, 36.9]], ['馬其頓', [22.4, 41.6]], ['亞該亞', [22.2, 37.2]], ['敘利亞', [38.1, 35.2]], ['猶太地', [35.15, 31.9]], ['義大利', [12.4, 43]], ['地 中 海', [23.4, 33.3], true], ['居比路', [33.2, 35.0]], ['革哩底', [24.9, 35.18]]];
+      const regions = [['亞西亞行省',[28.3,38.5]],['加拉太行省',[32.2,38.5]],['庇推尼與本都',[31,41.4]],['加帕多家行省',[35,39.3]],['基利家地區',[34.8,36.9]],['馬其頓行省',[22.4,41.6]],['亞該亞行省',[22.2,37.2]],['敘利亞行省',[37,35.2]],['猶太行省',[35.15,31.9]],['義大利本土',[13.4,42]],['居比路行省',[33.2,35]],['革哩底與古利奈',[24.9,35.18]],['埃及行省',[30.3,30.4]]];
       for (const [label, coordinate, water] of regions) {
         if (water || !withinScope(coordinate)) continue;
-        const element = document.createElement('div'); element.className = 'region-label' + (water ? ' water' : ''); element.textContent = label; element.setAttribute('aria-hidden', 'true');
+        const element = document.createElement('div'); element.className = 'region-label roman-label'; element.textContent = label; element.setAttribute('aria-hidden', 'true');
         new maplibregl.Marker({ element }).setLngLat(coordinate).addTo(map);
         element.hidden = true;
         boundaryLabels.push({ element, type: 'roman' });
@@ -712,6 +713,12 @@ async function init() {
         button.append(dot, text); button.addEventListener('click', () => { selectJourney(journey.id); closeExplorer(); });
         $('journey-tabs').append(button);
       });
+      const colors = themeMapColors[theme];
+      map.setPaintProperty('ocean','background-color',colors.sea);
+      map.setPaintProperty('land','fill-color',colors.land);
+      map.setPaintProperty('scope-mask','fill-color',colors.margin);
+      for (const layer of ['reference-fill','context-roman-fill','context-polity-fill']) map.setPaintProperty(layer,'fill-color',['match',['get','color'],...Object.entries(colors.regions).flat(),colors.land]);
+      map.setPaintProperty('reference-lakes','fill-color',colors.sea);
       ready = true;
       bindControls();
       selectJourney(initialId, initialStop);
