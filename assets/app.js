@@ -602,7 +602,7 @@ async function init() {
     if (!response.ok) throw new Error('行程資料未載入，請確認網站已完整上傳。');
     data = await response.json();
     const [studyData, letterData] = await Promise.all(['study-guide.json', 'letters.json'].map(async file => {
-      const response = await fetch(new URL(`./data/${file}`, import.meta.url));
+      const response = await fetch(new URL(`./data/${file}${file === 'study-guide.json' ? '?v=20261124-prose' : ''}`, import.meta.url));
       if (!response.ok) throw new Error(`內容資料未載入：${file}`);
       return response.json();
     }));

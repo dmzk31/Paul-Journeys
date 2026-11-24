@@ -7,6 +7,10 @@ from pathlib import Path
 root = Path(__file__).resolve().parents[1]
 raw = (root / 'assets/data/study-reference.md').read_text(encoding='utf-8')
 catalog = {}
+
+def content_only(text):
+    # Source names belong in the citation field; keep the following prose verbatim.
+    return re.sub(r'^(?:《[^》]+》(?:第[一二三四五六七八九十百零〇0-9]+篇)?(?:與|和)?)+(?:均|都|特別)?指出[，：]\s*', '', text).strip()
 def life(n):
     key = f'life-{n}'
     catalog[key] = {'book':'使徒行傳生命讀經', 'message':n,
@@ -93,7 +97,7 @@ for number,(title,body) in enumerate(sections,1):
         # Only remove link markup and broken paste-tail artifacts; retain prose verbatim.
         clean=re.sub(r'\[生命讀經\]\([^)]+\)','',original)
         clean=clean.replace('第十二篇　使徒行传的继续─基督团体的继续','').strip()
-        paragraphs=[p.strip() for p in re.split(r'\n\s*\n',clean) if p.strip()]
+        paragraphs=[value for p in re.split(r'\n\s*\n',clean) if (value:=content_only(p.strip()))]
         points.append({'title':heading,'paragraphs':paragraphs,'sources':point_sources[number][len(points)],
                        'kind':'provided-compilation','originalParagraph':original})
     background_match=re.search(r'### 二、行程背景\s*\n(.*?)(?=\n### )',body,re.S)
@@ -101,7 +105,7 @@ for number,(title,body) in enumerate(sections,1):
     if background_match:
         text=background_match.group(1).strip()
         text=re.sub(r'第九篇　保守自己在主工作的一道流中，为着召会的扩展，并且受主怜…','',text)
-        background=[p.strip() for p in text.split('\n\n') if p.strip()]
+        background=[value for p in text.split('\n\n') if (value:=content_only(p.strip()))]
     journeys.append({'id':number,'title':title,'route':route,'events':events,'points':points,
                      'stopEvents':bindings[number],'background':background})
 
