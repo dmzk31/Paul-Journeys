@@ -21,3 +21,22 @@
 #station-study,#station-letters{border-top:1px solid var(--line,#d6c6a9);margin-top:10px;padding-top:3px}
 #journey-letters-wrapper>summary{font-size:16px;padding:8px 0;cursor:pointer}.visit-row .study-point-body p{font-size:16px}.visit-row .study-point>summary{font-size:14px}
 @media(max-width:720px){.letter-list{grid-template-columns:1fr}.study-point>summary,.letter-card>summary{padding:9px 10px}.letter-fields{padding-inline:10px;gap:4px 8px}.study-sources{gap:3px 8px}}
+
+/* Reading panes must shrink with the viewport, including nested open details. */
+dialog{max-width:min(650px,calc(100vw - 16px));overflow-x:hidden;overflow-y:auto}
+dialog.explorer-dialog{width:calc(100vw - 24px);max-width:940px;max-height:calc(100dvh - 24px)}
+.dialog-header{width:100%;min-width:0}.dialog-header h2{min-width:0;overflow-wrap:anywhere}
+#explorer-body,#dialog-body{width:100%;min-width:0;max-width:100%;overflow-wrap:anywhere}
+#explorer-body :where(section,article,div,details,summary,p,dl,dd,ul,li,nav),#dialog-body :where(p,blockquote,div){min-width:0;max-width:100%}
+#explorer-body :where(summary,p,dd,a,button),#dialog-body :where(p,blockquote,a){overflow-wrap:anywhere;word-break:normal}
+#explorer-body summary{white-space:normal}
+#explorer-body .reference{white-space:normal;overflow-wrap:anywhere}
+#visit-rows{width:100%;grid-template-columns:repeat(2,minmax(0,1fr))}
+.compare-group,.visit-row,.visit-detail,.study-point,.letter-card,.letter-list,.letter-fields{min-width:0;max-width:100%}
+.visit-jump{float:none;display:block;margin-left:auto;text-align:right;white-space:normal}
+.section-heading,.detail-footer,.study-event-heading,.place-overview,.study-actions{flex-wrap:wrap}
+@media(max-width:720px){
+  dialog.explorer-dialog{width:calc(100vw - 16px);max-width:calc(100vw - 16px);max-height:calc(100dvh - 24px);margin-inline:auto}
+  #visit-rows{grid-template-columns:minmax(0,1fr)}
+  .journey-tabs,.stop-list,.camera-tools{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
