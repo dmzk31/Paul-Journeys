@@ -165,3 +165,29 @@ assert 'renderPlaceOverview' in js and 'stop.place === placeId' in js
 # Repeated stations remain separate; Antioch's two cities never share a key.
 assert [sum(stop['place']=='Antioch 1' for stop in j['stops']) for j in data['journeys']]==[2,2,1,0]
 assert [sum(stop['place']=='Rome' for stop in j['stops']) for j in data['journeys']]==[0,0,0,1]
+
+# Approved manuscript and Recovery Version introductions are separate source data.
+study=json.loads((root/'assets/data/study-guide.json').read_text(encoding='utf-8'))
+letters=json.loads((root/'assets/data/letters.json').read_text(encoding='utf-8'))['letters']
+manuscript=(root/'assets/data/study-reference.md').read_text(encoding='utf-8')
+assert hashlib.sha256(manuscript.encode()).hexdigest()==study['manuscriptSha256']
+assert sum(len(j['events']) for j in study['journeys'])==50
+assert sum(len(j['points']) for j in study['journeys'])==19
+for journey in study['journeys']:
+    assert len(journey['stopEvents'])==len(data['journeys'][journey['id']-1]['stops'])
+    for event in journey['events']:
+        assert event['text'] in manuscript
+        assert all(0<=p<len(journey['points']) for p in event['points'])
+    for point in journey['points']:
+        assert point['kind']=='provided-compilation'
+        assert point['title'] in manuscript
+        assert all(source in study['sources'] for source in point['sources'])
+assert len(letters)==len({book['id'] for book in letters})==14
+assert [sum(book['journey']==n for book in letters) for n in range(1,5)]==[0,3,3,4]
+for book in letters:
+    assert all(book[field] for field in ['author','date','location','recipients','theme'])
+    assert book['journey'] in [None,2,3,4]
+assert all(book['journey'] is None for book in letters if book['id'] in ['1-timothy','2-timothy','titus','hebrews'])
+assert {'journey-study','station-study','station-letters','journey-letters','letter-library','letter-filter','panel-letters'} <= set(ids)
+assert all((root/path).is_file() for path in ['assets/study.js','assets/study.css'])
+print('PASS: 50 manuscript events, 19 sourced content sections and 14 complete book introductions; later stages remain separate.')

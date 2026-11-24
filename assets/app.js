@@ -1,5 +1,6 @@
 import { theme, themeMapColors } from './themes.js';
 import { constrainScopeCamera, scopeFitZoom } from './scope-camera.js';
+import { configureStudy, studyJourney, stopEvents, journeyLetters, renderJourneyStudy, renderStopStudy, appendVisitStudy, renderLetters, renderStationLetters, renderLetterLibrary } from './study.js';
 
 const $ = (id) => document.getElementById(id);
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -18,13 +19,13 @@ let activePanel = null;
 let boundaryMode = 'ancient';
 let comparisonPlace = null, comparingVisits = false;
 const boundaryLabels = [];
-const panelNames = { journeys: '選擇行程', stops: '站點與事件', stoplist: '搜尋地點', playback: '播放設定', camera: '調整視角' };
+const panelNames = { journeys: '選擇行程', stops: '站點與事件', stoplist: '搜尋地點', playback: '播放設定', camera: '調整視角', letters: '保羅十四封書信' };
 const companionStatuses = { direct: '經文明載', context: '上下文接續', inferred: '敘事推定', translation: '依所附譯文', escort: '押送者' };
 
 function openExplorer(name) {
   if (!ready || !panelNames[name]) return;
   if (name === 'stops' && comparisonPlace === current.stops[selected].place && !comparingVisits) setEventView(false);
-  if (['journeys', 'stops', 'stoplist'].includes(name)) { pause(); drawProgress(); }
+  if (['journeys', 'stops', 'stoplist', 'letters'].includes(name)) { pause(); drawProgress(); }
   if (name === 'stops') { renderCompanions(selected); renderPlaceOverview(comparisonPlace || current.stops[selected].place); }
   if (activePanel && activePanel !== name) $('journey-panel').append($(`panel-${activePanel}`));
   activePanel = name;
@@ -203,12 +204,15 @@ function showStop(index) {
   comparisonPlace = stop.place;
   if (activePanel === 'stops') renderPlaceOverview(stop.place);
   $('station-title').textContent = stop.title;
-  $('station-text').textContent = stop.text;
+  const approvedEvents = stopEvents(current.id, selected);
+  $('station-text').textContent = approvedEvents.length ? approvedEvents.map(event => event.text).join('；') : stop.text;
+  renderStopStudy($('station-study'), current.id, selected);
+  renderStationLetters($('station-letters'), stop.place, current.id, selected);
   const geographicNote = [stop.note, place.coordinateNote].filter(Boolean).join(' ');
   $('geo-note').hidden = !geographicNote;
   $('station-note').hidden = !geographicNote;
   $('station-note').textContent = geographicNote;
-  $('station-ref').textContent = stop.ref;
+  $('station-ref').textContent = approvedEvents.length ? [...new Set(approvedEvents.map(event => event.ref))].join('；') : stop.ref;
   $('place-source').href = place.source;
   $('play-position').textContent = `${selected + 1} / ${current.stops.length}`;
   $('current-location').textContent = stop.name;
@@ -261,11 +265,12 @@ function renderPlaceOverview(placeId) {
       const article=document.createElement('article'); article.className='visit-row';
       if(journey.id===current.id && index===selected) article.classList.add('current-visit');
       const title=document.createElement('strong'); title.textContent=`第${index+1}站${index===0?' · 出發':stop.returning?' · 回訪':''}｜${stop.title}`;
-      const text=document.createElement('p');text.textContent=stop.text;
-      const ref=document.createElement('span');ref.className='reference';ref.textContent=stop.ref;
+      const approvedEvents=stopEvents(journey.id,index);
+      const text=document.createElement('p');text.textContent=approvedEvents.length ? approvedEvents.map(event=>event.text).join('；') : stop.text;
+      const ref=document.createElement('span');ref.className='reference';ref.textContent=approvedEvents.length ? [...new Set(approvedEvents.map(event=>event.ref))].join('；') : stop.ref;
       const jump=document.createElement('button');jump.type='button';jump.className='visit-jump';jump.textContent='查看此站';
       jump.addEventListener('click',()=>{if(journey.id!==current.id) selectJourney(journey.id,index);else goTo(index);comparisonPlace=placeId;setEventView(false);renderPlaceOverview(placeId);renderCompanions(index);});
-      const detail=document.createElement('details');detail.className='visit-detail';const summary=document.createElement('summary');summary.append(title);detail.append(summary,text);article.append(detail,ref,jump);group.append(article);
+      const detail=document.createElement('details');detail.className='visit-detail';const summary=document.createElement('summary');summary.append(title);detail.append(summary,text);appendVisitStudy(detail,journey.id,index);renderStationLetters(detail.appendChild(document.createElement('div')),stop.place,journey.id,index);article.append(detail,ref,jump);group.append(article);
     });
     $('visit-rows').append(group);
   }
@@ -433,9 +438,14 @@ function selectJourney(id, initialStop = 0) {
   document.documentElement.style.setProperty('--accent', current.color);
   $('journey-name').textContent = current.name;
   $('journey-ref').textContent = current.ref;
-  $('journey-summary').textContent = current.summary;
+  $('journey-summary').textContent = studyJourney(current.id).summary;
   $('companions').textContent = current.companions;
-  $('journey-books').textContent = current.books;
+  renderJourneyStudy($('journey-study'), current.id);
+  const books = journeyLetters(current.id);
+  $('journey-letters-wrapper').hidden = !books.length;
+  $('journey-letters-wrapper').open = false;
+  $('journey-letters-heading').textContent = `${current.id === 4 ? '抵達羅馬後的書信' : '本次行程與書信'} · ${books.length}封`;
+  renderLetters($('journey-letters'), books);
   $('journey-map-btn').textContent = `查看${current.name}地圖`;
   $('stop-total').textContent = `${current.stops.length} 個路線節點`;
   $('map-journey-caption').textContent = current.name;
@@ -516,7 +526,7 @@ function openDialog(type) {
     $('dialog-body').innerHTML = `<h3>選行程、看事件</h3><p>在左上方切換行程；點城市或下方站名看事件、同行者與經文。左右箭頭會沿路線移動，按「完整路線」回到全程視野。</p><h3>同一地點，歷次對照</h3><p>站點視窗上方列出四次行程的收錄筆數。「跨行程對照」可比較事件與經文，點事件標題展開摘要，按「查看此站」跳至該次行程。放大鏡可搜尋所有地點。</p><h3>地圖與播放</h3><p>拖曳移動、雙指或滾輪縮放。地圖上的工具圖示提供平面旋轉與全幅；播放旁的設定圖示調整速度、進度與視角跟隨。地圖限於兩張參考圖範圍，所有視窗都可關閉回到地圖。</p>`;
   } else {
     $('dialog-title').textContent = '資料來源與閱讀方式';
-    $('dialog-body').innerHTML = `<h3>行程、事件與經文出處</h3><p>依提供的《保羅的行程v2》（主要參考，第9–18頁）、《保羅的行程v1》、《使徒行傳》，及《使徒行傳一至二十八章鳥瞰、保羅的四次行程、十四封書信的著時》整理。本站事件說明為摘要，經文欄提供查讀位置。</p><h3>四次行程的分段</h3><p>第一次：徒13:4下–14:28；第二次：徒15:40–18:22；第三次：徒18:23–21:17；第四次：徒27:1–28:31。第四次依參考資料指「被解往羅馬」的航程；徒21–26章的被捕、受審與上訴作為背景。</p><h3>地點與路線</h3><p>城市座標採 <a href="https://www.openbible.info/geo/" target="_blank" rel="noopener noreferrer">OpenBible.info Bible Geocoding</a> 的主要候選地點，依其識別評分選取，資料授權為 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>。地區概略標記不代表確定停靠城市。路線依經文次序繪製為示意連線，非精確古道路或航跡；部分途經小站未逐一列出。古代港口與現代海岸線可能不重合。</p><h3>主要古代參考圖</h3><p>古代地區以使用者提供的《保羅的行程》與《新約時代的巴勒斯坦》兩張圖為主，保留其地區名稱、分色與分界關係。兩圖混合地理區域與統治範圍，採校準後的概略分界，不當作同一年份的精確行政圖。城市仍用可查核座標定位；小圓點是地理對照城市，不自動列為保羅本次停靠站。按「巴勒斯坦詳圖」可放大加利利、撒瑪利亞、猶太等分區。</p><h3>地圖底圖與程式庫</h3><p>海岸線與陸地採 <a href="https://www.naturalearthdata.com/downloads/50m-physical-vectors/" target="_blank" rel="noopener noreferrer">Natural Earth 1:50m Land</a>（公有領域）。海岸線使用現代地理輪廓。羅馬行省對照圖層的邊界來自 <a href="https://github.com/AWMC/geodata" target="_blank" rel="noopener noreferrer">Ancient World Mapping Center</a> 官方資料（Barrington Atlas、AWMC / OpenStreetMap，ODbL 1.0），採西元69年概況，以虛線表示，並非四次行程各年份的精確疆界，亦不等同所有聖經地理名詞的範圍。現代國界採 Natural Earth 1:50m Admin 0（公有領域），只作地理對照。上方「邊界」可切換參考圖古代地區、現代國界、羅馬行省（69年）或關閉；分色用於辨識區域。加利利海、死海採 OpenBible 自有幾何（CC BY 4.0）；約旦河、基順河、雅博河採經 OpenBible 提供的 OpenStreetMap 河道（ODbL 1.0）。互動地圖採 <a href="https://maplibre.org/" target="_blank" rel="noopener noreferrer">MapLibre GL JS 5.6.2</a>（BSD-3-Clause）。網站採2D平面地圖，顯示範圍以兩張主要參考圖為限。</p><h3>參考圖範圍內的補充來源</h3><p>參考圖範圍內需要銜接的地區，羅馬行省採 AWMC 的西元69年資料；周邊政體採 <a href="https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0" target="_blank" rel="noopener noreferrer">Seshat／Cliopatria v0.2.0</a> 的69年疆域重建（<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>）。補充政體採69年重建，不表示四次行程各年的精確疆界。全圖統一分區色票；細實線表示地區分界，行程以較粗彩線顯示。自然地理名稱採 <a href="https://www.naturalearthdata.com/downloads/50m-physical-vectors/50m-physical-labels/" target="_blank" rel="noopener noreferrer">Natural Earth 自然地理</a>（公有領域）；保留自然地理名稱，讓地區分色保持清楚。古代地區名稱採 AWMC 標籤；無可靠政體圖資的地區不杜撰國界。兩張主要參考圖的內部分區與城市座標維持不變；原圖邊緣與補充底圖柔和銜接，圖框本身不當作地區界線。</p><h3>書信著時</h3><p>書信資訊沿用參考資料的安排，屬著時整理，不是《使徒行傳》直接逐項記載。羅馬獲釋後的行程與「可能／也許」的著時推定，未併入四次行程的確定站序。</p>`;
+    $('dialog-body').innerHTML = `<h3>行程、事件與經文出處</h3><p>依提供的《保羅的行程v2》（主要參考，第9–18頁）、《保羅的行程v1》、《使徒行傳》，及《使徒行傳一至二十八章鳥瞰、保羅的四次行程、十四封書信的著時》整理。本站事件說明為摘要，經文欄提供查讀位置。</p><h3>四次行程的分段</h3><p>第一次：徒13:4下–14:28；第二次：徒15:40–18:22；第三次：徒18:23–21:17；第四次：徒27:1–28:31。第四次依參考資料指「被解往羅馬」的航程；徒21–26章的被捕、受審與上訴作為背景。</p><h3>地點與路線</h3><p>城市座標採 <a href="https://www.openbible.info/geo/" target="_blank" rel="noopener noreferrer">OpenBible.info Bible Geocoding</a> 的主要候選地點，依其識別評分選取，資料授權為 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>。地區概略標記不代表確定停靠城市。路線依經文次序繪製為示意連線，非精確古道路或航跡；部分途經小站未逐一列出。古代港口與現代海岸線可能不重合。</p><h3>主要古代參考圖</h3><p>古代地區以使用者提供的《保羅的行程》與《新約時代的巴勒斯坦》兩張圖為主，保留其地區名稱、分色與分界關係。兩圖混合地理區域與統治範圍，採校準後的概略分界，不當作同一年份的精確行政圖。城市仍用可查核座標定位；小圓點是地理對照城市，不自動列為保羅本次停靠站。按「巴勒斯坦詳圖」可放大加利利、撒瑪利亞、猶太等分區。</p><h3>地圖底圖與程式庫</h3><p>海岸線與陸地採 <a href="https://www.naturalearthdata.com/downloads/50m-physical-vectors/" target="_blank" rel="noopener noreferrer">Natural Earth 1:50m Land</a>（公有領域）。海岸線使用現代地理輪廓。羅馬行省對照圖層的邊界來自 <a href="https://github.com/AWMC/geodata" target="_blank" rel="noopener noreferrer">Ancient World Mapping Center</a> 官方資料（Barrington Atlas、AWMC / OpenStreetMap，ODbL 1.0），採西元69年概況，以虛線表示，並非四次行程各年份的精確疆界，亦不等同所有聖經地理名詞的範圍。現代國界採 Natural Earth 1:50m Admin 0（公有領域），只作地理對照。上方「邊界」可切換參考圖古代地區、現代國界、羅馬行省（69年）或關閉；分色用於辨識區域。加利利海、死海採 OpenBible 自有幾何（CC BY 4.0）；約旦河、基順河、雅博河採經 OpenBible 提供的 OpenStreetMap 河道（ODbL 1.0）。互動地圖採 <a href="https://maplibre.org/" target="_blank" rel="noopener noreferrer">MapLibre GL JS 5.6.2</a>（BSD-3-Clause）。網站採2D平面地圖，顯示範圍以兩張主要參考圖為限。</p><h3>參考圖範圍內的補充來源</h3><p>參考圖範圍內需要銜接的地區，羅馬行省採 AWMC 的西元69年資料；周邊政體採 <a href="https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.0" target="_blank" rel="noopener noreferrer">Seshat／Cliopatria v0.2.0</a> 的69年疆域重建（<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>）。補充政體採69年重建，不表示四次行程各年的精確疆界。全圖統一分區色票；細實線表示地區分界，行程以較粗彩線顯示。自然地理名稱採 <a href="https://www.naturalearthdata.com/downloads/50m-physical-vectors/50m-physical-labels/" target="_blank" rel="noopener noreferrer">Natural Earth 自然地理</a>（公有領域）；保留自然地理名稱，讓地區分色保持清楚。古代地區名稱採 AWMC 標籤；無可靠政體圖資的地區不杜撰國界。兩張主要參考圖的內部分區與城市座標維持不變；原圖邊緣與補充底圖柔和銜接，圖框本身不當作地區界線。</p><h3>書信著時</h3><p>十四封書信資料依使用者提供的《新約聖經恢復本》各卷卷首書介整理，保留著者、著時、著地、受者、主題及推定用語。希伯來書依該書介的著者認定列入。獲釋後與第二次被囚的書信另標階段，不併入四次行程站序。</p><h3>職事內容與屬靈意義</h3><p>以提供的《保羅四次出外盡職的行程整理》為主要底稿，保留稿件文字，並列出《使徒行傳生命讀經》及《使徒行傳結晶讀經》的書名、篇號與連結。整理文字不當作來源逐字原文。</p>`;
   }
   $('info-dialog').showModal();
 }
@@ -549,6 +559,7 @@ function bindControls() {
   });
   $('explorer-close').addEventListener('click', closeExplorer);
   $('journey-map-btn').addEventListener('click', closeExplorer);
+  $('letter-filter').addEventListener('change', () => renderLetterLibrary($('letter-library'), $('letter-filter').value));
   $('explorer-dialog').addEventListener('close', restoreExplorer);
   $('bearing').addEventListener('input', () => map.setBearing(Number($('bearing').value)));
   $('help-btn').addEventListener('click', () => openDialog('help'));
@@ -591,6 +602,13 @@ async function init() {
     const response = await fetch(new URL('./data/journeys.json', import.meta.url));
     if (!response.ok) throw new Error('行程資料未載入，請確認網站已完整上傳。');
     data = await response.json();
+    const [studyData, letterData] = await Promise.all(['study-guide.json', 'letters.json'].map(async file => {
+      const response = await fetch(new URL(`./data/${file}`, import.meta.url));
+      if (!response.ok) throw new Error(`內容資料未載入：${file}`);
+      return response.json();
+    }));
+    configureStudy(studyData, letterData);
+    renderLetterLibrary($('letter-library'));
     const initial = new URLSearchParams(location.hash.slice(1));
     const initialId = Number(initial.get('journey')) || 1;
     const initialStop = Math.max(0, (Number(initial.get('stop')) || 1) - 1);
@@ -728,6 +746,8 @@ async function init() {
       selectJourney(initialId, initialStop);
       setBoundaries(initialBoundaries);
       $('loading').hidden = true;
+      if (initial.get('panel') === 'letters') openExplorer('letters');
+      else if (initial.get('panel') === 'journeys') openExplorer('journeys');
       requestAnimationFrame(() => { map.resize(); fitJourney(0); });
       if (innerWidth <= 720) document.querySelector('.gesture-hint').textContent = '單指移動 · 雙指縮放、平面旋轉';
     });

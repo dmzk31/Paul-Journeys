@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="./assets/style.css">
   <link rel="stylesheet" href="./assets/design.css"><link rel="stylesheet" href="./assets/themes.css">
   <link rel="stylesheet" href="./assets/journal-art.css">
+  <link rel="stylesheet" href="./assets/study.css">
   <script src="./assets/vendor/maplibre-gl.js" defer></script>
   <script src="./assets/app.js" type="module"></script>
 </head>
@@ -47,7 +48,9 @@
       <nav id="journey-tabs" class="journey-tabs" aria-label="選擇行程"></nav>
       <section class="journey-intro" aria-labelledby="journey-name"><div class="section-heading"><h2 id="journey-name"></h2><span id="journey-ref" class="reference"></span></div><p id="journey-summary"></p><p class="companions"><span>同工概覽</span><span id="companions"></span></p><p class="overview-note">非全程同行名單；各段同行與分隊見「站點」。</p></section>
       <button id="journey-map-btn" class="journey-map-button" type="button">查看第一次行程地圖</button>
-      <details class="letters"><summary>本次行程與書信</summary><p id="journey-books"></p></details>
+      <div id="journey-study"></div>
+      <details id="journey-letters-wrapper" class="letters"><summary id="journey-letters-heading">本次行程與書信</summary><div id="journey-letters" class="letter-list"></div></details>
+      <div class="study-actions"><button type="button" data-panel="letters">十四封書信</button><span class="study-note">依《恢復本》書介</span></div>
       <p class="sidebar-footnote">地圖以現代海岸線呈現地理位置；連線為行程示意，並非精確古道路或航跡。</p><footer class="production-credit">製作：Daniel Kao</footer>
     </div>
     <div id="panel-stops" class="panel-content">
@@ -56,8 +59,10 @@
       <div class="event-tabs" role="group" aria-label="事件閱讀方式"><button id="event-current-btn" type="button" aria-pressed="true">本次事件</button><button id="event-compare-btn" type="button" aria-pressed="false">跨行程對照</button></div>
       <section id="visit-comparison" hidden><p class="count-note">依本站站次計算，含出發與回訪。</p><div id="visit-rows"></div></section><div id="current-event-body">
       <section class="station-detail" aria-labelledby="station-name" aria-live="polite"><div class="detail-kicker"><span id="station-step"></span><span id="station-mode"></span></div><h2 id="station-name"></h2><p id="station-title" class="station-title"></p><p id="station-text"></p><details id="geo-note"><summary>地點說明</summary><p id="station-note" class="station-note" hidden></p></details><div class="detail-footer"><span id="station-ref" class="reference"></span><a id="place-source" href="https://www.openbible.info/geo/" target="_blank" rel="noopener noreferrer">地點參考</a></div></section>
+      <div id="station-study"></div><div id="station-letters"></div>
       <details id="companions-details"><summary id="companions-summary">同行者與經文</summary><section id="segment-companions" class="segment-companions" aria-labelledby="segment-companions-title"><div class="section-heading"><h3 id="segment-companions-title">本段同行者</h3><button id="companion-method" class="text-btn" type="button">標示說明</button></div><span id="map-companions-caption" class="sr-only" aria-hidden="true"></span><p id="companion-scope" class="companion-scope"></p><ul id="companion-people" class="companion-people"></ul><p id="companion-note" class="companion-note"></p><p id="companion-change" class="companion-change" hidden></p><details id="companion-related" class="companion-related"><summary>分隊、會合與其他相關人物</summary><div id="companion-related-body"></div></details><button id="companion-evidence" class="evidence-button" type="button">查閱本段經文</button></section></details></div>
     </div>
+    <div id="panel-letters" class="panel-content"><div class="study-actions"><button type="button" data-panel="journeys">返回行程</button></div><p class="study-note">依《新約聖經恢復本》各卷卷首書介，按新約書卷順序排列。希伯來書依該書介的著者認定列入。著時、著地保留原稿的推定用語。</p><label class="letter-filter" for="letter-filter">階段<select id="letter-filter"><option value="all">全部十四封</option><option value="2">第二次行程</option><option value="3">第三次行程</option><option value="4">抵達羅馬後・第一次被囚</option><option value="released">第一次被囚獲釋後</option><option value="imprisoned">第二次被囚</option></select></label><div id="letter-library" class="letter-list"></div></div>
     <div id="panel-stoplist" class="panel-content"><label class="field-label" for="place-search">搜尋地點</label><input id="place-search" type="search" placeholder="輸入地名，查看歷次事件" autocomplete="off"><div id="place-results" class="place-results"></div><details><summary>本次行程站序</summary><div class="route-heading"><h3>選擇站點</h3><span id="stop-total"></span></div><ol id="stop-list" class="stop-list" aria-label="選擇停靠站"></ol></details></div>
     <div id="panel-playback" class="panel-content">
       <section class="playback" aria-label="路線播放設定"><p class="panel-description">可在主畫面播放、暫停或逐站前進；關閉這個面板即可回到地圖。</p><label class="field-label" for="progress">行程進度</label><input id="progress" class="progress" type="range" min="0" max="14" step="0.01" value="0"><div class="playback-options"><label class="speed-label" for="speed">播放速度<select id="speed"><option value="1">1×</option><option value="2">2×</option><option value="4">4×</option></select></label><label class="follow-label"><input id="follow-camera" type="checkbox">視角跟隨</label></div><button id="restart-btn" type="button" class="secondary-button">重新開始</button><h3>路線圖例</h3><div class="map-legend"><span><i class="land-line"></i>陸路</span><span><i class="sea-line"></i>海路</span><span><i class="uncertain-line"></i>漂流／未詳</span></div><p class="gesture-hint">拖曳移動 · 滾輪縮放 · 右鍵拖曳平面旋轉</p></section>
