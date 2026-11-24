@@ -63,7 +63,7 @@ js = (root/'assets/app.js').read_text(encoding='utf-8')
 for element_id in re.findall(r"\$\('([^']+)'\)", js):
     assert element_id in ids, element_id
 for url in re.findall(r'(?:src|href)="(\./[^"]+)"', html):
-    assert (root/url).exists(), url
+    assert (root/url.split('?',1)[0]).exists(), url
 assert 'href="/' not in html and 'src="/' not in html, 'root paths break project Pages'
 # The current experience is a bounded 2D atlas; old links cannot restore 3D.
 assert not {'mode-3d','mode-2d','globe-btn','pitch','pitch-value'}.intersection(ids)
